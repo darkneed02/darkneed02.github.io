@@ -1,0 +1,87 @@
+<!-- about area start -->
+<section
+  id="homeabout"
+  class="rs-about-area section-space rs-about-fourteen primary-bg"
+>
+  <div class="container">
+    <div class="row align-items-center justify-content-center g-5">
+      <div class="col-xl-5 col-lg-5 d-none d-lg-block">
+        <div
+          class="rs-about-thumb-wrapper position-relative wow fadeInLeft"
+          data-wow-delay=".3s"
+        >
+          <div class="rs-about-thumb">
+            <img src="assets/images/brand/PICT0053.jpg" alt="image" />
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-7">
+        <div
+          class="rs-about-content-wrapper wow fadeInRight"
+          data-wow-delay=".3s"
+        >
+          <div class="rs-section-title-wrapper">
+            <span class="rs-section-subtitle justify-content-start">
+              <img src="assets/images/shape/small-arrow.png" alt="image" />
+              เกี่ยวกับฉัน
+            </span>
+            <h2
+              class="rs-section-title mb-15 rs-split-text-enable split-in-fade"
+            >
+              สวัสดีครับ ชื่อ
+              <span class="rs-text-primary">จารุวัฒน์ อำนวยสัตย์</span>
+            </h2>
+            <p class="rs-about-designation">Programmer &amp; Developer</p>
+            <p class="rs-about-description">
+              สวัสดีครับ กระผมชื่อ ฟิล์ม ทำงานในสาย Programmer และ Developer
+              ชอบในการเขียนโปรแกรม ศึกษาการเขียนโปรแกรม และ ศึกษาเทคโนโลยีใหม่ๆ
+              เพื่อเอาปรับใช้กับงาน ให้ประสิทธิภาพมากยิ่งขึ้น
+            </p>
+          </div>
+          <div class="rs-about-bio">
+            <ul>
+              <li>
+                อายุ
+                <span id="age" data-birthdate="1997-06-19T00:00:00"></span>
+              </li>
+              <li>
+                เพศ
+                <span>ชาย</span>
+              </li>
+              <li>
+                โทรศัพท์
+                <span><a href="tel:0646613238"> 064-661-3238 </a></span>
+              </li>
+              <li>
+                Email
+                <span
+                  ><a href="mailto:overlag02@gmail.com"
+                    >overlag02@gmail.com</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- about area end -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const ageEl = document.getElementById("age");
+    if (ageEl && ageEl.dataset.birthdate) {
+      const birthDate = new Date(ageEl.dataset.birthdate);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      ageEl.textContent = age + " ปี";
+    }
+  });
+</script>
