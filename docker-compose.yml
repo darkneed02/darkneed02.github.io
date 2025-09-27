@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  web:
+    image: nginx:alpine
+    container_name: profile-cv
+    ports:
+      - "8080:80"
+    volumes:
+      # map ไฟล์โครงการเข้าไปแทนที่ใน nginx
+      - ./:/usr/share/nginx/html:ro
