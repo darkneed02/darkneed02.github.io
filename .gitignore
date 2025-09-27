@@ -1,0 +1,8 @@
+# ละเว้นไฟล์ docker-compose
+docker-compose.yml
+
+# ถ้ามีไฟล์ override ด้วย
+docker-compose.override.yml
+
+# หรือทุกไฟล์ docker-compose*.yml
+docker-compose*.yml
