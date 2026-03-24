@@ -62,11 +62,7 @@
     let rtl_setting = rs_rtl === 'rtl' ? true : false;
 
 
-    /* Preloader activation */
-    $(window).on('load', function (event) {
-        $("#pre-load").delay(600).fadeOut(500);
-        $(".pre-loader").delay(600).fadeOut(500);
-    });
+    /* Preloader activation — จัดการโดย app.js หลัง fetch เสร็จ */
 
     /* footer year */
     var yearElement = document.getElementById("year");
@@ -230,9 +226,11 @@ Sidebar Toggle
         },
     });
 
-    $(document).ready(function () {
+    /* Backtotop + init ที่ต้องการ DOM จาก fetch — รอ componentsLoaded */
+    document.addEventListener("componentsLoaded", function () {
         /* Button scroll up js */
         var progressPath = document.querySelector(".backtotop-wrap path");
+        if (!progressPath) return;
         var pathLength = progressPath.getTotalLength();
         progressPath.style.transition = progressPath.style.WebkitTransition = "none";
         progressPath.style.strokeDasharray = pathLength + " " + pathLength;
@@ -360,7 +358,7 @@ Sidebar Toggle
             makeTimer(endTime, "countdown4");
             makeTimer(endTime, "countdown5");
         }, 1000);
-    });
+    }); // end componentsLoaded
     /* countdown activation end */
 
     /* pralax image */
