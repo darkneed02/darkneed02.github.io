@@ -197,29 +197,34 @@ body {
 
 /* Highlights list */
 .rs-banner-highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 28px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  grid-template-columns: unset !important;
 }
 .rs-banner-highlights li {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,.80);
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-  padding: 6px 14px;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #DBEAFE !important;
+  background: rgba(59,130,246,.22) !important;
+  border: 1px solid rgba(96,165,250,.55) !important;
+  padding: 8px 18px !important;
+  border-radius: 100px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  list-style: none !important;
+  width: fit-content !important;
+  flex: none !important;
 }
 .rs-banner-highlights li::before {
-  content: '▸';
-  color: #60A5FA;
-  font-size: 10px;
+  content: '▸' !important;
+  color: #93C5FD !important;
+  font-size: 11px !important;
 }
 
 /* Metrics */
@@ -489,18 +494,26 @@ body {
   color: var(--cv-blue-mid) !important;
 }
 
-/* Dark bg variant */
-.primary-bg .rs-section-title,
-.secondary-bg .rs-section-title {
+/* Dark bg (primary-bg) — ตัวอักษรขาว */
+.primary-bg .rs-section-title {
   color: #fff !important;
 }
-.primary-bg .rs-section-subtitle,
-.secondary-bg .rs-section-subtitle {
+.primary-bg .rs-section-subtitle {
   color: #93C5FD !important;
 }
-.primary-bg .rs-section-subtitle::before,
-.secondary-bg .rs-section-subtitle::before {
+.primary-bg .rs-section-subtitle::before {
   background: #93C5FD;
+}
+
+/* Light bg (secondary-bg) — ตัวอักษรเข้ม */
+.secondary-bg .rs-section-title {
+  color: var(--cv-navy) !important;
+}
+.secondary-bg .rs-section-subtitle {
+  color: var(--cv-blue-mid) !important;
+}
+.secondary-bg .rs-section-subtitle::before {
+  background: var(--cv-blue-mid);
 }
 
 /* ---------------------------------------------------------
