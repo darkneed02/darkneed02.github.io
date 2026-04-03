@@ -8,20 +8,43 @@
           <span style="font-family:'Prompt',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:-.3px;">
             Jaruwat<span style="color:#60A5FA;">.</span>
           </span>
-          <div class="offcanvas-close">
-            <button class="offcanvas-close-icon animation--flip">
-              <span class="offcanvas-m-lines">
-                <span class="offcanvas-m-line line--1"></span>
-                <span class="offcanvas-m-line line--2"></span>
-                <span class="offcanvas-m-line line--3"></span>
-              </span>
-            </button>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <button
+              class="cv-lang-btn"
+              onclick="window.toggleLang()"
+              aria-label="Switch to English"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                background: rgba(255,255,255,.06);
+                border: 1px solid rgba(255,255,255,.14);
+                color: rgba(255,255,255,.75);
+                font-family: 'Prompt', sans-serif;
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: .5px;
+                padding: 5px 11px 5px 9px;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: background .2s, border-color .2s, color .2s;
+              "
+            ><i class="ri-translate-2" style="font-size:13px;"></i><span>EN</span></button>
+            <div class="offcanvas-close">
+              <button class="offcanvas-close-icon animation--flip">
+                <span class="offcanvas-m-lines">
+                  <span class="offcanvas-m-line line--1"></span>
+                  <span class="offcanvas-m-line line--2"></span>
+                  <span class="offcanvas-m-line line--3"></span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
 
         <div class="offcanvas-about mb-30 d-none d-sm-block">
-          <h4 class="offcanvas-title-meta">เกี่ยวกับฉัน</h4>
-          <p>
+          <h4 class="offcanvas-title-meta" data-i18n="offcanvas.about.title">เกี่ยวกับฉัน</h4>
+          <p data-i18n="offcanvas.about.text">
             สวัสดีครับ กระผม จารุวัฒน์ อำนวยสัตย์ (ฟิล์ม)<br>
             Programmer &amp; Developer ที่เชี่ยวชาญด้าน Web App, API, Database และ Automation
           </p>
@@ -34,7 +57,7 @@
         </div>
 
         <div class="offcanvas-contact mb-30">
-          <h4 class="offcanvas-title-meta">ข้อมูลติดต่อ</h4>
+          <h4 class="offcanvas-title-meta" data-i18n="offcanvas.contact.title">ข้อมูลติดต่อ</h4>
           <ul>
             <li class="d-flex align-items-center gap-15">
               <div class="offcanvas-contact-icon">
@@ -64,7 +87,7 @@
         </div>
 
         <div class="offcanvas-social">
-          <h4 class="offcanvas-title-meta">ติดตาม</h4>
+          <h4 class="offcanvas-title-meta" data-i18n="offcanvas.social.title">ติดตาม</h4>
           <ul>
             <li>
               <a href="https://www.facebook.com/jaruwat.amnuaysat" target="_blank" rel="noopener noreferrer" title="Facebook">

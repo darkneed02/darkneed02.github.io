@@ -67,6 +67,9 @@ Promise.all([
     jQuery(".pre-loader").delay(400).fadeOut(400);
   }
 
+  // --- Initialize i18n (ภาษาที่บันทึกไว้ หรือ ไทย default) ---
+  if (typeof window.initI18n === 'function') window.initI18n();
+
   // --- Dispatch event เพื่อให้ส่วนอื่น subscribe ได้ ---
   document.dispatchEvent(new Event("componentsLoaded"));
 });
