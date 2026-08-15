@@ -243,20 +243,30 @@ AI agent รุ่นใหม่อ่านหน้าเว็บผ่า�
 ### เฟส 0 — หยุดเลือดก่อน (~30 นาที)
 | งาน | เวลา |
 |---|---|
-| แก้เมนูมือถือ (ย้ายเข้า `componentsLoaded` หรือใช้ delegated event) | 5 นาที |
+| แก้เมนูมือถือ ด้วย **delegated event** `$(document).on("click", ".sidebar-toggle", ...)` | 5 นาที |
 | ลบ `å` ท้าย `brithday.js` | 1 นาที |
 | ใส่ OG / Twitter meta | 10 นาที |
 | ตัดที่อยู่เหลือระดับจังหวัด + ตัดเกรดเฉลี่ยออก | 15 นาที |
+
+> **ทำไมต้องเป็น delegated event ไม่ใช่ย้ายเข้า `componentsLoaded`:** เฟส 1 จะเลิกใช้ `fetch` ทำให้ event `componentsLoaded` เปลี่ยนที่มา ถ้าเฟส 0 ย้ายเข้าไปผูกกับ event นั้น เฟส 1 จะทำให้เมนูพังซ้ำอีกรอบ ส่วน delegated event ผูกกับ `document` จึงรอดทั้งสองสถาปัตยกรรม
 
 ### เฟส 1 — สถาปัตยกรรม (~1 วัน) ← **ปลดล็อกทุกอย่างที่เหลือ**
 | งาน | เวลา |
 |---|---|
 | เขียน `build.js` ต่อ component → `index.html` static | 3–4 ชม. |
+| **เก็บบล็อก init ของ `app.js` ไว้ แล้ว dispatch `componentsLoaded` ตอน `DOMContentLoaded` แทน** | 15 นาที |
 | ตรวจว่า jQuery/GSAP/WOW/Isotope ยังทำงานถูกหลังเลิกใช้ fetch | 2 ชม. |
 | ตรวจซ้ำด้วย `curl` — ต้องเห็นเนื้อหาครบใน HTML ดิบ | 30 นาที |
 | สร้าง `/en/` จาก source เดียวกัน + `hreflang` + `canonical` | 2 ชม. |
 
-**เกณฑ์ผ่าน:** `curl https://darkneed02.github.io/ | grep -c "Full Stack"` ต้องมากกว่า 0
+> **กับดักที่ต้องรู้ก่อนลบ `app.js`:** ใน `main.js` บรรทัด 230–361 (~130 บรรทัด) อยู่ใน `document.addEventListener("componentsLoaded", ...)` และตัวเดียวที่ยิง event นี้คือ `app.js:74` ท้าย pipeline ของ `fetch`
+> **ถ้าลบ `app.js` ทิ้งเพราะคิดว่าไม่ต้องใช้แล้ว โค้ด 130 บรรทัดนั้นจะตายเงียบๆ ไม่มี error ขึ้นเลย** — backtotop, scroll trigger และ init อื่นๆ จะหายไปเฉยๆ
+> เรื่องเดียวกันนี้ยังกินไปถึงบล็อกใน `app.js` เองด้วย: การคำนวณอายุ, `data-background`, re-init WOW/jarallax, ซ่อน preloader และ `initI18n()` ทั้งหมดอยู่ในบล็อกนั้น ต้องยกมาทั้งชุด
+> ทำถูก = 15 นาที ทำผิด = ไล่หาสาเหตุทั้งวัน
+>
+> ผลพลอยได้: เมื่อเนื้อหาเป็น static แล้ว script ที่ `defer` จะรันตอนที่ `.sidebar-toggle` มีอยู่ใน DOM แล้ว บั๊กเมนูมือถือจะหายไปเองด้วย
+
+**เกณฑ์ผ่าน (ตรวจได้ระหว่างทำ ไม่ต้องรอ deploy):** `grep -c "Full Stack" index.html` ต้องมากกว่า 0 แล้วค่อยยืนยันอีกครั้งบน production หลัง push
 
 ### เฟส 2 — SEO / AEO (~1 วัน)
 | งาน | เวลา |
@@ -277,9 +287,15 @@ AI agent รุ่นใหม่อ่านหน้าเว็บผ่า�
 | จัดกลุ่มทักษะใหม่ตามระดับความชำนาญ | 3 ชม. |
 | ปรับ timeline ประสบการณ์ให้สแกนง่ายขึ้น + ใส่ตัวเลขผลลัพธ์ | 4 ชม. |
 | แก้คอนทราสต์ marquee + ช่องว่างก่อน contact | 1 ชม. |
-| ต่อฟอร์มติดต่อเข้ากับ `assets/mailer.php` ที่มีอยู่แล้ว | 2 ชม. |
+| ฟอร์มติดต่อผ่าน endpoint ภายนอก (Formspree / Web3Forms / Cloudflare Worker) | 2 ชม. |
 | ตรวจ i18n key ครบทุกตัวหลังรื้อ UI (**ห้ามข้าม**) | 3 ชม. |
 | ทดสอบ responsive 390 / 768 / 1440 | 2 ชม. |
+
+> **`assets/mailer.php` ใช้ไม่ได้ ต้องเปลี่ยนวิธี:** รายงานเดือน ก.ค. เสนอให้ต่อฟอร์มเข้ากับไฟล์นี้ แต่ตรวจแล้วใช้ไม่ได้ทั้งสองเส้นทาง deploy ที่มีใน repo
+> — GitHub Pages เป็น static hosting ล้วน **ไม่รัน PHP** ไฟล์จะถูกเสิร์ฟเป็น text หรือ 404
+> — `docker-compose.yml` ใช้ `nginx:alpine` ซึ่งไม่มี php-fpm เช่นกัน
+> ยิ่งกว่านั้น ตัวไฟล์เป็นของแถมมากับธีมและยังไม่เคยตั้งค่า — บรรทัด 20 ยังเป็น `$recipient = "demo@gmail.com"`
+> **ทางออก:** ใช้ form endpoint ภายนอกที่ทำงานกับเว็บ static ได้ (Formspree, Web3Forms, Cloudflare Worker) หรือไม่ทำฟอร์มแล้วใช้ `mailto:` ต่อไป
 
 > **คำเตือนเรื่อง i18n:** `i18n.js` เก็บ **HTML พร้อม inline style** ไว้ในค่าแปล เช่น
 > `'banner.title': 'สวัสดีครับ ผม<br><span style="color:#60A5FA;">จารุวัฒน์ อำนวยสัตย์</span>'`
