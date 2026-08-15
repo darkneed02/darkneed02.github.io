@@ -1,5 +1,14 @@
 /* ============================================================
    CV i18n — Thai / English translations
+
+   หมายเหตุ: ไฟล์นี้ "ไม่ได้ถูกโหลดในเบราว์เซอร์แล้ว"
+   build.js อ่านไฟล์นี้ตอน build เพื่อสร้างสองหน้า static
+   คือ index.html (ไทย) และ en/index.html (อังกฤษ)
+   การสลับภาษาตอนนี้ใช้ลิงก์จริงระหว่างสองหน้า ไม่ใช่ JS
+
+   แก้คำแปลที่นี่ แล้วรัน: node build.js
+   ฟังก์ชัน applyLanguage / toggleLang / initI18n ด้านล่าง
+   เก็บไว้เผื่ออ้างอิง — ไม่มีหน้าไหนเรียกใช้แล้ว
    ============================================================ */
 
 window.cvI18n = {
@@ -10,29 +19,33 @@ window.cvI18n = {
     'nav.skills':          'ทักษะ',
     'nav.experience':      'ประสบการณ์',
     'nav.certifications':  'ใบรับรอง',
+    'nav.faq':             'คำถามที่พบบ่อย',
     'nav.contact':         'ติดต่อ',
 
     /* ---- Offcanvas ---- */
     'offcanvas.about.title':   'เกี่ยวกับฉัน',
-    'offcanvas.about.text':    'สวัสดีครับ กระผม จารุวัฒน์ อำนวยสัตย์ (ฟิล์ม)<br>Programmer &amp; Developer ที่เชี่ยวชาญด้าน Web App, API, Database และ Automation',
+    'offcanvas.about.text':    'สวัสดีครับ กระผม จารุวัฒน์ อำนวยสัตย์ (ฟิล์ม)<br>Full Stack Developer (PHP/Laravel) ถนัดระบบหลังบ้านองค์กร การเชื่อมต่อระบบ และ Automation',
     'offcanvas.contact.title': 'ข้อมูลติดต่อ',
+    'offcanvas.address':       'อ.เมืองปทุมธานี จ.ปทุมธานี',
     'offcanvas.social.title':  'ติดตาม',
 
     /* ---- Banner ---- */
     'banner.badge':                   'Available for Work &amp; Freelance',
-    'banner.title':                   'สวัสดีครับ ผม<br><span style="color:#60A5FA;">จารุวัฒน์ อำนวยสัตย์</span>',
-    'banner.description':             'Programmer &amp; Full Stack Developer ที่มุ่งเน้นคุณภาพโค้ด<br>ระบบ Web App · API · Database · Automation',
+    'banner.title':                   'จารุวัฒน์ อำนวยสัตย์<br><span class="rs-banner-role">Full Stack Developer</span>',
+    'banner.description':             'ประสบการณ์ 6 ปี · ปทุมธานี / พร้อมทำงาน Remote<br>ถนัดระบบหลังบ้านองค์กร · เชื่อมต่อ SAP และระบบธนาคาร · Automation',
     'banner.metric.exp.title':        'ประสบการณ์',
-    'banner.metric.exp.value':        '5+ ปี',
+    'banner.metric.exp.value':        '6 ปี',
     'banner.metric.projects.title':   'โปรเจกต์',
     'banner.metric.companies.title':  'บริษัท',
+    'banner.cta.resume':              'ดาวน์โหลด Resume',
+    'banner.cta.contact':             'ติดต่อผม',
 
     /* ---- About ---- */
     'about.subtitle':        'เกี่ยวกับฉัน',
-    'about.title':           'สวัสดีครับ ผม<br><span class="rs-text-primary">จารุวัฒน์ อำนวยสัตย์</span>',
-    'about.designation':     'Programmer &amp; Developer',
-    'about.description':     'สวัสดีครับ ผมชื่อ ฟิล์ม ทำงานในสาย Programmer และ Developer มีประสบการณ์กว่า 5 ปีในการพัฒนา Web Application, API, Database และระบบ Automation ชอบเขียนโค้ดที่สะอาด อ่านง่าย และศึกษาเทคโนโลยีใหม่เสมอเพื่อนำมาปรับใช้กับงานให้มีประสิทธิภาพยิ่งขึ้น',
-    'about.feature.1':       'เชี่ยวชาญ Web App, REST API, Database และ Automation',
+    'about.title':           'ถนัดระบบหลังบ้านองค์กร<br><span class="rs-text-primary">ที่ต้องเชื่อมหลายระบบเข้าด้วยกัน</span>',
+    'about.designation':     'Full Stack Developer (PHP/Laravel)',
+    'about.description':     'สวัสดีครับ ผมชื่อ ฟิล์ม เป็น Full Stack Developer ประสบการณ์ 6 ปี ทำงานหลักด้วย PHP/Laravel และ SQL งานที่ถนัดที่สุดคือระบบหลังบ้านขององค์กร ตั้งแต่ระบบเบิกจ่าย ระบบสมาชิก ไปจนถึงการเชื่อมข้อมูลกับ SAP และการส่งไฟล์เข้ารหัสตามมาตรฐานธนาคาร ชอบเขียนโค้ดที่สะอาด อ่านง่าย และดูแลต่อได้ในระยะยาว',
+    'about.feature.1':       'เชี่ยวชาญ PHP/Laravel, REST API, Database และ Automation',
     'about.feature.2':       'โฟกัสคุณภาพโค้ดที่อ่านง่ายและดูแลต่อได้ในระยะยาว',
     'about.feature.3':       'สื่อสารชัดเจน วางแผนเป็นระบบ ส่งมอบงานตรงเวลา',
     'about.feature.4':       'พร้อมเรียนรู้เทคโนโลยีใหม่เพื่อเพิ่มประสิทธิภาพงาน',
@@ -42,29 +55,42 @@ window.cvI18n = {
     'about.bio.gender.val':  'ชาย',
     'about.bio.phone':       'โทรศัพท์',
     'about.bio.email':       'อีเมล',
-    'about.btn.contact':     '<i class="ri-mail-send-line"></i> ติดต่อฉัน',
-    'about.btn.resume':      '<i class="ri-download-line"></i> ดาวน์โหลด Resume',
+    'about.btn.contact':     'ติดต่อฉัน',
+    'about.btn.resume':      'ดาวน์โหลด Resume',
 
     /* ---- Skills ---- */
     'skills.subtitle':      'ความเชี่ยวชาญ',
     'skills.title':         'ทักษะและเครื่องมือ',
     'skills.primary.note':  'ทักษะหลักที่ใช้งานจริงเป็นประจำ',
+    'skills.laravel.meta':  'ระบบหลังบ้านที่ใช้งานจริงใน Production',
+    'skills.learning.label': 'กำลังศึกษา',
     'skills.strong.note':   'ทักษะที่ใช้งานร่วมกับงานหลักสม่ำเสมอ',
 
     /* ---- Shared labels ---- */
     'label.tech.stack':    'เทคโนโลยีที่ใช้',
-    'label.skills.gained': 'ทักษะที่ได้',
+    'label.status':        'สถานะ',
 
     /* ---- Experience ---- */
     'exp.subtitle': 'ประสบการณ์',
+    /* ---- Experience stats (นับจากงานที่ระบุไว้จริง) ---- */
+    'exp.stherb.stat.a':    '3 งานหลัก',
+    'exp.stherb.stat.b':    'HerbCore CRM ~70%',
+    'exp.cm.stat.a':        '6 ระบบ',
+    'exp.cm.stat.b':        '11 เดือน',
+    'exp.nat.stat.a':       '3 ระบบหลัก',
+    'exp.nat.stat.b':       '3 ปี 4 เดือน',
+    'exp.amphan.stat.a':    'ฝึกงาน 5 เดือน',
+
     'exp.title':    'ประสบการณ์การทำงาน',
 
     /* St.Herb */
-    'exp.stherb.period':         'เม.ย. 2567 – ปัจจุบัน',
+    'exp.stherb.period':         'เม.ย. 2568 – ปัจจุบัน',
     'exp.stherb.web.title':      'ดูแลและพัฒนาเว็บไซต์',
     'exp.stherb.web.desc':       '<p><strong>หน้าที่:</strong> ดูแลความเสถียร/ความปลอดภัย, ติดตาม Traffic, ปรับ SEO, ปรับ UI/UX, จัดทำระบบ Backup</p><p><strong>ผลลัพธ์:</strong> เว็บไซต์เสถียรขึ้น การมองเห็นดีขึ้น และ UX ปรับปรุงให้ดีขึ้น</p>',
     'exp.stherb.server.title':   'ดูแลและประสานงาน Server',
     'exp.stherb.server.desc':    '<p><strong>หน้าที่:</strong> ประสานงานและเฝ้าระวังความเสถียรของ Server พร้อมแก้ปัญหาเบื้องต้น</p><p><strong>ผลลัพธ์:</strong> บริการไม่สะดุดและลดเวลาหยุดชะงักของระบบ</p>',
+    'exp.stherb.crm.title':     'พัฒนาระบบ HerbCore CRM',
+    'exp.stherb.crm.desc':      '<p><strong>หน้าที่:</strong> พัฒนาระบบ CRM หลังบ้านเองทั้งระบบ รวมออเดอร์จากร้าน WooCommerce หลายร้านมาไว้ที่เดียว ตั้งแต่ดึงออเดอร์อัตโนมัติตามรอบ คิวแพ็กที่ตัดสต็อกเอง การคืนเงินแบบยอดสุทธิ จองขนส่ง DHL Express อีเมลการตลาดและอีเมลขาเข้า ไปจนถึงหน้าวิเคราะห์ยอดขาย สิทธิ์ผู้ใช้ และ Audit Log</p><p><strong>ขนาดงาน:</strong> 37 หน้าจอ · 35 controller · API 13 กลุ่มงาน · 57 migration · งานเบื้องหลังตั้งเวลา 4 ตัว</p><p><strong>สถานะ:</strong> พัฒนาไปแล้วประมาณ 70% — ส่วนจองขนส่ง DHL ผ่านการทดสอบ Sandbox แบบ end-to-end แล้ว รอสิทธิ์บัญชี Production</p>',
 
     /* Cloudmate */
     'exp.cm.period':        'ม.ค. – พ.ย. 2567',
@@ -103,29 +129,29 @@ window.cvI18n = {
     'qual.lower.title':       'มัธยมศึกษาตอนต้น',
     'qual.lower.period':      'ม.1 – ม.3',
     'qual.lower.school':      'โรงเรียนสวนกุหลาบวิทยาลัย นครศรีธรรมราช',
-    'qual.lower.meta':        'เกรดเฉลี่ย 2.35',
+    'qual.lower.meta':        '',
     'qual.upper.title':       'มัธยมศึกษาตอนปลาย',
     'qual.upper.period':      'เมษายน 2556 – ธันวาคม 2558',
     'qual.upper.school':      'โรงเรียนสวนกุหลาบวิทยาลัย นครศรีธรรมราช',
-    'qual.upper.meta':        'สายวิทย์–คณิต<br>เกรดเฉลี่ย 2.55',
+    'qual.upper.meta':        'สายวิทย์–คณิต',
     'qual.bachelor.title':    'ปริญญาตรี',
     'qual.bachelor.period':   'สิงหาคม 2559 – มีนาคม 2563',
     'qual.bachelor.school':   'มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี',
-    'qual.bachelor.meta':     'สาขาเทคโนโลยีสารสนเทศ<br>คณะวิทยาศาสตร์และเทคโนโลยี<br>เกรดเฉลี่ย 2.55',
+    'qual.bachelor.meta':     'สาขาเทคโนโลยีสารสนเทศ<br>คณะวิทยาศาสตร์และเทคโนโลยี',
 
     /* ---- Certifications ---- */
     'cert.subtitle':          'ใบรับรอง',
-    'cert.desc':              'รวมใบรับรองที่ได้รับ พร้อมลิงก์ตรวจสอบหลักฐานแต่ละรายการ',
+    'cert.desc':              '8 ใบรับรอง พร้อมลิงก์ตรวจสอบหลักฐานได้ทุกใบ',
     'cert.backend.subtitle':  'งานพัฒนา REST API และระบบฝั่งเซิร์ฟเวอร์',
     'cert.data.subtitle':     'เส้นทางด้าน Data Science และ Data Engineering',
     'cert.cloud.subtitle':    'พื้นฐานระบบคลาวด์และการจัดการโครงสร้างพื้นฐาน',
-    'cert.view':              '<i class="ri-external-link-line"></i> ดูใบรับรอง',
+    'cert.view':              'ดูใบรับรอง',
     'cert.de.course':         'Data Engineer Track (5 ใบรับรอง)',
-    'cert.de.cert1':          '<i class="ri-external-link-line"></i> ปูพื้นฐานสู่สายงาน Data Engineer',
-    'cert.de.cert2':          '<i class="ri-external-link-line"></i> เครื่องมือและโครงสร้างพื้นฐาน Data Engineering',
-    'cert.de.cert3':          '<i class="ri-external-link-line"></i> Python, Pandas &amp; PySpark',
-    'cert.de.cert4':          '<i class="ri-external-link-line"></i> ETL Pipeline ด้วย PySpark',
-    'cert.de.cert5':          '<i class="ri-external-link-line"></i> Serverless Data Lakes ด้วย AWS',
+    'cert.de.cert1':          'ปูพื้นฐานสู่สายงาน Data Engineer',
+    'cert.de.cert2':          'เครื่องมือและโครงสร้างพื้นฐาน Data Engineering',
+    'cert.de.cert3':          'Python, Pandas &amp; PySpark',
+    'cert.de.cert4':          'ETL Pipeline ด้วย PySpark',
+    'cert.de.cert5':          'Serverless Data Lakes ด้วย AWS',
 
     /* ---- Company names ---- */
     'company.stherb':   'บริษัท เซนต์เฮิร์บ คอสเมติกส์ อินเตอร์เนชั่นแนล จำกัด',
@@ -134,7 +160,7 @@ window.cvI18n = {
     'company.amphan':   'บริษัท อำพันเทคโนโลยี จำกัด',
 
     /* ---- Footer ---- */
-    'footer.brand.desc':     'Programmer &amp; Developer ที่มุ่งเน้นคุณภาพโค้ด<br>พัฒนา Web App · API · Database · Automation',
+    'footer.brand.desc':     'Full Stack Developer (PHP/Laravel)<br>ระบบหลังบ้านองค์กร · เชื่อมต่อระบบ · Automation',
     'footer.nav.title':      'เมนูหลัก',
     'footer.nav.home':       'หน้าแรก',
     'footer.nav.about':      'เกี่ยวกับ',
@@ -143,9 +169,88 @@ window.cvI18n = {
     'footer.nav.cert':       'ใบรับรอง',
     'footer.nav.contact':    'ติดต่อ',
     'footer.contact.title':  'ข้อมูลติดต่อ',
-    'footer.address':        '15/178 หมู่บ้านศิริทรัพย์ ต.บางพูน<br>อ.เมืองปทุมธานี จ.ปทุมธานี 12000',
+    'footer.address':        'อ.เมืองปทุมธานี จ.ปทุมธานี<br>(พร้อมเดินทาง กรุงเทพฯ–ปริมณฑล / Remote)',
     'footer.download':       'ดาวน์โหลด Resume (PDF)',
-    'footer.location':       'Programmer &amp; Developer · ปทุมธานี, ไทย',
+    'footer.location':       'Full Stack Developer · ปทุมธานี, ไทย',
+
+
+
+
+    /* ---- Contact form / CTA ---- */
+    'contact.cta.text': 'ส่งรายละเอียดงานหรือคำถามมาทางอีเมลได้เลย ตอบกลับทุกฉบับ',
+    'contact.cta.btn':  'ส่งอีเมลถึงผม',
+    'form.name':    'ชื่อของคุณ',
+    'form.email':   'อีเมลสำหรับติดต่อกลับ',
+    'form.message': 'ข้อความ',
+    'form.submit':  '<i class="ri-send-plane-line"></i> ส่งข้อความ',
+    'form.sending': 'กำลังส่ง...',
+    'form.ok':      'ส่งข้อความเรียบร้อยแล้ว ขอบคุณครับ จะติดต่อกลับโดยเร็วที่สุด',
+    'form.fail':    'ส่งไม่สำเร็จ ลองใหม่อีกครั้ง หรืออีเมลมาที่ <a href="mailto:overlag02@gmail.com">overlag02@gmail.com</a> ได้เลย',
+
+    /* ---- Work / Case studies ---- */
+    'work.subtitle': 'ผลงาน',
+    'work.title':    'ตัวอย่างงานที่ทำ',
+    'work.intro':    'เลือกมา 5 ระบบที่สะท้อนงานที่ถนัดที่สุด — แต่ละชิ้นเล่าเป็นโจทย์ สิ่งที่ทำ และผลลัพธ์',
+    'work.note':     'หมายเหตุ: ภาพประกอบเป็นแผนภาพการทำงานที่วาดขึ้นใหม่ ไม่ใช่ภาพหน้าจอระบบจริง เนื่องจากทุกชิ้นเป็นระบบภายในขององค์กร',
+    'label.problem': 'โจทย์',
+    'label.doing':   'สิ่งที่ทำ',
+    'label.result':  'ผลลัพธ์',
+
+    'work.crm.tag':     'เซนต์เฮิร์บ · 2569',
+    'work.crm.badge':   'กำลังพัฒนา · ~70%',
+    'work.crm.name':    'HerbCore CRM — รวมออเดอร์หลายร้านค้าออนไลน์ ตั้งแต่รับออเดอร์ถึงจัดส่ง',
+    'work.crm.alt':     'แผนภาพระบบ HerbCore CRM ตั้งแต่ดึงออเดอร์จากหลายร้านไปจนถึงการจัดส่ง',
+    'work.crm.problem': 'ธุรกิจขายผ่านเว็บ WooCommerce หลายร้านพร้อมกัน ออเดอร์ ลูกค้า และสต็อกกระจายอยู่คนละหลังร้าน ต้องคัดลอกมารวมด้วยมือทุกวัน ส่วนยอดขายที่รายงานออกมายังไม่ได้หักคืนเงิน ตัวเลขที่ใช้ตัดสินใจจึงไม่ตรงกับเงินที่ได้รับจริง',
+    'work.crm.doing':   'พัฒนาเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker รวม 37 หน้าจอ 35 controller API 13 กลุ่มงาน 57 migration และงานเบื้องหลังตั้งเวลา 4 ตัว ดึงออเดอร์จากทุกร้านผ่าน WooCommerce REST API ตามรอบอัตโนมัติ ต่อเข้าคิวแพ็กที่ตัดสต็อกเอง เชื่อม DHL Express API เพื่อขอราคา สร้าง Shipment และเก็บ Label กับเลข Tracking ไว้กับออเดอร์ พร้อมระบบอีเมลการตลาด อีเมลขาเข้า สิทธิ์ผู้ใช้ และหน้าวิเคราะห์ยอดขาย',
+    'work.crm.result':  'ออเดอร์จากทุกร้านเข้ามารวมเองโดยไม่ต้องคัดลอกมือ พนักงานคลังทำงานจากคิวเดียวและสถานะไม่ถูก sync ทับ ส่วนการคืนเงินเก็บเป็นรายการแยกที่หักออกจากยอดทุกจุดโดยอัตโนมัติ ตัวเลขในระบบจึงเป็นยอดสุทธิเสมอโดยไม่ต้องแก้ออเดอร์ย้อนหลัง',
+    'work.crm.status':  'อยู่ระหว่างพัฒนา เสร็จแล้วประมาณ 70% ส่วนจองขนส่ง DHL ผ่านชุดทดสอบและทดสอบ Sandbox แบบ end-to-end แล้ว รอสิทธิ์บัญชี Production จึงจะเปิดใช้จริงได้',
+
+    'work.sap.tag':     'คลาวด์เมท · 2567',
+    'work.sap.name':    'ระบบเชื่อมข้อมูล SAP และส่งไฟล์เข้ารหัสให้ธนาคาร',
+    'work.sap.alt':     'แผนภาพการทำงานของระบบส่งไฟล์จาก SAP ไปยังธนาคาร',
+    'work.sap.problem': 'การส่งข้อมูลการชำระเงินให้ธนาคารต้องทำเป็นรอบ ต้องสร้างไฟล์จาก SAP เข้ารหัสตามข้อกำหนดของธนาคาร แล้วส่งผ่าน sFTP ทุกขั้นตอนทำมือ ผิดพลาดได้ง่ายและกินเวลา',
+    'work.sap.doing':   'เขียนโปรแกรม Python ดึงข้อมูลจาก SAP สร้างไฟล์ตามรูปแบบที่ธนาคารกำหนด เข้ารหัสตามมาตรฐาน ส่งผ่าน sFTP แล้วลบไฟล์ที่ส่งแล้ว พร้อมขาดึงไฟล์ผลการชำระเงินกลับมาถอดรหัสและบันทึกเข้า SAP',
+    'work.sap.result':  'การส่งข้อมูลผ่านมาตรฐานความปลอดภัยของธนาคาร ลดขั้นตอนที่ต้องทำมือ และข้อมูลสองระบบตรงกันโดยไม่ต้องกระทบยอดเอง',
+
+    'work.adv.tag':     'คลาวด์เมท · 2567',
+    'work.adv.name':    'ระบบเบิกจ่ายและเงินทดรองจ่าย',
+    'work.adv.alt':     'แผนภาพระบบเบิกจ่ายและเงินทดรองจ่าย',
+    'work.adv.problem': 'การเบิกจ่ายมีหลายเส้นทาง ทั้งแบบอ้างอิงเงินทดรองจ่ายและแบบไม่อ้างอิง แต่ละแบบมีลำดับผู้อนุมัติและเงื่อนไขต่างกัน และต้องตรวจสอบย้อนหลังได้',
+    'work.adv.doing':   'พัฒนาระบบบันทึกรายการเงินล่วงหน้าและการเบิกจ่าย ออกแบบขั้นตอนอนุมัติที่กำหนดเงื่อนไขและลำดับได้ พร้อมส่งออกข้อมูลเป็น Excel สำหรับงานบัญชี',
+    'work.adv.result':  'ทุกรายการมีร่องรอยการอนุมัติครบ ตรวจสอบย้อนหลังได้ง่าย และฝ่ายบัญชีดึงข้อมูลไปใช้ต่อได้ทันที',
+
+    'work.mm.tag':     'คลาวด์เมท · 2567',
+    'work.mm.name':    'ระบบวางแผนและเบิกจ่ายพัสดุรายไตรมาส',
+    'work.mm.alt':     'แผนภาพระบบวางแผนและเบิกจ่ายพัสดุรายไตรมาส',
+    'work.mm.problem': 'การเบิกพัสดุกระจายอยู่หลายหน่วยงาน ไม่มีภาพรวมว่าแต่ละไตรมาสวางแผนไว้เท่าไรและเบิกไปแล้วเท่าไร ทำให้คุมงบประมาณยาก',
+    'work.mm.doing':   'พัฒนาระบบวางแผนเบิกพัสดุรายไตรมาส ออกแบบขั้นตอนขออนุมัติและติดตามสถานะรายการ พร้อมเก็บประวัติการเบิกและส่งออกเป็น Excel',
+    'work.mm.result':  'เห็นภาพรวมการใช้พัสดุทั้งปี คุมงบประมาณได้ชัดเจนขึ้น และลดงานเอกสารที่ต้องทำซ้ำ',
+
+    'work.ht.tag':     'เนเจอร์ไบโอเทค · 2563–2566',
+    'work.ht.name':    'Healthy Together — ระบบสะสมแต้มและแลกของรางวัล',
+    'work.ht.alt':     'แผนภาพระบบสะสมแต้มและแลกของรางวัล Healthy Together',
+    'work.ht.problem': 'ต้องการระบบให้ลูกค้าลงทะเบียนสินค้าและสะสมโค้ดเพื่อแลกของรางวัล พร้อมหลังบ้านที่ทีมการตลาดจัดการเองได้ และรายงานที่ผู้บริหารดูภาพรวมได้',
+    'work.ht.doing':   'พัฒนาทั้งหน้าบ้านและหลังบ้าน ตั้งแต่ฟอร์มลงทะเบียน การสร้าง QR Code เฉพาะแต่ละรหัสสินค้า ระบบสะสมและแลกของรางวัล ระบบ Lucky Draw ไปจนถึงการทำ Data Cleansing ด้วย Pandas และ Dashboard บน Looker Studio',
+    'work.ht.result':  'ทีมการตลาดจัดการกิจกรรมได้เองโดยไม่ต้องรอทีมพัฒนา และผู้บริหารเห็นภาพรวมการลงทะเบียนและการแลกของรางวัลจาก Dashboard ได้ทันที',
+
+    'nav.work':      'ผลงาน',
+
+    /* ---- FAQ (ใช้ทั้งบนหน้าเว็บและใน FAQPage schema) ---- */
+    'faq.subtitle':    'คำถามที่พบบ่อย',
+    'faq.title':       'คำถามจากผู้ว่าจ้าง',
+    'faq.work.q':      'รับงานประเภทไหนบ้าง',
+    'faq.work.a':      'รับงานประจำตำแหน่ง Full Stack Developer, Programmer และ Web Developer รวมถึงงาน Freelance ที่เกี่ยวกับ Web Application, REST API, ระบบหลังบ้านองค์กร และงาน Automation เชื่อมต่อข้อมูลระหว่างระบบ',
+    'faq.stack.q':     'ถนัด tech stack อะไรบ้าง',
+    'faq.stack.a':     'ทำงานหลักด้วย PHP และ Laravel คู่กับฐานข้อมูล PostgreSQL, MySQL และ SQL Server ฝั่งหน้าเว็บใช้ JavaScript, AJAX, HTML/CSS และ Bootstrap ส่วนงาน Automation และจัดการข้อมูลใช้ Python กับ Pandas',
+    'faq.location.q':  'ทำงาน remote หรือ onsite ที่ไหนได้บ้าง',
+    'faq.location.a':  'อยู่อำเภอเมืองปทุมธานี จังหวัดปทุมธานี เดินทางเข้าทำงาน onsite ในกรุงเทพฯ และปริมณฑลได้ และทำงานแบบ remote หรือ hybrid ได้เช่นกัน',
+    'faq.experience.q':'มีประสบการณ์กี่ปี ทำอะไรมาบ้าง',
+    'faq.experience.a':'ทำงานสายพัฒนาระบบมา 6 ปี ผ่านบริษัท 3 แห่ง งานที่ผ่านมามีระบบ Loyalty และแลกของรางวัล ระบบจัดการทัวร์และการจอง ระบบเบิกจ่ายและพัสดุ การเชื่อมข้อมูลกับ SAP และการเข้ารหัสไฟล์ส่งธนาคารผ่าน sFTP',
+    'faq.start.q':     'ติดต่อและเริ่มงานได้อย่างไร',
+    'faq.start.a':     'ติดต่อได้ทางอีเมล overlag02@gmail.com หรือโทร 064-661-3238 ดาวน์โหลดเรซูเม่ฉบับเต็มได้จากปุ่มบนหน้านี้ ส่วนช่วงเวลาที่เริ่มงานได้ ขอพูดคุยตกลงกันอีกครั้งตามเงื่อนไขของงาน',
+
+    /* ---- Alt / title ของรูป (แปลผ่าน data-i18n-attr) ---- */
+    'alt.portrait':    'จารุวัฒน์ อำนวยสัตย์ — Full Stack Developer (PHP/Laravel)',
 
     /* ---- Contact ---- */
     'contact.subtitle':       'ติดต่อ',
@@ -154,7 +259,13 @@ window.cvI18n = {
     'contact.phone.label':    'เบอร์โทรศัพท์',
     'contact.email.label':    'อีเมล',
     'contact.location.label': 'ที่อยู่',
+    'contact.location.value': 'ปทุมธานี · พร้อมทำงาน Remote',
     'contact.social.label':   'ติดตามได้ที่',
+
+    /* ---- ชื่อที่ screen reader อ่าน สำหรับปุ่มที่มีแต่ไอคอน ---- */
+    'aria.menu.open':   'เปิดเมนู',
+    'aria.menu.close':  'ปิดเมนู',
+    'aria.backtotop':   'กลับขึ้นด้านบน',
   },
 
   en: {
@@ -164,29 +275,33 @@ window.cvI18n = {
     'nav.skills':          'Skills',
     'nav.experience':      'Experience',
     'nav.certifications':  'Certifications',
+    'nav.faq':             'FAQ',
     'nav.contact':         'Contact',
 
     /* ---- Offcanvas ---- */
     'offcanvas.about.title':   'About Me',
-    'offcanvas.about.text':    "Hi, I'm Jaruwat Amnuaysat (Film)<br>Programmer &amp; Developer specializing in Web App, API, Database and Automation",
+    'offcanvas.about.text':    "Hi, I'm Jaruwat Amnuaysat (Film)<br>Full Stack Developer (PHP/Laravel) specialising in enterprise back-office systems, integration and automation",
     'offcanvas.contact.title': 'Contact Info',
+    'offcanvas.address':       'Mueang Pathum Thani, Pathum Thani',
     'offcanvas.social.title':  'Follow',
 
     /* ---- Banner ---- */
     'banner.badge':                   'Available for Work &amp; Freelance',
-    'banner.title':                   'Hi, I\'m<br><span style="color:#60A5FA;">Jaruwat Amnuaysat</span>',
-    'banner.description':             'Programmer &amp; Full Stack Developer focused on code quality<br>Web App · API · Database · Automation',
+    'banner.title':                   'Jaruwat Amnuaysat<br><span class="rs-banner-role">Full Stack Developer</span>',
+    'banner.description':             '6 years of experience · Pathum Thani / open to remote<br>Enterprise back-office systems · SAP &amp; banking integration · Automation',
     'banner.metric.exp.title':        'Experience',
-    'banner.metric.exp.value':        '5+ Years',
+    'banner.metric.exp.value':        '6 Years',
     'banner.metric.projects.title':   'Projects',
     'banner.metric.companies.title':  'Companies',
+    'banner.cta.resume':              'Download Resume',
+    'banner.cta.contact':             'Get in touch',
 
     /* ---- About ---- */
     'about.subtitle':        'About Me',
-    'about.title':           'Hi, I\'m<br><span class="rs-text-primary">Jaruwat Amnuaysat</span>',
-    'about.designation':     'Programmer &amp; Developer',
-    'about.description':     "Hi, I'm Film — a Programmer and Developer with 5+ years of experience building Web Applications, APIs, Databases and Automation systems. I enjoy writing clean, maintainable code and constantly exploring new technologies to improve my work.",
-    'about.feature.1':       'Proficient in Web App, REST API, Database and Automation',
+    'about.title':           'Enterprise back-office systems<br><span class="rs-text-primary">that have to talk to each other</span>',
+    'about.designation':     'Full Stack Developer (PHP/Laravel)',
+    'about.description':     "Hi, I'm Film — a Full Stack Developer with 6 years of experience, working mainly with PHP/Laravel and SQL. My strongest area is enterprise back-office systems: disbursement and membership platforms, SAP data integration, and encrypted file transfers built to banking standards. I enjoy writing clean, maintainable code that lasts.",
+    'about.feature.1':       'Proficient in PHP/Laravel, REST API, Database and Automation',
     'about.feature.2':       'Focused on clean, readable code that is easy to maintain long-term',
     'about.feature.3':       'Clear communicator, systematic planner, on-time delivery',
     'about.feature.4':       'Always learning new technologies to improve work efficiency',
@@ -196,21 +311,32 @@ window.cvI18n = {
     'about.bio.gender.val':  'Male',
     'about.bio.phone':       'Phone',
     'about.bio.email':       'Email',
-    'about.btn.contact':     '<i class="ri-mail-send-line"></i> Contact Me',
-    'about.btn.resume':      '<i class="ri-download-line"></i> Download Resume',
+    'about.btn.contact':     'Contact Me',
+    'about.btn.resume':      'Download Resume',
 
     /* ---- Skills ---- */
     'skills.subtitle':      'Expertise',
     'skills.title':         'Skills &amp; Tools',
     'skills.primary.note':  'Core skills used regularly in production',
+    'skills.laravel.meta':  'Production back-office systems',
+    'skills.learning.label': 'Currently learning',
     'skills.strong.note':   'Skills consistently used alongside primary work',
 
     /* ---- Shared labels ---- */
     'label.tech.stack':    'Tech Stack',
-    'label.skills.gained': 'Skills Gained',
+    'label.status':        'Status',
 
     /* ---- Experience ---- */
     'exp.subtitle': 'Experience',
+    /* ---- Experience stats ---- */
+    'exp.stherb.stat.a':    '3 main responsibilities',
+    'exp.stherb.stat.b':    'HerbCore CRM ~70%',
+    'exp.cm.stat.a':        '6 systems',
+    'exp.cm.stat.b':        '11 months',
+    'exp.nat.stat.a':       '3 core systems',
+    'exp.nat.stat.b':       '3 yrs 4 mos',
+    'exp.amphan.stat.a':    '5-month internship',
+
     'exp.title':    'Work Experience',
 
     /* St.Herb */
@@ -219,6 +345,8 @@ window.cvI18n = {
     'exp.stherb.web.desc':       '<p><strong>Responsibilities:</strong> Maintained website stability &amp; security, tracked traffic, optimized SEO, improved UX/UI, developed backup system</p><p><strong>Results:</strong> Improved website stability, better search visibility and enhanced UX</p>',
     'exp.stherb.server.title':   'Server Maintenance &amp; Coordination',
     'exp.stherb.server.desc':    '<p><strong>Responsibilities:</strong> Coordinated and monitored server stability, resolved primary issues</p><p><strong>Results:</strong> Uninterrupted service and reduced system downtime</p>',
+    'exp.stherb.crm.title':      'HerbCore CRM Development',
+    'exp.stherb.crm.desc':       '<p><strong>Responsibilities:</strong> Building an in-house back-office CRM that consolidates orders from multiple WooCommerce shops into one place — scheduled order sync, a packing queue that deducts stock, net-revenue refund handling, DHL Express booking, marketing and inbound email, plus sales analytics, role permissions and an audit log</p><p><strong>Scope:</strong> 37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled background jobs</p><p><strong>Status:</strong> Roughly 70% complete — DHL booking has passed end-to-end sandbox testing and is waiting on production account approval</p>',
 
     /* Cloudmate */
     'exp.cm.period':        'Jan – Nov 2024',
@@ -257,15 +385,15 @@ window.cvI18n = {
     'qual.lower.title':       'Lower Secondary',
     'qual.lower.period':      'Grade 7 – 9',
     'qual.lower.school':      'Suankularb Wittayalai Nakhon Si Thammarat School',
-    'qual.lower.meta':        'GPA: 2.35',
+    'qual.lower.meta':        '',
     'qual.upper.title':       'Upper Secondary',
     'qual.upper.period':      'April 2013 – December 2015',
     'qual.upper.school':      'Suankularb Wittayalai Nakhon Si Thammarat School',
-    'qual.upper.meta':        'Science–Mathematics<br>GPA: 2.55',
+    'qual.upper.meta':        'Science–Mathematics',
     'qual.bachelor.title':    "Bachelor's Degree",
     'qual.bachelor.period':   'August 2016 – March 2020',
     'qual.bachelor.school':   'Rajamangala University of Technology Thanyaburi',
-    'qual.bachelor.meta':     'Information Technology and Digital Communication<br>Faculty of Science and Technology<br>GPA: 2.55',
+    'qual.bachelor.meta':     'Information Technology<br>Faculty of Science and Technology',
 
     /* ---- Certifications ---- */
     'cert.subtitle':          'Certifications',
@@ -273,13 +401,13 @@ window.cvI18n = {
     'cert.backend.subtitle':  'REST API development and server-side systems',
     'cert.data.subtitle':     'Data Science and Data Engineering tracks',
     'cert.cloud.subtitle':    'Cloud fundamentals and infrastructure management',
-    'cert.view':              '<i class="ri-external-link-line"></i> View Certificate',
+    'cert.view':              'View Certificate',
     'cert.de.course':         'Data Engineer Track (5 Certificates)',
-    'cert.de.cert1':          '<i class="ri-external-link-line"></i> Foundation for Data Engineer Career',
-    'cert.de.cert2':          '<i class="ri-external-link-line"></i> Data Engineering Tools &amp; Infrastructure',
-    'cert.de.cert3':          '<i class="ri-external-link-line"></i> Python, Pandas &amp; PySpark',
-    'cert.de.cert4':          '<i class="ri-external-link-line"></i> ETL Pipeline with PySpark',
-    'cert.de.cert5':          '<i class="ri-external-link-line"></i> Serverless Data Lakes with AWS',
+    'cert.de.cert1':          'Foundation for Data Engineer Career',
+    'cert.de.cert2':          'Data Engineering Tools &amp; Infrastructure',
+    'cert.de.cert3':          'Python, Pandas &amp; PySpark',
+    'cert.de.cert4':          'ETL Pipeline with PySpark',
+    'cert.de.cert5':          'Serverless Data Lakes with AWS',
 
     /* ---- Company names ---- */
     'company.stherb':   'ST. Herb Cosmetics International Co., Ltd.',
@@ -288,7 +416,7 @@ window.cvI18n = {
     'company.amphan':   'Amphan Technology Co., Ltd.',
 
     /* ---- Footer ---- */
-    'footer.brand.desc':     'Programmer &amp; Developer focused on code quality<br>Web App · API · Database · Automation',
+    'footer.brand.desc':     'Full Stack Developer (PHP/Laravel)<br>Enterprise systems · Integration · Automation',
     'footer.nav.title':      'Navigation',
     'footer.nav.home':       'Home',
     'footer.nav.about':      'About',
@@ -297,9 +425,88 @@ window.cvI18n = {
     'footer.nav.cert':       'Certifications',
     'footer.nav.contact':    'Contact',
     'footer.contact.title':  'Contact Info',
-    'footer.address':        '15/178 Sirisap Village, Bang Phun<br>Mueang Pathum Thani, Pathum Thani 12000',
+    'footer.address':        'Mueang Pathum Thani, Pathum Thani<br>(Open to Bangkok metro area / Remote)',
     'footer.download':       'Download Resume (PDF)',
-    'footer.location':       'Programmer &amp; Developer · Pathum Thani, Thailand',
+    'footer.location':       'Full Stack Developer · Pathum Thani, Thailand',
+
+
+
+
+    /* ---- Contact form / CTA ---- */
+    'contact.cta.text': 'Send over the role details or any question by email — every message gets a reply.',
+    'contact.cta.btn':  'Email me',
+    'form.name':    'Your name',
+    'form.email':   'Email to reply to',
+    'form.message': 'Message',
+    'form.submit':  '<i class="ri-send-plane-line"></i> Send message',
+    'form.sending': 'Sending...',
+    'form.ok':      'Message sent — thank you. I will get back to you shortly.',
+    'form.fail':    'Could not send. Please try again, or email <a href="mailto:overlag02@gmail.com">overlag02@gmail.com</a> directly.',
+
+    /* ---- Work / Case studies ---- */
+    'work.subtitle': 'Selected work',
+    'work.title':    'Case studies',
+    'work.intro':    'Five systems that best represent the work I do — each one framed as the problem, what I built, and the outcome.',
+    'work.note':     'Note: the visuals are architecture diagrams drawn for this page, not screenshots of the live systems, as every one of them is an internal company tool.',
+    'label.problem': 'Problem',
+    'label.doing':   'What I built',
+    'label.result':  'Outcome',
+
+    'work.crm.tag':     'St.Herb · 2026',
+    'work.crm.badge':   'In progress · ~70%',
+    'work.crm.name':    'HerbCore CRM — multi-shop order consolidation, from checkout to delivery',
+    'work.crm.alt':     'Architecture diagram of HerbCore CRM, from multi-shop order sync through to delivery',
+    'work.crm.problem': 'The business sells through several WooCommerce shops at once, so orders, customers and stock all lived in separate back offices and had to be copied together by hand every day. Reported sales also excluded refunds, so the numbers used for decisions never matched the money actually received.',
+    'work.crm.doing':   'Built the whole system myself in PHP 8.2 and PostgreSQL on Docker — 37 screens, 35 controllers, 13 API groups, 57 migrations and 4 scheduled background jobs. Orders sync from every shop through the WooCommerce REST API on their own cycle, feed a packing queue that deducts stock, and connect to the DHL Express API for live rates, shipment creation and storing labels and tracking numbers against the order — alongside marketing email, an inbound mail inbox, role permissions and sales analytics.',
+    'work.crm.result':  'Orders from every shop arrive on their own with no manual copying, warehouse staff work from a single queue whose status cannot be overwritten by a sync, and refunds are kept as separate records deducted automatically everywhere — so every figure in the system is a net figure without editing past orders.',
+    'work.crm.status':  'In active development, roughly 70% complete. DHL booking has passed its test suite and end-to-end sandbox testing, and goes live once the production account is approved.',
+
+    'work.sap.tag':     'Cloudmate · 2024',
+    'work.sap.name':    'SAP integration and encrypted bank file transfer',
+    'work.sap.alt':     'Architecture diagram of the SAP to bank file transfer pipeline',
+    'work.sap.problem': 'Payment data had to reach the bank on a fixed cycle: export from SAP, encrypt to the bank’s specification, then send over sFTP. Every step was manual, slow and easy to get wrong.',
+    'work.sap.doing':   'Built a Python job that pulls data from SAP, generates files in the bank’s required format, encrypts them to standard, transfers over sFTP and clears sent files — plus a return path that decrypts the bank’s payment result files and posts them back into SAP.',
+    'work.sap.result':  'Transfers meet the bank’s security requirements, manual steps are largely gone, and both systems stay in sync without manual reconciliation.',
+
+    'work.adv.tag':     'Cloudmate · 2024',
+    'work.adv.name':    'Advance and disbursement system',
+    'work.adv.alt':     'Architecture diagram of the advance and disbursement system',
+    'work.adv.problem': 'Disbursement ran through several different routes — with and without a linked advance — each with its own approver order and conditions, and all of it had to stay auditable.',
+    'work.adv.doing':   'Built the recording flow for advances and disbursements, designed an approval process where conditions and approver order are configurable, and added Excel export for the finance team.',
+    'work.adv.result':  'Every transaction carries a complete approval trail, past records are easy to audit, and finance can pull the data straight into their own workflow.',
+
+    'work.mm.tag':     'Cloudmate · 2024',
+    'work.mm.name':    'Quarterly supply planning and procurement',
+    'work.mm.alt':     'Architecture diagram of the quarterly supply planning system',
+    'work.mm.problem': 'Supply requests were spread across departments with no single view of what each quarter had planned versus actually drawn, which made budget control difficult.',
+    'work.mm.doing':   'Built quarterly supply planning with a purchase request and approval flow, per-item status tracking, request history and Excel export.',
+    'work.mm.result':  'A full-year view of supply usage, clearer budget control, and noticeably less repeated paperwork.',
+
+    'work.ht.tag':     'Nature Biotec · 2020–2023',
+    'work.ht.name':    'Healthy Together — loyalty and reward platform',
+    'work.ht.alt':     'Architecture diagram of the Healthy Together loyalty platform',
+    'work.ht.problem': 'The business needed customers to register products and collect codes toward rewards, a back office the marketing team could run themselves, and reporting management could actually read.',
+    'work.ht.doing':   'Built both ends: registration forms, per-product-code QR generation, point collection and reward redemption, a lucky draw engine, plus data cleansing in Pandas and dashboards in Looker Studio.',
+    'work.ht.result':  'Marketing runs campaigns without waiting on the dev team, and management sees registration and redemption activity at a glance from the dashboard.',
+
+    'nav.work':      'Work',
+
+    /* ---- FAQ ---- */
+    'faq.subtitle':    'FAQ',
+    'faq.title':       'What recruiters usually ask',
+    'faq.work.q':      'What kind of work do you take on?',
+    'faq.work.a':      'Full-time roles as a Full Stack Developer, Programmer or Web Developer, plus freelance work covering web applications, REST APIs, enterprise back-office systems and automation that connects data between systems.',
+    'faq.stack.q':     'Which tech stack do you work with?',
+    'faq.stack.a':     'Mainly PHP and Laravel with PostgreSQL, MySQL and SQL Server. On the front end, JavaScript, AJAX, HTML/CSS and Bootstrap. For automation and data work, Python with Pandas.',
+    'faq.location.q':  'Do you work remotely or onsite?',
+    'faq.location.a':  'Based in Mueang Pathum Thani, Pathum Thani. Available for onsite work across Bangkok and the surrounding metropolitan area, and equally comfortable working remote or hybrid.',
+    'faq.experience.q':'How many years of experience do you have?',
+    'faq.experience.a':'Six years across three companies. Past work includes a loyalty and reward redemption platform, a tour booking and management system, disbursement and procurement systems, SAP data integration, and encrypted bank file transfers over sFTP.',
+    'faq.start.q':     'How do I get in touch?',
+    'faq.start.a':     'Email overlag02@gmail.com or call +66 64-661-3238. The full resume can be downloaded from the button on this page. Start date is open to discussion depending on the role.',
+
+    /* ---- Image alt / title ---- */
+    'alt.portrait':    'Jaruwat Amnuaysat — Full Stack Developer (PHP/Laravel)',
 
     /* ---- Contact ---- */
     'contact.subtitle':       'Contact',
@@ -308,7 +515,13 @@ window.cvI18n = {
     'contact.phone.label':    'Phone',
     'contact.email.label':    'Email',
     'contact.location.label': 'Location',
+    'contact.location.value': 'Pathum Thani · Open to Remote',
     'contact.social.label':   'Follow Me On',
+
+    /* ---- Accessible names for icon-only controls ---- */
+    'aria.menu.open':   'Open menu',
+    'aria.menu.close':  'Close menu',
+    'aria.backtotop':   'Back to top',
   }
 };
 

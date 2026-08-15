@@ -1,30 +1,19 @@
-// โหลด HTML component และ return Promise
-function loadHTML(id, file) {
-  return fetch(file)
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById(id).innerHTML = data;
-    })
-    .catch((err) => console.error(`ไม่สามารถโหลด ${file}`, err));
-}
+/* ============================================================
+   app.js — init หลังหน้าเว็บพร้อม
 
-// โหลดทุก component พร้อมกัน (parallel) แล้วรอให้ครบก่อน init
-Promise.all([
-  loadHTML("preloader",   "component/header/preloader.html"),
-  loadHTML("header",      "component/header/header.html"),
-  loadHTML("offcanvas",   "component/header/offcanvas.html"),
-  loadHTML("banner",      "component/body/banner.html"),
-  loadHTML("about",       "component/body/about.html"),
-  loadHTML("qualification","component/body/qualification.html"),
-  loadHTML("skill",       "component/body/skill.html"),
-  loadHTML("experience",  "component/body/experience.html"),
-  loadHTML("slide-area",  "component/body/slide-area.html"),
-  loadHTML("portfolio",   "component/body/portfolio.html"),
-  loadHTML("contact",     "component/body/contact.html"),
-  loadHTML("footer-area", "component/footer/footer-area.html"),
-  loadHTML("backto-top",  "component/footer/backtotop.html"),
-]).then(() => {
-  // --- คำนวณอายุ (script ใน innerHTML จะไม่ run จึงทำที่นี่) ---
+   เดิมไฟล์นี้โหลด component ทุกตัวด้วย fetch().innerHTML
+   ตอนนี้เนื้อหาถูก build เป็น static HTML แล้ว (ดู build.js)
+   จึงเหลือแค่ส่วน init ที่ต้องรันหลัง DOM พร้อม
+
+   สำคัญ: ต้อง dispatch "componentsLoaded" ที่ DOMContentLoaded
+   ไม่ใช่ตอนไฟล์นี้รัน — เพราะ main.js (โหลดทีหลัง) ผูก listener
+   ของ event นี้ไว้ ถ้ายิงเร็วเกินไป โค้ด ~130 บรรทัดใน main.js
+   จะไม่ทำงานโดยไม่มี error ขึ้นเลย
+   script ทุกตัวเป็น defer จึงรันเสร็จครบก่อน DOMContentLoaded
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+  // --- คำนวณอายุ ---
   const ageEl = document.getElementById("age");
   if (ageEl && ageEl.dataset.birthdate) {
     const birthDate = new Date(ageEl.dataset.birthdate);
@@ -32,10 +21,10 @@ Promise.all([
     let age = today.getFullYear() - birthDate.getFullYear();
     const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
-    ageEl.textContent = age + " ปี";
+    ageEl.textContent = age + (ageEl.dataset.ageSuffix || " ปี");
   }
 
-  // --- Re-init data-background (ต้องทำหลัง HTML inject) ---
+  // --- data-background ---
   if (typeof jQuery !== "undefined") {
     jQuery("[data-background]").each(function () {
       jQuery(this).css(
@@ -45,7 +34,7 @@ Promise.all([
     });
   }
 
-  // --- Re-init WOW animations ---
+  // --- WOW animations ---
   if (typeof WOW !== "undefined") {
     new WOW({
       boxClass: "wow",
@@ -56,20 +45,27 @@ Promise.all([
     }).init();
   }
 
-  // --- Re-init jarallax ---
+  // --- jarallax ---
   if (typeof jarallax !== "undefined") {
     jarallax(document.querySelectorAll(".jarallax"), { speed: 0.4 });
   }
 
-  // --- ซ่อน preloader หลัง content พร้อม ---
+  // --- ซ่อน preloader ---
   if (typeof jQuery !== "undefined") {
     jQuery("#pre-load").delay(400).fadeOut(400);
     jQuery(".pre-loader").delay(400).fadeOut(400);
   }
 
-  // --- Initialize i18n (ภาษาที่บันทึกไว้ หรือ ไทย default) ---
-  if (typeof window.initI18n === 'function') window.initI18n();
-
-  // --- Dispatch event เพื่อให้ส่วนอื่น subscribe ได้ ---
+  // --- Dispatch event เพื่อให้ main.js init ส่วนที่ต้องการ DOM ---
   document.dispatchEvent(new Event("componentsLoaded"));
+
+  // --- ตั้งชื่อให้ปุ่มเมนูมือถือที่ปลั๊กอินสร้างขึ้น ---
+  // meanmenu สร้าง <a class="meanmenu-reveal"> ที่มีแต่ขีดสามขีด ไม่มีข้อความ
+  // screen reader จึงอ่านได้แค่ "ลิงก์" ปลั๊กอินไม่มีออปชันให้ตั้งชื่อ
+  // ต้องเติมเองหลัง init (listener ของ componentsLoaded รันจบแล้วตรงนี้)
+  document.querySelectorAll(".meanmenu-reveal").forEach(function (el) {
+    if (!el.getAttribute("aria-label")) {
+      el.setAttribute("aria-label", document.documentElement.lang === "en" ? "Open menu" : "เปิดเมนู");
+    }
+  });
 });

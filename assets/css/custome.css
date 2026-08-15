@@ -21,8 +21,13 @@
   --cv-card-dark:     #1E2D4A;
 
   --cv-text:          #1E293B;
-  --cv-text-muted:    #64748B;
-  --cv-text-light:    #94A3B8;
+  /* เดิม #64748B ผ่านเกณฑ์บนพื้นขาว แต่บนพื้น --cv-bg (#F0F4F8)
+     และ --cv-border-light วัดได้ ~4.26:1 ซึ่งต่ำกว่า AA
+     ค่านี้ให้ 5.0:1 บนพื้นเทาอ่อน และ 5.6:1 บนพื้นขาว */
+  --cv-text-muted:    #5A6880;
+  /* เดิม #94A3B8 = คอนทราสต์ 2.6:1 บนพื้นขาว ตกเกณฑ์ WCAG AA
+     ค่านี้ให้ 5.4:1 และยังจางกว่า --cv-text-muted พอให้เห็นลำดับชั้น */
+  --cv-text-light:    #5E6B7F;
   --cv-text-white:    #F8FAFC;
 
   --cv-border:        #E2E8F0;
@@ -59,6 +64,131 @@ body {
 
 /* Section spacing */
 .section-space { padding: 90px 0; }
+
+/* ความยาวบรรทัดสูงสุดของเนื้อความยาว — ที่ 1440px คอนเทนเนอร์กว้าง
+   จนบรรทัดยาวเกิน 110 ตัวอักษร ตาจะหาต้นบรรทัดถัดไปไม่เจอ */
+.rs-measure { max-width: 68ch; }
+.rs-measure-center { max-width: 68ch; margin-left: auto; margin-right: auto; }
+
+/* ---------------------------------------------------------
+   2b. FOCUS RING — ต้องมองเห็นได้ทุกที่ที่ tab ไปถึง
+   ธีมเดิมใช้ outline:none โดยไม่มีตัวแทนที่ชัดเจน
+   :focus-visible จึงไม่ไปรบกวนคนที่ใช้เมาส์
+   --------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--cv-blue);
+  outline-offset: 3px;
+  border-radius: var(--cv-radius-sm);
+}
+/* บนพื้นกรมท่าต้องใช้สีอ่อนกว่า ไม่งั้นวงโฟกัสจมไปกับพื้น */
+.rs-banner-area a:focus-visible,
+.rs-contact-area a:focus-visible,
+.rs-contact-area input:focus-visible,
+.rs-contact-area textarea:focus-visible,
+.rs-contact-area button:focus-visible,
+.rs-footer-area a:focus-visible,
+.offcanvas-area a:focus-visible,
+.rs-header-area a:focus-visible,
+.rs-header-area button:focus-visible {
+  outline-color: #93C5FD;
+}
+
+/* ---------------------------------------------------------
+   2c. ปุ่มมาตรฐาน — ใช้ชุดเดียวกันทั้ง hero / about / contact
+   เดิมสไตล์ปุ่มผูกกับ .rs-about-actions .btn เท่านั้น ปุ่ม CTA
+   ในส่วนติดต่อจึงหลุดสไตล์ กลายเป็นลิงก์เล็กๆ ในกล่องเปล่า
+   ขนาดขั้นต่ำ 44px ตามเกณฑ์พื้นที่กดบนมือถือ
+   --------------------------------------------------------- */
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 13px 26px;
+  border-radius: var(--cv-radius-sm);
+  font-family: var(--cv-font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  text-decoration: none !important;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--cv-transition);
+  white-space: nowrap;
+}
+.cv-btn i { font-size: 18px; line-height: 1; }
+/* ธีมมีคลาสชื่อ .rs-btn ของตัวเองที่ตั้ง height: 60px ไว้
+   จึงตั้งใจใช้ชื่อ .cv-btn เพื่อไม่ให้ทับกัน */
+
+.cv-btn-primary {
+  background: var(--cv-blue-mid);
+  border-color: var(--cv-blue-mid);
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(37,99,235,.32);
+}
+.cv-btn-primary:hover {
+  background: var(--cv-blue);
+  border-color: var(--cv-blue);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(59,130,246,.42);
+}
+
+/* ปุ่มรองบนพื้นกรมท่า */
+.cv-btn-ghost {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.28);
+  color: #fff !important;
+}
+.cv-btn-ghost:hover {
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.55);
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* ปุ่มรองบนพื้นสว่าง */
+.cv-btn-outline {
+  background: transparent;
+  border-color: var(--cv-border);
+  color: var(--cv-text) !important;
+}
+.cv-btn-outline:hover {
+  border-color: var(--cv-blue-mid);
+  color: var(--cv-blue-mid) !important;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   2d. REDUCED MOTION
+   วงโคจร จุดกะพริบ และ marquee วิ่งไม่หยุด — ผู้ใช้ที่ไวต่อ
+   การเคลื่อนไหวต้องปิดได้ ไม่งั้นหน้านี้ใช้งานไม่ได้เลย
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* WOW ซ่อนเนื้อหาไว้ก่อนเล่นอนิเมชัน ถ้าตัดอนิเมชันทิ้งเฉยๆ
+     เนื้อหาจะหายไปทั้งหน้า จึงต้องบังคับให้แสดงเสมอ */
+  .wow,
+  .animated {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .rs-banner-orbit { display: none; }
+}
 
 /* ---------------------------------------------------------
    3. HEADER
@@ -180,6 +310,16 @@ body {
   letter-spacing: -.5px !important;
   margin-bottom: 12px !important;
 }
+/* บรรทัดตำแหน่งงานใน h1 — เล็กกว่าชื่อแต่ยังอ่านได้ใน 3 วินาทีแรก */
+.rs-banner-role {
+  display: block;
+  margin-top: 10px;
+  font-size: .56em;
+  font-weight: 600;
+  color: #60A5FA;
+  letter-spacing: -.2px;
+  line-height: 1.25;
+}
 .rs-banner-title .cd-headline { display: inline-block; }
 .rs-banner-title .cd-words-wrapper b {
   color: #60A5FA !important;
@@ -221,34 +361,71 @@ body {
   width: fit-content !important;
   flex: none !important;
 }
-.rs-banner-highlights li::before {
-  content: '▸' !important;
-  color: #93C5FD !important;
-  font-size: 11px !important;
+/* ธีมใส่ ::before เป็น glyph ของ remixicon ("\eb79") ไว้ที่ inset-inline-start:0
+   ซึ่งไปตกบนมุมโค้งของแคปซูล เห็นเป็นเศษเส้นจางๆ ที่ขอบซ้ายทุกชิป
+   ต้องเขียนคู่กับ .rs-banner-one ให้ specificity เท่าธีมถึงจะปิดได้
+   ป้ายเป็นแคปซูลชัดอยู่แล้ว ไม่ต้องมีสัญลักษณ์นำหน้า */
+.rs-banner-one .rs-banner-highlights li::before {
+  content: none !important;
 }
 
-/* Metrics */
-.rs-banner-metric {
+/* Metrics — ตัวเลขต้องเด่นกว่าป้ายกำกับ ของเดิมกลับด้านกันอยู่
+   และการ์ดขาวทึบบนพื้นกรมท่าดูเป็นกล่องแปลกปลอม
+   หมายเหตุ: ต้องเขียนคู่กับ .rs-banner-one ให้ specificity เท่ากับ
+   ธีมใน main.css ไม่งั้นพื้นขาวของธีมจะชนะ */
+.rs-banner-one .rs-banner-metric {
   display: flex;
-  gap: 28px;
+  align-items: stretch;
+  gap: 0;
   flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-top: 0;
+  margin-bottom: 26px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--cv-radius);
+  padding: 4px;
+  width: fit-content;
 }
-.rs-banner-metric-item {
+.rs-banner-one .rs-banner-metric-item {
   text-align: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  min-width: 0;
+  padding: 10px 24px;
+  position: relative;
 }
-.rs-banner-metric-title {
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(255,255,255,.45);
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+.rs-banner-one .rs-banner-metric-item + .rs-banner-metric-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+  background: rgba(255,255,255,.16);
 }
-.rs-banner-metric-value {
-  font-size: 18px;
+.rs-banner-one .rs-banner-metric-value {
+  font-size: 24px;
   font-weight: 700;
   color: #fff;
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+.rs-banner-one .rs-banner-metric-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,.60);
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+/* CTA หลักของหน้า — ของเดิมมีแค่ไอคอน 40px ปนอยู่ในแถวโซเชียล
+   HR ที่เปิดมา 30 วินาทีต้องเห็นปุ่ม "ดาวน์โหลด Resume" ทันที */
+.cv-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 26px;
 }
 
 /* Social */
@@ -280,23 +457,48 @@ body {
   box-shadow: var(--cv-shadow-blue);
 }
 
-/* Banner photo */
+/* Banner photo
+   เคยลองลดความอิ่มสี + ซ้อนกรมท่าโหมด multiply เพื่อให้พื้นหลังฟ้าสตูดิโอ
+   กลืนกับ hero แต่ผลคือทั้งรูปกลายเป็นโทนเทา ใบหน้าหม่นไปด้วย
+   ตอนนี้ให้รูปเป็นสีธรรมชาติ แล้วใช้กรอบ + เงา + ไล่เฉดบางๆ ที่ขอบล่าง
+   ทำหน้าที่เชื่อมรูปเข้ากับพื้นแทน — ไม่แตะสีในรูปเลย */
 .rs-banner-thumb {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.rs-banner-thumb img {
-  width: 400px;
-  height: 480px;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: var(--cv-radius-xl);
+.rs-banner-thumb-inner {
   position: relative;
   z-index: 2;
+  width: 400px;
+  height: 480px;
+  border-radius: var(--cv-radius-xl);
+  overflow: hidden;
   box-shadow: var(--cv-shadow-lg);
-  border: 3px solid rgba(255,255,255,.10);
+  border: 3px solid rgba(255,255,255,.12);
+  isolation: isolate;
+}
+/* ต้องมี .rs-banner-one นำหน้าให้ specificity เท่าธีม
+   ไม่งั้น width:460px ของ main.css จะชนะ */
+.rs-banner-one .rs-banner-thumb .rs-banner-thumb-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* ไล่เฉดบางๆ เฉพาะขอบล่าง ให้รูปจบลงกลืนกับพื้น ไม่ตัดขาดเป็นกล่อง
+   สูงแค่ 22% และจางกว่าเดิมมาก จึงไม่แตะทั้งใบหน้าและชุดครุย */
+.rs-banner-thumb-inner::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 22%;
+  background: linear-gradient(to top, rgba(15,26,48,.38), transparent);
+  pointer-events: none;
 }
 
 /* Orbit rings */
@@ -351,7 +553,7 @@ body {
   font-size: 15px;
   line-height: 1.8;
   color: var(--cv-text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 /* Feature list */
@@ -388,14 +590,17 @@ body {
   margin-top: 1px;
 }
 
-/* Bio grid */
+/* Bio grid
+   หลังถอดคอลัมน์รูปออก แถวนี้กว้างเต็มคอนเทนเนอร์ ช่องละ 500px+
+   ทั้งที่มีข้อความบรรทัดเดียว จัดเป็นสี่ช่องพอดีเนื้อหาแทน */
 .rs-about-bio ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
+  margin: 0 0 26px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
+  max-width: 1000px;
 }
 .rs-about-bio ul li {
   font-size: 13px;
@@ -594,6 +799,8 @@ body {
   line-height: 1.6;
   display: block;
 }
+/* กันช่องว่างค้างเมื่อไม่มีข้อมูลกำกับ (เช่น ม.ต้น ที่ไม่แสดงเกรด) */
+.rs-qualification-meta:empty { display: none; }
 
 /* ---------------------------------------------------------
    8. SKILLS
@@ -608,7 +815,9 @@ body {
   border: 1px solid var(--cv-border-light);
   border-radius: var(--cv-radius-lg);
   padding: 28px;
-  height: 100%;
+  /* เดิม height:100% — สองกลุ่มมีจำนวนรายการไม่เท่ากัน
+     กลุ่มที่สั้นกว่าจึงเหลือพื้นที่ว่างท้ายการ์ดร้อยกว่า px */
+  height: auto;
 }
 .rs-skill-group--primary {
   background: linear-gradient(135deg, var(--cv-navy) 0%, #1e3a6e 100%);
@@ -631,11 +840,13 @@ body {
 .rs-skill-group--primary .rs-skill-group-note { color: rgba(255,255,255,.55) !important; }
 .rs-skill-group:not(.rs-skill-group--primary) .rs-skill-group-note { color: var(--cv-text-muted) !important; }
 
-/* Skill grid */
+/* Skill grid
+   ตัดแถบเปอร์เซ็นต์ออกแล้ว การ์ดจึงเตี้ยลงมาก จัดสองคอลัมน์ได้
+   สแกนจบเร็วกว่าและไม่เหลือช่องว่างยาวๆ ในกลุ่ม */
 .rs-skill-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
 }
 
 /* Skill card */
@@ -648,7 +859,7 @@ body {
 }
 .rs-skill-group--primary .rs-skill-card:hover {
   background: rgba(255,255,255,.12);
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 .rs-skill-group:not(.rs-skill-group--primary) .rs-skill-card {
   background: #fff;
@@ -658,14 +869,14 @@ body {
 .rs-skill-group:not(.rs-skill-group--primary) .rs-skill-card:hover {
   box-shadow: var(--cv-shadow);
   border-color: rgba(59,130,246,.25);
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 
 .rs-skill-card-top {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 .rs-skill-icon {
   width: 36px;
@@ -701,35 +912,10 @@ body {
 .rs-skill-group--primary .rs-skill-meta { color: rgba(255,255,255,.50) !important; }
 .rs-skill-group:not(.rs-skill-group--primary) .rs-skill-meta { color: var(--cv-text-muted) !important; }
 
-/* Progress bar */
-.rs-skill-progress .progress {
-  height: 5px;
-  background: rgba(255,255,255,.12);
-  border-radius: 100px;
-  position: relative;
-  overflow: visible;
-}
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-progress .progress {
-  background: var(--cv-border);
-}
-.rs-skill-progress .progress-bar {
-  height: 100%;
-  border-radius: 100px;
-  background: linear-gradient(90deg, #60A5FA, #3B82F6);
-  position: relative;
-}
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-progress .progress-bar {
-  background: linear-gradient(90deg, var(--cv-blue), var(--cv-blue-mid));
-}
-.rs-skill-progress .progress-number {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  font-size: 11px;
-  font-weight: 600;
-}
-.rs-skill-group--primary .rs-skill-progress .progress-number { color: rgba(255,255,255,.65); }
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-progress .progress-number { color: var(--cv-text-muted); }
+/* หมายเหตุ: แถบเปอร์เซ็นต์ทักษะ (PHP 90%, Laravel 85% ...) ถูกถอดออก
+   ตัวเลขเป็นการให้คะแนนตัวเองที่ยืนยันไม่ได้ ไม่มีเกณฑ์กลางว่า 90%
+   ต่างจาก 85% อย่างไร และเป็นจุดที่ผู้สัมภาษณ์สายเทคนิคมองว่าลดความน่าเชื่อถือ
+   ระดับความชำนาญสื่อผ่านการจัดกลุ่ม Primary / Strong / กำลังศึกษา แทน */
 
 /* Skill tools tags */
 .rs-skill-tools {
@@ -750,6 +936,34 @@ body {
   letter-spacing: .3px;
 }
 
+/* ไอคอนแบบ font (ใช้กับทักษะที่ไม่มีไฟล์โลโก้ เช่น Laravel) */
+.rs-skill-icon i {
+  font-size: 20px;
+  line-height: 1;
+  color: #FF6B5B;
+}
+
+/* กลุ่ม "กำลังศึกษา" — ต้องดูต่างจากทักษะที่ใช้งานจริงอย่างชัดเจน
+   เพื่อไม่ให้ HR หรือ AI เข้าใจผิดว่าเป็นทักษะที่ใช้ทำงานได้แล้ว */
+.rs-skill-tools--learning {
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 0;
+  border-top: none;
+}
+.rs-skill-tools-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cv-text-light);
+  letter-spacing: .3px;
+  margin-right: 2px;
+}
+.rs-skill-tools--learning .rs-skill-tool {
+  color: var(--cv-text-muted);
+  background: transparent;
+  border: 1px dashed var(--cv-border);
+}
+
 /* ---------------------------------------------------------
    9. WORK EXPERIENCE
    --------------------------------------------------------- */
@@ -757,8 +971,11 @@ body {
   background: var(--cv-bg) !important;
 }
 
+/* เดิม height:100% ทำให้การ์ดในแถวเดียวกันสูงเท่ากันหมด
+   การ์ดที่มีเนื้อหาน้อย (เช่น ฝึกงาน) จึงเหลือพื้นที่ว่างหลายร้อย px
+   ให้แต่ละใบสูงเท่าเนื้อหาจริงแทน */
 .rs-experience-wrapper {
-  height: 100%;
+  height: auto;
 }
 
 .rs-experience-item {
@@ -768,7 +985,7 @@ body {
   padding: 24px !important;
   box-shadow: var(--cv-shadow-sm) !important;
   transition: var(--cv-transition) !important;
-  height: 100%;
+  height: auto;
 }
 .rs-experience-item:hover {
   box-shadow: var(--cv-shadow-md) !important;
@@ -846,6 +1063,24 @@ body {
   font-weight: 600 !important;
   color: var(--cv-text) !important;
   margin-bottom: 10px !important;
+}
+
+/* ตัวเลขสรุปขอบเขตงานของแต่ละที่ — ให้สแกนเห็นก่อนกดอ่าน accordion */
+.rs-experience-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -4px 0 12px;
+}
+.rs-experience-stat {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cv-text-muted);
+  background: var(--cv-border-light);
+  border: 1px solid var(--cv-border);
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
 }
 
 /* Accordion overrides */
@@ -947,55 +1182,178 @@ body {
   overflow: hidden;
 }
 .rs-text-slide-item {
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
-  color: rgba(255,255,255,.40) !important;
+  /* เดิม .40 บนพื้น navy คอนทราสต์ต่ำจนอ่านไม่ออก keyword ที่ดีเลยหายไปเปล่า */
+  color: rgba(255,255,255,.72) !important;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 /* ---------------------------------------------------------
-   11. CERTIFICATES (portfolio section)
+   11. CERTIFICATES
+   ของเดิมยืมสไตล์ section ประสบการณ์มาใช้ผ่าน selector
+   [style*="padding: 12px"] ทำให้หัวหมวดกลายเป็นแถบกรมท่าเต็มความกว้าง
+   ที่มีตัวหนังสือจางจนอ่านไม่ออก และการ์ดครึ่งคอลัมน์ที่เหลือพื้นที่ว่าง
+   ครึ่งจอเมื่อหมวดนั้นมีใบเดียว — เขียนใหม่เป็นกริดของตัวเอง
    --------------------------------------------------------- */
-/* Reuse experience styles, add category header */
-.rs-experience-area .rs-experience-item[style*="padding: 12px"] {
-  background: var(--cv-navy) !important;
-  border-color: transparent !important;
-  border-radius: var(--cv-radius-sm) !important;
-  padding: 14px 20px !important;
-  box-shadow: none !important;
-}
-.rs-experience-area .rs-experience-item[style*="padding: 12px"]:hover {
-  transform: none !important;
-  box-shadow: none !important;
-}
-.rs-experience-area .rs-experience-item[style*="padding: 12px"] h5 {
-  color: #fff !important;
-  margin: 0 0 2px !important;
-}
-.rs-experience-area .rs-experience-item[style*="padding: 12px"] p {
-  color: rgba(255,255,255,.55) !important;
-  font-size: 12px !important;
+.rs-cert-area { background: var(--cv-bg) !important; }
+
+.rs-cert-intro {
+  font-size: 14px !important;
+  color: var(--cv-text-muted) !important;
+  margin-top: 10px !important;
 }
 
-/* Certificate link */
-.rs-experience-description a[href] {
-  display: inline-flex;
+.rs-cert-group + .rs-cert-group { margin-top: 40px; }
+
+/* หัวหมวดเป็นบรรทัดเดียวพร้อมเส้นคั่น ไม่ใช่แถบทึบที่กินพื้นที่ไปเปล่าๆ */
+.rs-cert-group-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--cv-border);
+}
+.rs-cert-group-title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: var(--cv-navy) !important;
+  margin: 0 !important;
+}
+.rs-cert-group-note {
+  font-size: 13px !important;
+  color: var(--cv-text-muted) !important;
+  margin: 0 !important;
+}
+
+/* auto-fill + align-items:start = การ์ดกว้างเท่าที่จำเป็น สูงเท่าเนื้อหาจริง
+   หมวดที่มีใบเดียวจึงไม่เหลือช่องว่างครึ่งจออีก */
+.rs-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+
+.rs-cert-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius);
+  padding: 20px 22px;
+  box-shadow: var(--cv-shadow-sm);
+  transition: var(--cv-transition);
+}
+.rs-cert-card:hover {
+  border-color: rgba(59,130,246,.40);
+  box-shadow: var(--cv-shadow);
+  transform: translateY(-2px);
+}
+/* ใบที่มีลิงก์ย่อยหลายอัน ขอพื้นที่สองคอลัมน์เมื่อจอกว้างพอ */
+.rs-cert-card--wide { grid-column: span 2; }
+
+.rs-cert-card-head {
+  display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  color: var(--cv-blue-mid) !important;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.rs-cert-logo {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 9px;
+  background: var(--cv-bg);
+  border: 1px solid var(--cv-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.rs-cert-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.rs-cert-issuer {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cv-navy);
+}
+.rs-cert-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cv-blue-mid);
   background: var(--cv-blue-light);
   padding: 4px 10px;
   border-radius: 100px;
-  text-decoration: none !important;
-  transition: var(--cv-transition);
-  margin-top: 4px;
+  white-space: nowrap;
+  margin-left: auto;
 }
-.rs-experience-description a[href]:hover {
-  background: var(--cv-blue-mid) !important;
-  color: #fff !important;
+
+.rs-cert-name {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--cv-text) !important;
+  line-height: 1.5 !important;
+  margin: 0 0 12px !important;
+}
+
+.rs-cert-skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0 0 16px;
+}
+.rs-cert-skills li {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cv-text-muted);
+  background: var(--cv-border-light);
+  border: 1px solid var(--cv-border);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ลิงก์ตรวจสอบ — ดันไปชิดล่างเสมอ การ์ดในแถวเดียวกันจึงจบเสมอกัน */
+.rs-cert-link,
+.rs-cert-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cv-blue-mid) !important;
+  text-decoration: none !important;
+  transition: color .2s ease;
+}
+.rs-cert-link {
+  margin-top: auto;
+  align-self: flex-start;
+}
+.rs-cert-link:hover,
+.rs-cert-links a:hover {
+  color: var(--cv-navy) !important;
+  text-decoration: underline !important;
+}
+.rs-cert-links {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: grid;
+  gap: 9px;
+}
+
+@media (max-width: 767px) {
+  .rs-cert-grid { grid-template-columns: 1fr; }
+  .rs-cert-card--wide { grid-column: span 1; }
+  .rs-cert-card { padding: 18px; }
 }
 
 /* ---------------------------------------------------------
@@ -1044,7 +1402,7 @@ body {
   font-weight: 600;
   letter-spacing: .8px;
   text-transform: uppercase;
-  color: rgba(255,255,255,.40);
+  color: rgba(255,255,255,.62);
   display: block;
   margin-bottom: 4px;
 }
@@ -1073,7 +1431,7 @@ body {
 }
 .rs-footer-copyright p {
   font-size: 13px;
-  color: rgba(255,255,255,.40);
+  color: rgba(255,255,255,.62);
   margin: 0;
 }
 .rs-footer-copyright a {
@@ -1104,6 +1462,11 @@ body {
   bottom: 24px !important;
   box-shadow: 0 4px 16px rgba(59,130,246,.35) !important;
   transition: var(--cv-transition) !important;
+  /* ตอนนี้เป็น <button> แล้ว ต้องล้างสไตล์ปริยายของปุ่มออก */
+  border: none;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .backtotop-wrap:hover {
   background: var(--cv-blue-mid) !important;
@@ -1122,7 +1485,7 @@ body {
   font-weight: 600 !important;
   letter-spacing: 1.2px !important;
   text-transform: uppercase !important;
-  color: rgba(255,255,255,.40) !important;
+  color: rgba(255,255,255,.62) !important;
   margin-bottom: 14px !important;
 }
 .offcanvas-about p {
@@ -1163,7 +1526,7 @@ body {
    17. RESPONSIVE
    --------------------------------------------------------- */
 @media (max-width: 991px) {
-  .rs-banner-thumb img {
+  .rs-banner-thumb-inner {
     width: 300px;
     height: 360px;
   }
@@ -1183,10 +1546,18 @@ body {
 @media (max-width: 767px) {
   .section-space { padding: 60px 0; }
   .rs-about-bio ul { grid-template-columns: 1fr; }
-  .rs-banner-metric { gap: 16px; }
-  .rs-banner-thumb img { width: 260px; height: 300px; }
+  .rs-banner-thumb-inner { width: 260px; height: 300px; }
   .rs-banner-orbit:first-child { width: 300px; height: 300px; }
   .rs-banner-orbit-sm { display: none; }
+
+  /* แถบตัวเลขต้องพอดีจอแคบ ไม่ใช่ตกบรรทัดจนกล่องเบี้ยว */
+  .rs-banner-metric { width: 100%; justify-content: space-between; }
+  .rs-banner-metric-item { padding: 10px 8px; flex: 1; }
+  .rs-banner-metric-value { font-size: 20px; }
+  .rs-banner-metric-title { font-size: 10px; letter-spacing: .4px; }
+  /* ปุ่ม CTA เต็มความกว้างบนมือถือ — กดง่ายกว่าและอ่านลำดับได้ชัด */
+  .cv-hero-actions { gap: 10px; }
+  .cv-hero-actions .cv-btn { flex: 1 1 100%; }
 }
 
 /* ---------------------------------------------------------
@@ -1198,3 +1569,272 @@ body {
 .secondary-bg {
   background: var(--cv-bg) !important;
 }
+
+/* ---------------------------------------------------------
+   14. FAQ — คำถามที่ HR ถามจริง
+   เขียนให้แต่ละคำตอบจบในตัว เพราะ AI ดึงคำตอบเป็น "ท่อน"
+   ไม่ได้ดึงทั้งหน้า
+   --------------------------------------------------------- */
+.rs-faq-area {
+  background: var(--cv-bg-alt);
+}
+.rs-faq-list {
+  display: grid;
+  gap: 14px;
+}
+.rs-faq-item {
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius);
+  padding: 22px 26px;
+  box-shadow: var(--cv-shadow-sm);
+  transition: var(--cv-transition);
+}
+.rs-faq-item:hover {
+  border-color: var(--cv-blue);
+  box-shadow: var(--cv-shadow);
+  transform: translateY(-2px);
+}
+.rs-faq-question {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: var(--cv-navy) !important;
+  margin: 0 0 8px !important;
+  line-height: 1.45 !important;
+}
+.rs-faq-answer {
+  /* น้ำหนัก 300 บางเกินไปสำหรับเนื้อความที่ต้องอ่านจริง
+     และต้องจำกัดความยาวบรรทัด ไม่งั้นที่ 1440px จะยาวเกิน 110 ตัวอักษร */
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: var(--cv-text-muted) !important;
+  line-height: 1.75 !important;
+  margin: 0 !important;
+  max-width: 76ch;
+}
+@media (max-width: 575px) {
+  .rs-faq-item { padding: 18px 20px; }
+  .rs-faq-question { font-size: 15px !important; }
+}
+
+/* ---------------------------------------------------------
+   15. WORK / CASE STUDIES
+   สลับซ้าย-ขวาเพื่อให้สแกนเป็นจังหวะ ไม่ใช่กำแพงข้อความ
+   --------------------------------------------------------- */
+.rs-work-area {
+  background: var(--cv-bg);
+}
+.rs-work-intro {
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  color: var(--cv-text-muted) !important;
+  margin-top: 10px !important;
+}
+.rs-work-list {
+  display: grid;
+  gap: 28px;
+}
+.rs-work-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 34px;
+  /* เดิมเป็น center — ภาพแผนภาพเตี้ยกว่าคอลัมน์ข้อความมาก
+     จึงลอยอยู่กลางการ์ดโดยมีช่องว่างบน-ล่างข้างละเกือบร้อย px */
+  align-items: start;
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius-lg);
+  padding: 26px;
+  box-shadow: var(--cv-shadow-sm);
+  transition: var(--cv-transition);
+}
+.rs-work-item:hover {
+  box-shadow: var(--cv-shadow-md);
+  border-color: rgba(59,130,246,.45);
+}
+.rs-work-item:nth-child(even) .rs-work-media { order: 2; }
+.rs-work-media {
+  border-radius: var(--cv-radius);
+  overflow: hidden;
+  border: 1px solid var(--cv-border);
+  background: var(--cv-navy-deep);
+  line-height: 0;
+}
+.rs-work-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-work-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cv-blue-mid);
+  background: var(--cv-blue-light);
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: .3px;
+  margin-bottom: 10px;
+}
+/* ป้ายบอกว่างานยังไม่จบ — ต้องอ่านออกว่าต่างจาก .rs-work-tag ตั้งแต่แวบแรก */
+.rs-work-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #B45309;
+  background: rgba(251,191,36,.16);
+  border: 1px solid rgba(251,191,36,.45);
+  padding: 3px 11px;
+  border-radius: 100px;
+  letter-spacing: .3px;
+  margin: 0 0 10px 8px;
+}
+.rs-work-name {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--cv-navy) !important;
+  line-height: 1.4 !important;
+  margin: 0 0 16px !important;
+}
+.rs-work-detail {
+  margin: 0 0 16px !important;
+}
+.rs-work-detail dt {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cv-blue-mid);
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  margin-bottom: 3px;
+}
+.rs-work-detail dd {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cv-text-muted);
+  line-height: 1.75;
+  margin: 0 0 12px;
+  max-width: 72ch;
+}
+.rs-work-detail dd:last-child { margin-bottom: 0; }
+.rs-work-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.rs-work-tech span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cv-text-muted);
+  background: var(--cv-border-light);
+  border: 1px solid var(--cv-border);
+  padding: 4px 11px;
+  border-radius: 6px;
+}
+.rs-work-note {
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: var(--cv-text-light) !important;
+  text-align: center;
+  margin-top: 26px !important;
+}
+
+@media (max-width: 991px) {
+  .rs-work-item {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 20px;
+  }
+  /* บนจอแคบให้ภาพอยู่บนเสมอ ไม่ต้องสลับ */
+  .rs-work-item:nth-child(even) .rs-work-media { order: 0; }
+}
+
+/* ---------------------------------------------------------
+   16. CONTACT — CTA และฟอร์ม
+   --------------------------------------------------------- */
+.rs-contact-cta {
+  text-align: center;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--cv-radius-lg);
+  padding: 30px 26px;
+}
+.rs-contact-cta p {
+  /* เดิม 14px/300 บนพื้นกรมท่าที่ .60 — บางและจางเกินไปสำหรับ
+     ข้อความที่นำไปสู่ CTA หลักของหน้า */
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: rgba(255,255,255,.78) !important;
+  margin: 0 auto 20px !important;
+  max-width: 52ch;
+}
+
+/* honeypot — ต้องซ่อนจากคนแต่ยังอยู่ใน DOM ให้ bot กรอก */
+.rs-hp {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  opacity: 0; pointer-events: none;
+}
+.rs-contact-form {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--cv-radius-lg);
+  padding: 30px 28px;
+}
+.rs-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.rs-form-field { margin-bottom: 16px; }
+.rs-form-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+  letter-spacing: .3px;
+  margin-bottom: 7px;
+}
+.rs-form-field input,
+.rs-form-field textarea {
+  width: 100%;
+  font-family: var(--cv-font);
+  font-size: 14px;
+  color: #F8FAFC;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--cv-radius-sm);
+  padding: 11px 14px;
+  transition: border-color .2s, background .2s;
+}
+.rs-form-field input:focus,
+.rs-form-field textarea:focus {
+  outline: none;
+  border-color: var(--cv-blue);
+  background: rgba(255,255,255,.09);
+}
+.rs-form-field textarea { resize: vertical; min-height: 120px; }
+.rs-form-submit { margin-top: 4px; }
+.rs-form-submit[disabled] { opacity: .6; cursor: not-allowed; }
+.rs-form-status {
+  font-size: 13px !important;
+  margin: 14px 0 0 !important;
+  min-height: 20px;
+}
+.rs-form-status.is-sending { color: rgba(255,255,255,.55) !important; }
+.rs-form-status.is-ok      { color: var(--cv-green) !important; }
+.rs-form-status.is-fail    { color: #FCA5A5 !important; }
+.rs-form-status a          { color: #93C5FD !important; text-decoration: underline; }
+
+@media (max-width: 575px) {
+  .rs-form-row { grid-template-columns: 1fr; gap: 0; }
+  .rs-contact-form, .rs-contact-cta { padding: 22px 18px; }
+}
+
+/* marquee กว้างเกินจอโดยตั้งใจ (มันเลื่อน) ต้องคลิปให้สนิท
+   ไม่งั้นหน้าจะเลื่อนแนวนอนได้ ~1px บนมือถือ ซึ่งดูเหมือนเว็บพัง */
+.rs-text-slide-area .container-fluid {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+.rs-text-slide-wrapper { overflow: hidden; }

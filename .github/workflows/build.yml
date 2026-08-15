@@ -1,0 +1,55 @@
+# build อัตโนมัติเมื่อ push แก้ source
+#
+# GitHub Pages ไม่ build ให้ ไฟล์ที่ generate จึงต้องอยู่ใน repo
+# workflow นี้รัน build.js แล้ว commit ผลลัพธ์กลับให้เอง
+#
+# ไม่วนลูป เพราะ trigger ดูเฉพาะไฟล์ source ส่วน bot แก้เฉพาะไฟล์ output
+# (ใส่ [skip ci] ไว้อีกชั้นกันเหนียว)
+#
+# ต้องเช็ค 2 อย่างก่อนใช้:
+#   1. GitHub Pages deploy จาก branch ไหน — ถ้าไม่ใช่ main ต้องแก้ branches ด้านล่าง
+#   2. Pages ใช้โหมดไหน — "Deploy from a branch" หรือ GitHub Actions workflow
+#      ถ้าเป็นโหมด workflow: commit ที่ bot push ด้วย GITHUB_TOKEN จะ "ไม่" trigger
+#      workflow อื่นต่อ ทำให้ build เขียว แต่เว็บจริงไม่อัปเดต (พังแบบเงียบ)
+#      กรณีนั้นต้องใช้ deploy key หรือ PAT แทน GITHUB_TOKEN
+
+name: Build static site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "component/**"
+      - "data/**"
+      - "assets/js/i18n.js"
+      - "build.js"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # build.js จะ exit 1 เองถ้าคำแปล key ไหนหาย — ให้ workflow แดงไปเลย
+      - name: Build
+        run: node build.js
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html en/index.html robots.txt sitemap.xml llms.txt resume.json resume.th.json
+          if git diff --staged --quiet; then
+            echo "ผลลัพธ์ตรงกับ source อยู่แล้ว ไม่ต้อง commit"
+          else
+            git commit -m "build: regenerate static output [skip ci]"
+            git push
+          fi

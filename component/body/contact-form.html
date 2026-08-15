@@ -1,0 +1,73 @@
+<div class="row justify-content-center" style="margin-top:44px;">
+  <div class="col-xl-7 col-lg-8">
+    <form class="rs-contact-form" id="cv-contact-form" action="https://api.web3forms.com/submit" method="POST"
+          data-msg-sending="กำลังส่ง..."
+          data-msg-ok="ส่งข้อความเรียบร้อยแล้ว ขอบคุณครับ จะติดต่อกลับโดยเร็วที่สุด"
+          data-msg-fail="ส่งไม่สำเร็จ ลองใหม่อีกครั้ง หรืออีเมลมาที่ &lt;a href=&quot;mailto:overlag02@gmail.com&quot;&gt;overlag02@gmail.com&lt;/a&gt; ได้เลย"
+          data-i18n-attr="data-msg-sending:form.sending;data-msg-ok:form.ok;data-msg-fail:form.fail">
+      <input type="hidden" name="access_key" value="{{CONTACT_FORM_KEY}}" />
+      <input type="hidden" name="subject" value="ข้อความจากเว็บ CV — jaruwat" />
+      <input type="hidden" name="from_name" value="profile-cv" />
+      <!-- honeypot กัน bot: คนจริงมองไม่เห็นช่องนี้ -->
+      <input type="checkbox" name="botcheck" class="rs-hp" tabindex="-1" autocomplete="off" />
+
+      <div class="rs-form-row">
+        <div class="rs-form-field">
+          <label for="cf-name" data-i18n="form.name">ชื่อของคุณ</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" />
+        </div>
+        <div class="rs-form-field">
+          <label for="cf-email" data-i18n="form.email">อีเมลสำหรับติดต่อกลับ</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="rs-form-field">
+        <label for="cf-message" data-i18n="form.message">ข้อความ</label>
+        <textarea id="cf-message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary rs-form-submit" data-i18n="form.submit">
+        <i class="ri-send-plane-line"></i> ส่งข้อความ
+      </button>
+
+      <p class="rs-form-status" id="cv-form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById("cv-contact-form");
+    if (!form) return;
+    var status = document.getElementById("cv-form-status");
+    var btn = form.querySelector(".rs-form-submit");
+    var msg = {
+      sending: form.dataset.msgSending,
+      ok: form.dataset.msgOk,
+      fail: form.dataset.msgFail,
+    };
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      status.className = "rs-form-status is-sending";
+      status.textContent = msg.sending;
+      btn.disabled = true;
+      fetch(form.action, { method: "POST", body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            status.className = "rs-form-status is-ok";
+            status.textContent = msg.ok;
+            form.reset();
+          } else {
+            throw new Error(data.message || "failed");
+          }
+        })
+        .catch(function () {
+          status.className = "rs-form-status is-fail";
+          status.innerHTML = msg.fail;
+        })
+        .finally(function () { btn.disabled = false; });
+    });
+  })();
+</script>

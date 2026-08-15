@@ -1,0 +1,232 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "จารุวัฒน์ อำนวยสัตย์",
+    "label": "Full Stack Developer",
+    "image": "https://darkneed02.github.io/assets/images/brand/PICT0053.jpg",
+    "email": "overlag02@gmail.com",
+    "phone": "+66646613238",
+    "url": "https://darkneed02.github.io/",
+    "summary": "Full Stack Developer ประสบการณ์ 6 ปี ทำงานหลักด้วย PHP/Laravel และ SQL ถนัดระบบหลังบ้านขององค์กร ตั้งแต่ระบบเบิกจ่าย ระบบสมาชิก ไปจนถึงการเชื่อมข้อมูลกับ SAP และการส่งไฟล์เข้ารหัสตามมาตรฐานธนาคาร",
+    "location": {
+      "city": "อำเภอเมืองปทุมธานี",
+      "region": "ปทุมธานี",
+      "countryCode": "TH"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/jaruwat-amnuaysat-509244207/",
+        "username": "jaruwat-amnuaysat"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/darkneed02",
+        "username": "darkneed02"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "บริษัท เซนต์เฮิร์บ คอสเมติกส์ อินเตอร์เนชั่นแนล จำกัด",
+      "position": "WebMaster",
+      "startDate": "2025-04",
+      "summary": "ดูแลความเสถียรและความปลอดภัยของเว็บไซต์ ติดตาม Traffic ปรับ SEO และ UI/UX จัดทำระบบ Backup พร้อมประสานงานและเฝ้าระวัง Server และพัฒนาระบบ HerbCore CRM หลังบ้านเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker เพื่อรวมออเดอร์จากร้าน WooCommerce หลายร้าน ต่อคิวแพ็กสินค้า และจองขนส่งผ่าน DHL Express API",
+      "highlights": [
+        "ดูแลและพัฒนาเว็บไซต์",
+        "ดูแลและประสานงาน Server",
+        "พัฒนาระบบ HerbCore CRM รวมออเดอร์หลายร้าน (37 หน้าจอ · 35 controller · API 13 กลุ่มงาน · 57 migration · งานตั้งเวลา 4 ตัว) — อยู่ระหว่างพัฒนา เสร็จแล้วประมาณ 70%"
+      ],
+      "keywords": [
+        "PHP 8.2",
+        "PostgreSQL",
+        "Docker",
+        "WooCommerce REST API",
+        "DHL Express API",
+        "Cron",
+        "WordPress",
+        "SEO",
+        "Server"
+      ]
+    },
+    {
+      "name": "บริษัท คลาวด์เมท จำกัด",
+      "position": "Programmer",
+      "startDate": "2024-01",
+      "endDate": "2024-11",
+      "summary": "พัฒนา 6 ระบบภายในองค์กรภายใน 11 เดือน ครอบคลุมระบบจัดการทัวร์และการจอง ระบบเบิกจ่าย ระบบพัสดุ การเชื่อมข้อมูลกับ SAP และการเข้ารหัสไฟล์ตามข้อกำหนดของธนาคารก่อนส่งผ่าน sFTP",
+      "highlights": [
+        "ระบบจัดการทัวร์และการจอง",
+        "ระบบวางแผนและเบิกจ่ายพัสดุ",
+        "เข้ารหัสข้อมูลระบบธนาคารและส่งผ่าน sFTP",
+        "ระบบเบิกจ่ายและเงินล่วงหน้า",
+        "ระบบเชื่อมข้อมูลและจัดการไฟล์กับ SAP",
+        "ระบบส่งไฟล์อัตโนมัติไปยังธนาคาร"
+      ],
+      "keywords": [
+        "PHP",
+        "AJAX",
+        "PostgreSQL",
+        "Python",
+        "SAP",
+        "sFTP",
+        "Windows Server"
+      ]
+    },
+    {
+      "name": "บริษัท เนเจอร์ไบโอเทค จำกัด",
+      "position": "Full Stack Developer",
+      "startDate": "2020-07",
+      "endDate": "2023-10",
+      "summary": "พัฒนาระบบ Loyalty ‘Healthy Together’ ทั้งหน้าบ้านและหลังบ้าน รวมถึงระบบลงทะเบียน แลกของรางวัล QR Code เฉพาะสินค้า และ Lucky Draw พร้อมทำ Data Cleansing ด้วย Pandas และ Dashboard ด้วย Looker Studio",
+      "highlights": [
+        "ระบบ Loyalty Healthy Together",
+        "Data Report และ Dashboard",
+        "เว็บไซต์ WordPress และดูแลความปลอดภัย"
+      ],
+      "keywords": [
+        "PHP",
+        "AJAX",
+        "MySQL",
+        "Bootstrap",
+        "Python",
+        "Pandas",
+        "Looker Studio",
+        "WordPress"
+      ]
+    },
+    {
+      "name": "บริษัท อำพันเทคโนโลยี จำกัด",
+      "position": "นักศึกษาฝึกงาน (R&D)",
+      "startDate": "2019-06",
+      "endDate": "2019-10",
+      "summary": "ฝึกงานในตำแหน่ง R&D พัฒนาเว็บไซต์แสดงสถานะสำหรับงานโรงแรมตามที่ได้รับมอบหมาย",
+      "highlights": [
+        "พัฒนาเว็บไซต์ในส่วน R&D"
+      ],
+      "keywords": [
+        "PHP",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี",
+      "studyType": "ปริญญาตรี วิทยาศาสตรบัณฑิต",
+      "area": "เทคโนโลยีสารสนเทศ",
+      "startDate": "2016-08",
+      "endDate": "2020-03"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Mastering Fundamental Golang: Building REST API Project",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=171&userId=63471"
+    },
+    {
+      "name": "ปูพื้นฐานสู่สายงาน Data Engineer",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=612&userId=63471"
+    },
+    {
+      "name": "เครื่องมือและโครงสร้างพื้นฐาน Data Engineering",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=613&userId=63471"
+    },
+    {
+      "name": "Python, Pandas & PySpark",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=639&userId=63471"
+    },
+    {
+      "name": "ETL Pipeline ด้วย PySpark",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=640&userId=63471"
+    },
+    {
+      "name": "Serverless Data Lakes ด้วย AWS",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=641&userId=63471"
+    },
+    {
+      "name": "Data Science for Everyone",
+      "issuer": "FutureSkill",
+      "url": "https://app.futureskill.co/api/certificate?courseId=51&userId=63471"
+    },
+    {
+      "name": "CompTIA Cloud Essentials+",
+      "issuer": "CompTIA",
+      "url": "https://drive.google.com/file/d/1M3AxoumBlYWQ-OtTKjVRB7-6teeXpJcj/view"
+    }
+  ],
+  "skills": [
+    {
+      "name": "ภาษาและเฟรมเวิร์ก",
+      "keywords": [
+        "PHP",
+        "Laravel",
+        "JavaScript",
+        "AJAX",
+        "Python",
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ]
+    },
+    {
+      "name": "ฐานข้อมูล",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "Microsoft SQL Server"
+      ]
+    },
+    {
+      "name": "เชื่อมต่อระบบและ Automation",
+      "keywords": [
+        "REST API",
+        "SAP data integration",
+        "WooCommerce REST API",
+        "DHL Express API",
+        "sFTP file encryption",
+        "Batch automation"
+      ]
+    },
+    {
+      "name": "เครื่องมือ",
+      "keywords": [
+        "Git",
+        "Docker",
+        "Postman",
+        "WordPress",
+        "Figma",
+        "Looker Studio",
+        "Windows Server"
+      ]
+    },
+    {
+      "name": "กำลังศึกษา",
+      "keywords": [
+        "Golang"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "ไทย",
+      "fluency": "ภาษาแม่"
+    },
+    {
+      "language": "อังกฤษ",
+      "fluency": "ระดับใช้งานได้"
+    }
+  ],
+  "meta": {
+    "canonical": "https://darkneed02.github.io/",
+    "language": "th",
+    "note": "generated by build.js — แก้ที่ data/profile.js"
+  }
+}

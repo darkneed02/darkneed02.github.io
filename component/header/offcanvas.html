@@ -9,10 +9,11 @@
             Jaruwat<span style="color:#60A5FA;">.</span>
           </span>
           <div style="display:flex;align-items:center;gap:10px;">
-            <button
+            <a
               class="cv-lang-btn"
-              onclick="window.toggleLang()"
-              aria-label="Switch to English"
+              href="{{ALT_URL}}"
+              hreflang="{{ALT_LANG}}"
+              aria-label="{{ALT_ARIA_LABEL}}"
               style="
                 display: inline-flex;
                 align-items: center;
@@ -27,11 +28,13 @@
                 padding: 5px 11px 5px 9px;
                 border-radius: 20px;
                 cursor: pointer;
+                text-decoration: none;
                 transition: background .2s, border-color .2s, color .2s;
               "
-            ><i class="ri-translate-2" style="font-size:13px;"></i><span>EN</span></button>
+            ><i class="ri-translate-2" style="font-size:13px;"></i><span>{{ALT_LABEL}}</span></a>
             <div class="offcanvas-close">
-              <button class="offcanvas-close-icon animation--flip">
+              <button class="offcanvas-close-icon animation--flip"
+                      aria-label="ปิดเมนู" data-i18n-attr="aria-label:aria.menu.close">
                 <span class="offcanvas-m-lines">
                   <span class="offcanvas-m-line line--1"></span>
                   <span class="offcanvas-m-line line--2"></span>
@@ -64,7 +67,7 @@
                 <i class="ri-map-pin-line" style="font-size:16px;color:rgba(255,255,255,.40);"></i>
               </div>
               <div class="offcanvas-contact-text">
-                <a href="#">15/178 ม.บ.ศิริทรัพย์ ต.บางพูน อ.เมือง จ.ปทุมธานี 12000</a>
+                <a href="#" data-i18n="offcanvas.address">15/178 ม.บ.ศิริทรัพย์ ต.บางพูน อ.เมือง จ.ปทุมธานี 12000</a>
               </div>
             </li>
             <li class="d-flex align-items-center gap-15">

@@ -16,16 +16,19 @@
               <li><a href="#homeabout" data-i18n="nav.about">เกี่ยวกับ</a></li>
               <li><a href="#homeskill" data-i18n="nav.skills">ทักษะ</a></li>
               <li><a href="#homeworkexp" data-i18n="nav.experience">ประสบการณ์</a></li>
+              <li><a href="#homework" data-i18n="nav.work">ผลงาน</a></li>
               <li><a href="#homeportfolio" data-i18n="nav.certifications">ใบรับรอง</a></li>
+              <li><a href="#homefaq" data-i18n="nav.faq">คำถามที่พบบ่อย</a></li>
               <li><a href="#homecontact" data-i18n="nav.contact">ติดต่อ</a></li>
             </ul>
           </nav>
         </div>
         <div class="rs-header-right" style="display:flex;align-items:center;gap:12px;">
-          <button
+          <a
             class="cv-lang-btn"
-            onclick="window.toggleLang()"
-            aria-label="Switch to English"
+            href="{{ALT_URL}}"
+            hreflang="{{ALT_LANG}}"
+            aria-label="{{ALT_ARIA_LABEL}}"
             style="
               display: inline-flex;
               align-items: center;
@@ -40,15 +43,19 @@
               padding: 6px 13px 6px 10px;
               border-radius: 20px;
               cursor: pointer;
+              text-decoration: none;
               transition: background .2s, border-color .2s, color .2s;
               white-space: nowrap;
             "
             onmouseover="this.style.background='rgba(96,165,250,.15)';this.style.borderColor='rgba(96,165,250,.45)';this.style.color='#93C5FD'"
             onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(255,255,255,.14)';this.style.color='rgba(255,255,255,.75)'"
-          ><i class="ri-translate-2" style="font-size:14px;"></i><span>EN</span></button>
+          ><i class="ri-translate-2" style="font-size:14px;"></i><span>{{ALT_LABEL}}</span></a>
           <div class="rs-header-hamburger">
             <div class="sidebar-toggle">
-              <a class="bar-icon" href="javascript:void(0)">
+              <!-- ปุ่มมีแต่ขีดสามขีด ไม่มีข้อความ ต้องบอกชื่อผ่าน aria-label
+                   ไม่งั้น screen reader อ่านได้แค่ "ลิงก์" -->
+              <a class="bar-icon" href="javascript:void(0)"
+                 aria-label="เปิดเมนู" data-i18n-attr="aria-label:aria.menu.open">
                 <span></span>
                 <span></span>
                 <span></span>

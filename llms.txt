@@ -1,0 +1,99 @@
+# Jaruwat Amnuaysat (จารุวัฒน์ อำนวยสัตย์)
+
+> Full Stack Developer (PHP/Laravel) — enterprise back-office systems, SAP and banking integration
+
+Personal CV and portfolio. Content is available in Thai at https://darkneed02.github.io/ and English at https://darkneed02.github.io/en/.
+
+## Currently looking for
+
+- Target roles: Full Stack Developer, Programmer, Web Developer
+- Location: Pathum Thani · Bangkok metropolitan area · Remote
+- Contact: overlag02@gmail.com · +66646613238
+- Links: https://www.linkedin.com/in/jaruwat-amnuaysat-509244207/ · https://github.com/darkneed02 · https://www.facebook.com/jaruwat.amnuaysat
+
+## Summary
+
+Full Stack Developer with 6 years of experience, working mainly with PHP/Laravel and SQL. Specialises in enterprise back-office systems — disbursement and membership platforms, SAP data integration, and encrypted file transfers built to banking standards.
+
+## Skills
+
+- **Languages & Frameworks**: PHP, Laravel, JavaScript, AJAX, Python, HTML, CSS, Bootstrap
+- **Databases**: PostgreSQL, MySQL, Microsoft SQL Server
+- **Integration & Automation**: REST API, SAP data integration, WooCommerce REST API, DHL Express API, sFTP file encryption, Batch automation
+- **Tools**: Git, Docker, Postman, WordPress, Figma, Looker Studio, Windows Server
+- **Currently learning**: Golang
+
+## Work experience
+
+### WebMaster — ST. Herb Cosmetics International Co., Ltd.
+04/2025 – Present
+
+Maintained website stability and security, tracked traffic, improved SEO and UX, built the backup process, and coordinated server monitoring. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.
+
+- Website maintenance and development
+- Server maintenance and coordination
+- HerbCore CRM — multi-shop order consolidation (37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled jobs), in development, roughly 70% complete
+
+Tech: PHP 8.2, PostgreSQL, Docker, WooCommerce REST API, DHL Express API, Cron, WordPress, SEO, Server
+
+### Programmer — Cloudmate Co., Ltd.
+01/2024 – 11/2024
+
+Delivered 6 internal systems in 11 months: tour booking and management, disbursement and advance payment, supply procurement, SAP data integration, and bank-standard file encryption transferred over sFTP.
+
+- Tour booking and management system
+- Supply planning and procurement system
+- Banking data encryption and sFTP transfer
+- Advance and disbursement payment system
+- SAP data connection and file management
+- Automated bank file transfer
+
+Tech: PHP, AJAX, PostgreSQL, Python, SAP, sFTP, Windows Server
+
+### Full Stack Developer — Nature Biotec Co., Ltd.
+07/2020 – 10/2023
+
+Built the ‘Healthy Together’ loyalty platform end to end — registration, reward redemption, per-product QR codes and lucky draw — plus data cleansing with Pandas and dashboards in Looker Studio.
+
+- Healthy Together loyalty system
+- Data reporting and dashboards
+- WordPress sites and security maintenance
+
+Tech: PHP, AJAX, MySQL, Bootstrap, Python, Pandas, Looker Studio, WordPress
+
+### Intern (R&D) — Amphan Technology Co., Ltd.
+06/2019 – 10/2019
+
+R&D internship developing an assigned hotel status display website.
+
+- Web development within the R&D team
+
+Tech: PHP, HTML, CSS
+
+## Education
+
+- Bachelor of Science in Information Technology, Rajamangala University of Technology Thanyaburi (2016-08 – 2020-03)
+
+## Certifications
+
+- [Mastering Fundamental Golang: Building REST API Project](https://app.futureskill.co/api/certificate?courseId=171&userId=63471) — FutureSkill
+- [Foundation for Data Engineer Career](https://app.futureskill.co/api/certificate?courseId=612&userId=63471) — FutureSkill
+- [Data Engineering Tools & Infrastructure](https://app.futureskill.co/api/certificate?courseId=613&userId=63471) — FutureSkill
+- [Python, Pandas & PySpark](https://app.futureskill.co/api/certificate?courseId=639&userId=63471) — FutureSkill
+- [ETL Pipeline with PySpark](https://app.futureskill.co/api/certificate?courseId=640&userId=63471) — FutureSkill
+- [Serverless Data Lakes with AWS](https://app.futureskill.co/api/certificate?courseId=641&userId=63471) — FutureSkill
+- [Data Science for Everyone](https://app.futureskill.co/api/certificate?courseId=51&userId=63471) — FutureSkill
+- [CompTIA Cloud Essentials+](https://drive.google.com/file/d/1M3AxoumBlYWQ-OtTKjVRB7-6teeXpJcj/view) — CompTIA
+
+## ข้อมูลภาษาไทย
+
+ชื่อ: จารุวัฒน์ อำนวยสัตย์ (ฟิล์ม)
+ตำแหน่งที่สนใจ: Full Stack Developer, Programmer, Web Developer
+พื้นที่ทำงาน: ปทุมธานี · กรุงเทพฯ และปริมณฑล · Remote
+
+Full Stack Developer ประสบการณ์ 6 ปี ทำงานหลักด้วย PHP/Laravel และ SQL ถนัดระบบหลังบ้านขององค์กร ตั้งแต่ระบบเบิกจ่าย ระบบสมาชิก ไปจนถึงการเชื่อมข้อมูลกับ SAP และการส่งไฟล์เข้ารหัสตามมาตรฐานธนาคาร
+
+- WebMaster — บริษัท เซนต์เฮิร์บ คอสเมติกส์ อินเตอร์เนชั่นแนล จำกัด (04/2025 – ปัจจุบัน): ดูแลความเสถียรและความปลอดภัยของเว็บไซต์ ติดตาม Traffic ปรับ SEO และ UI/UX จัดทำระบบ Backup พร้อมประสานงานและเฝ้าระวัง Server และพัฒนาระบบ HerbCore CRM หลังบ้านเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker เพื่อรวมออเดอร์จากร้าน WooCommerce หลายร้าน ต่อคิวแพ็กสินค้า และจองขนส่งผ่าน DHL Express API
+- Programmer — บริษัท คลาวด์เมท จำกัด (01/2024 – 11/2024): พัฒนา 6 ระบบภายในองค์กรภายใน 11 เดือน ครอบคลุมระบบจัดการทัวร์และการจอง ระบบเบิกจ่าย ระบบพัสดุ การเชื่อมข้อมูลกับ SAP และการเข้ารหัสไฟล์ตามข้อกำหนดของธนาคารก่อนส่งผ่าน sFTP
+- Full Stack Developer — บริษัท เนเจอร์ไบโอเทค จำกัด (07/2020 – 10/2023): พัฒนาระบบ Loyalty ‘Healthy Together’ ทั้งหน้าบ้านและหลังบ้าน รวมถึงระบบลงทะเบียน แลกของรางวัล QR Code เฉพาะสินค้า และ Lucky Draw พร้อมทำ Data Cleansing ด้วย Pandas และ Dashboard ด้วย Looker Studio
+- นักศึกษาฝึกงาน (R&D) — บริษัท อำพันเทคโนโลยี จำกัด (06/2019 – 10/2019): ฝึกงานในตำแหน่ง R&D พัฒนาเว็บไซต์แสดงสถานะสำหรับงานโรงแรมตามที่ได้รับมอบหมาย
