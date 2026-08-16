@@ -61,10 +61,40 @@ window.cvI18n = {
     /* ---- Skills ---- */
     'skills.subtitle':      'ความเชี่ยวชาญ',
     'skills.title':         'ทักษะและเครื่องมือ',
-    'skills.primary.note':  'ทักษะหลักที่ใช้งานจริงเป็นประจำ',
+    'skills.intro':         'แยกเป็นสามกลุ่มตามบทบาทการใช้งาน ทุกรายการกำกับไว้ว่าเอาไปทำอะไรในงานจริง',
+
+    'skills.lang.title':    'ภาษาที่ใช้พัฒนา',
+    'skills.lang.note':     'ภาษาที่เขียนเองในงานจริง',
+    'skills.php.note':      'ภาษาหลักของงานหลังบ้านตลอด 6 ปี ปัจจุบันใช้ PHP 8.2',
+    'skills.sql.note':      'ออกแบบตารางและเขียน query เอง',
+    'skills.js.note':       'งานฝั่งหน้าเว็บและเรียก API',
+    'skills.htmlcss.note':  'โครงหน้าเว็บและงาน responsive',
+    'skills.python.note':   'งาน Automation เชื่อม SAP และจัดการไฟล์ข้อมูล',
+
+    'skills.fw.title':      'เฟรมเวิร์กและไลบรารี',
+    'skills.fw.note':       'ตัวช่วยที่สร้างงานอยู่บนนั้น',
     'skills.laravel.meta':  'ระบบหลังบ้านที่ใช้งานจริงใน Production',
+    'skills.bootstrap.note': 'โครงเลย์เอาต์และคอมโพเนนต์ UI',
+    'skills.ajax.note':     'โหลดและส่งข้อมูลโดยไม่รีเฟรชหน้า',
+    'skills.pandas.note':   'ทำ Data Cleansing ก่อนขึ้นแดชบอร์ด',
+
+    'skills.tool.title':    'เครื่องมือและแพลตฟอร์ม',
+    'skills.tool.note':     'สิ่งที่ใช้ทำงานทุกวัน',
+    'skills.db.name':       'ฐานข้อมูล',
+    'skills.git.note':      'ควบคุมเวอร์ชันทุกโปรเจกต์',
+    'skills.wp.note':       'เขียนธีมเองทั้งชุด 2 เว็บบริษัท',
+    'skills.docker.note':   'ยกระบบและฐานข้อมูลขึ้นรันเป็นชุดเดียว',
+    'skills.cpanel.note':   'ดูแลโฮสต์ โดเมน และระบบสำรองข้อมูล',
+    'skills.postman.note':  'ทดสอบและทำเอกสาร API',
+    'skills.looker.note':   'แดชบอร์ดสรุปข้อมูลให้ผู้บริหาร',
+    'skills.sheets.note':   'ต้นทางข้อมูลที่ต่อเข้าแดชบอร์ด',
+    'skills.winsrv.note':   'ตั้งค่าเซิร์ฟเวอร์ โดเมน SSL และ Deploy',
+    'skills.figma.note':    'ร่าง Wireframe และวาง UI ก่อนลงมือ',
+
     'skills.learning.label': 'กำลังศึกษา',
-    'skills.strong.note':   'ทักษะที่ใช้งานร่วมกับงานหลักสม่ำเสมอ',
+
+    'skills.integration.title': 'งานเชื่อมต่อระบบและ Automation ที่ทำมาแล้ว',
+    'skills.integration.note':  'อ่านรายละเอียดแต่ละงานได้ที่หัวข้อประสบการณ์และผลงาน',
 
     /* ---- Shared labels ---- */
     'label.tech.stack':    'เทคโนโลยีที่ใช้',
@@ -72,16 +102,32 @@ window.cvI18n = {
 
     /* ---- Experience ---- */
     'exp.subtitle': 'ประสบการณ์',
-    /* ---- Experience stats (นับจากงานที่ระบุไว้จริง) ---- */
+    'exp.title':    'ประสบการณ์การทำงาน',
+    'exp.intro':    'ไล่จากงานปัจจุบันย้อนไปงานแรก แต่ละที่สรุปไว้บรรทัดเดียวก่อน แล้วค่อยกดดูเฉพาะงานที่สนใจ',
+
+    /* ---- ภาพรวมของ section ---- */
+    'exp.meta.org':   '4 องค์กร',
+    'exp.meta.span':  '2562–ปัจจุบัน',
+    'exp.meta.total': 'รวม 6 ปี',
+    'exp.tasks':      'งานที่รับผิดชอบ',
+
+    /* ---- ขอบเขตงานของแต่ละที่ (นับจากงานที่ระบุไว้จริง) ---- */
     'exp.stherb.stat.a':    '3 งานหลัก',
     'exp.stherb.stat.b':    'HerbCore CRM ~70%',
     'exp.cm.stat.a':        '6 ระบบ',
-    'exp.cm.stat.b':        '11 เดือน',
     'exp.nat.stat.a':       '3 ระบบหลัก',
-    'exp.nat.stat.b':       '3 ปี 4 เดือน',
-    'exp.amphan.stat.a':    'ฝึกงาน 5 เดือน',
 
-    'exp.title':    'ประสบการณ์การทำงาน',
+    /* ---- ระยะเวลาที่อยู่แต่ละที่ (คำนวณจาก startDate/endDate ใน data/profile.js) ---- */
+    'exp.stherb.duration':  '1 ปี 5 เดือน',
+    'exp.cm.duration':      '11 เดือน',
+    'exp.nat.duration':     '3 ปี 4 เดือน',
+    'exp.amphan.duration':  '5 เดือน',
+
+    /* ---- สรุปหนึ่งบรรทัดของแต่ละที่ — ย่อจาก summary ใน data/profile.js ---- */
+    'exp.stherb.summary':   'ดูแลเว็บไซต์บริษัททั้งสองเว็บที่เขียนธีมขึ้นเองทั้งชุด ควบคู่กับการพัฒนา HerbCore CRM หลังบ้านเองทั้งระบบ และดูแลความเสถียรของ Server',
+    'exp.cm.summary':       'พัฒนา 6 ระบบภายในองค์กรภายใน 11 เดือน ตั้งแต่ระบบจัดการทัวร์ ระบบเบิกจ่าย ระบบพัสดุ ไปจนถึงการเชื่อมข้อมูลกับ SAP และเข้ารหัสไฟล์ตามข้อกำหนดของธนาคาร',
+    'exp.nat.summary':      'พัฒนาระบบ Loyalty ‘Healthy Together’ ทั้งหน้าบ้านและหลังบ้าน พร้อมทำ Data Cleansing ด้วย Pandas และ Dashboard บน Looker Studio ให้ผู้บริหารดูภาพรวมได้',
+    'exp.amphan.summary':   'ฝึกงานในตำแหน่ง R&amp;D พัฒนาเว็บไซต์แสดงสถานะสำหรับงานโรงแรมตามที่ได้รับมอบหมาย',
 
     /* St.Herb */
     'exp.stherb.period':         'เม.ย. 2568 – ปัจจุบัน',
@@ -197,6 +243,11 @@ window.cvI18n = {
     'work.title':    'ตัวอย่างงานที่ทำ',
     'work.intro':    'เลือกมา 5 ระบบที่สะท้อนงานที่ถนัดที่สุด — แต่ละชิ้นเล่าเป็นโจทย์ สิ่งที่ทำ และผลลัพธ์',
     'work.note':     'หมายเหตุ: ภาพประกอบเป็นแผนภาพการทำงานที่วาดขึ้นใหม่ ไม่ใช่ภาพหน้าจอระบบจริง เนื่องจากทุกชิ้นเป็นระบบภายในขององค์กร',
+    'work.meta.count': '5 ระบบ',
+    'work.meta.org':   '3 องค์กร',
+    'work.meta.span':  '2563–2569',
+    'work.more':       'โจทย์ · สิ่งที่ทำ · ผลลัพธ์',
+    'work.diagram':    'ดูแผนภาพเต็ม',
     'label.problem': 'โจทย์',
     'label.doing':   'สิ่งที่ทำ',
     'label.result':  'ผลลัพธ์',
@@ -209,6 +260,11 @@ window.cvI18n = {
     'work.crm.doing':   'พัฒนาเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker รวม 37 หน้าจอ 35 controller API 13 กลุ่มงาน 57 migration และงานเบื้องหลังตั้งเวลา 4 ตัว ดึงออเดอร์จากทุกร้านผ่าน WooCommerce REST API ตามรอบอัตโนมัติ ต่อเข้าคิวแพ็กที่ตัดสต็อกเอง เชื่อม DHL Express API เพื่อขอราคา สร้าง Shipment และเก็บ Label กับเลข Tracking ไว้กับออเดอร์ พร้อมระบบอีเมลการตลาด อีเมลขาเข้า สิทธิ์ผู้ใช้ และหน้าวิเคราะห์ยอดขาย',
     'work.crm.result':  'ออเดอร์จากทุกร้านเข้ามารวมเองโดยไม่ต้องคัดลอกมือ พนักงานคลังทำงานจากคิวเดียวและสถานะไม่ถูก sync ทับ ส่วนการคืนเงินเก็บเป็นรายการแยกที่หักออกจากยอดทุกจุดโดยอัตโนมัติ ตัวเลขในระบบจึงเป็นยอดสุทธิเสมอโดยไม่ต้องแก้ออเดอร์ย้อนหลัง',
     'work.crm.status':  'อยู่ระหว่างพัฒนา เสร็จแล้วประมาณ 70% ส่วนจองขนส่ง DHL ผ่านชุดทดสอบและทดสอบ Sandbox แบบ end-to-end แล้ว รอสิทธิ์บัญชี Production จึงจะเปิดใช้จริงได้',
+    'work.crm.summary': 'รวมออเดอร์จาก WooCommerce หลายร้านเข้าระบบเดียว ตั้งแต่ดึงออเดอร์อัตโนมัติ คิวแพ็กที่ตัดสต็อกเอง ไปจนถึงจองขนส่ง DHL และเก็บเลขติดตามพัสดุ',
+    'work.crm.m.screens':   'หน้าจอ',
+    'work.crm.m.api':       'controller API',
+    'work.crm.m.migration': 'migration',
+    'work.crm.m.cron':      'งานตั้งเวลา',
 
     'work.sap.tag':     'คลาวด์เมท · 2567',
     'work.sap.name':    'ระบบเชื่อมข้อมูล SAP และส่งไฟล์เข้ารหัสให้ธนาคาร',
@@ -216,6 +272,7 @@ window.cvI18n = {
     'work.sap.problem': 'การส่งข้อมูลการชำระเงินให้ธนาคารต้องทำเป็นรอบ ต้องสร้างไฟล์จาก SAP เข้ารหัสตามข้อกำหนดของธนาคาร แล้วส่งผ่าน sFTP ทุกขั้นตอนทำมือ ผิดพลาดได้ง่ายและกินเวลา',
     'work.sap.doing':   'เขียนโปรแกรม Python ดึงข้อมูลจาก SAP สร้างไฟล์ตามรูปแบบที่ธนาคารกำหนด เข้ารหัสตามมาตรฐาน ส่งผ่าน sFTP แล้วลบไฟล์ที่ส่งแล้ว พร้อมขาดึงไฟล์ผลการชำระเงินกลับมาถอดรหัสและบันทึกเข้า SAP',
     'work.sap.result':  'การส่งข้อมูลผ่านมาตรฐานความปลอดภัยของธนาคาร ลดขั้นตอนที่ต้องทำมือ และข้อมูลสองระบบตรงกันโดยไม่ต้องกระทบยอดเอง',
+    'work.sap.summary': 'แทนงานส่งไฟล์ชำระเงินให้ธนาคารที่เคยทำมือทุกรอบ ด้วย Python ที่สร้างไฟล์ เข้ารหัส ส่ง sFTP และดึงผลกลับเข้า SAP เอง',
 
     'work.adv.tag':     'คลาวด์เมท · 2567',
     'work.adv.name':    'ระบบเบิกจ่ายและเงินทดรองจ่าย',
@@ -223,6 +280,7 @@ window.cvI18n = {
     'work.adv.problem': 'การเบิกจ่ายมีหลายเส้นทาง ทั้งแบบอ้างอิงเงินทดรองจ่ายและแบบไม่อ้างอิง แต่ละแบบมีลำดับผู้อนุมัติและเงื่อนไขต่างกัน และต้องตรวจสอบย้อนหลังได้',
     'work.adv.doing':   'พัฒนาระบบบันทึกรายการเงินล่วงหน้าและการเบิกจ่าย ออกแบบขั้นตอนอนุมัติที่กำหนดเงื่อนไขและลำดับได้ พร้อมส่งออกข้อมูลเป็น Excel สำหรับงานบัญชี',
     'work.adv.result':  'ทุกรายการมีร่องรอยการอนุมัติครบ ตรวจสอบย้อนหลังได้ง่าย และฝ่ายบัญชีดึงข้อมูลไปใช้ต่อได้ทันที',
+    'work.adv.summary': 'รวมการเบิกจ่ายทุกเส้นทางไว้ในระบบเดียว พร้อมขั้นตอนอนุมัติที่ตั้งเงื่อนไขและลำดับเองได้ และร่องรอยที่ตรวจย้อนหลังได้ทุกรายการ',
 
     'work.mm.tag':     'คลาวด์เมท · 2567',
     'work.mm.name':    'ระบบวางแผนและเบิกจ่ายพัสดุรายไตรมาส',
@@ -230,6 +288,7 @@ window.cvI18n = {
     'work.mm.problem': 'การเบิกพัสดุกระจายอยู่หลายหน่วยงาน ไม่มีภาพรวมว่าแต่ละไตรมาสวางแผนไว้เท่าไรและเบิกไปแล้วเท่าไร ทำให้คุมงบประมาณยาก',
     'work.mm.doing':   'พัฒนาระบบวางแผนเบิกพัสดุรายไตรมาส ออกแบบขั้นตอนขออนุมัติและติดตามสถานะรายการ พร้อมเก็บประวัติการเบิกและส่งออกเป็น Excel',
     'work.mm.result':  'เห็นภาพรวมการใช้พัสดุทั้งปี คุมงบประมาณได้ชัดเจนขึ้น และลดงานเอกสารที่ต้องทำซ้ำ',
+    'work.mm.summary': 'ให้ทุกหน่วยงานวางแผนเบิกพัสดุรายไตรมาสในที่เดียว เห็นยอดที่วางแผนไว้เทียบกับที่เบิกจริงได้ทั้งปี',
 
     'work.ht.tag':     'เนเจอร์ไบโอเทค · 2563–2566',
     'work.ht.name':    'Healthy Together — ระบบสะสมแต้มและแลกของรางวัล',
@@ -237,6 +296,7 @@ window.cvI18n = {
     'work.ht.problem': 'ต้องการระบบให้ลูกค้าลงทะเบียนสินค้าและสะสมโค้ดเพื่อแลกของรางวัล พร้อมหลังบ้านที่ทีมการตลาดจัดการเองได้ และรายงานที่ผู้บริหารดูภาพรวมได้',
     'work.ht.doing':   'พัฒนาทั้งหน้าบ้านและหลังบ้าน ตั้งแต่ฟอร์มลงทะเบียน การสร้าง QR Code เฉพาะแต่ละรหัสสินค้า ระบบสะสมและแลกของรางวัล ระบบ Lucky Draw ไปจนถึงการทำ Data Cleansing ด้วย Pandas และ Dashboard บน Looker Studio',
     'work.ht.result':  'ทีมการตลาดจัดการกิจกรรมได้เองโดยไม่ต้องรอทีมพัฒนา และผู้บริหารเห็นภาพรวมการลงทะเบียนและการแลกของรางวัลจาก Dashboard ได้ทันที',
+    'work.ht.summary': 'ระบบสะสมแต้มจาก QR Code เฉพาะรายสินค้า ที่ทีมการตลาดจัดแคมเปญเองได้ และผู้บริหารดูภาพรวมจาก Dashboard ได้ทันที',
 
     'nav.work':      'ผลงาน',
 
@@ -342,10 +402,40 @@ window.cvI18n = {
     /* ---- Skills ---- */
     'skills.subtitle':      'Expertise',
     'skills.title':         'Skills &amp; Tools',
-    'skills.primary.note':  'Core skills used regularly in production',
+    'skills.intro':         'Grouped by the role each one plays. Every item says what it is actually used for on real work.',
+
+    'skills.lang.title':    'Languages',
+    'skills.lang.note':     'Written by hand on real projects',
+    'skills.php.note':      'Primary back-end language for 6 years, currently on PHP 8.2',
+    'skills.sql.note':      'Schema design and hand-written queries',
+    'skills.js.note':       'Front-end behaviour and API calls',
+    'skills.htmlcss.note':  'Page structure and responsive layout',
+    'skills.python.note':   'Automation, SAP integration and data file handling',
+
+    'skills.fw.title':      'Frameworks &amp; Libraries',
+    'skills.fw.note':       'What the work is built on top of',
     'skills.laravel.meta':  'Production back-office systems',
+    'skills.bootstrap.note': 'Layout grid and UI components',
+    'skills.ajax.note':     'Loading and sending data without a page reload',
+    'skills.pandas.note':   'Data cleansing before it reaches the dashboard',
+
+    'skills.tool.title':    'Tools &amp; Platforms',
+    'skills.tool.note':     'Used every working day',
+    'skills.db.name':       'Databases',
+    'skills.git.note':      'Version control on every project',
+    'skills.wp.note':       'Two company sites on fully hand-written themes',
+    'skills.docker.note':   'Running the app and its database as one stack',
+    'skills.cpanel.note':   'Hosting, domains and backup routines',
+    'skills.postman.note':  'API testing and documentation',
+    'skills.looker.note':   'Dashboards summarising data for management',
+    'skills.sheets.note':   'Source data feeding the dashboards',
+    'skills.winsrv.note':   'Server setup, domains, SSL and deployment',
+    'skills.figma.note':    'Wireframes and UI layout before building',
+
     'skills.learning.label': 'Currently learning',
-    'skills.strong.note':   'Skills consistently used alongside primary work',
+
+    'skills.integration.title': 'Integration &amp; automation delivered',
+    'skills.integration.note':  'Each one is described in the Experience and Work sections',
 
     /* ---- Shared labels ---- */
     'label.tech.stack':    'Tech Stack',
@@ -353,16 +443,32 @@ window.cvI18n = {
 
     /* ---- Experience ---- */
     'exp.subtitle': 'Experience',
-    /* ---- Experience stats ---- */
+    'exp.title':    'Work Experience',
+    'exp.intro':    'Newest role first. Each one opens with a one-line summary — expand only the work you want to read in full.',
+
+    /* ---- Section overview ---- */
+    'exp.meta.org':   '4 organisations',
+    'exp.meta.span':  '2019–Present',
+    'exp.meta.total': '6 years total',
+    'exp.tasks':      'What I worked on',
+
+    /* ---- Scope per role (counted from the work actually listed) ---- */
     'exp.stherb.stat.a':    '3 main responsibilities',
     'exp.stherb.stat.b':    'HerbCore CRM ~70%',
     'exp.cm.stat.a':        '6 systems',
-    'exp.cm.stat.b':        '11 months',
     'exp.nat.stat.a':       '3 core systems',
-    'exp.nat.stat.b':       '3 yrs 4 mos',
-    'exp.amphan.stat.a':    '5-month internship',
 
-    'exp.title':    'Work Experience',
+    /* ---- Tenure per role (derived from startDate/endDate in data/profile.js) ---- */
+    'exp.stherb.duration':  '1 yr 5 mos',
+    'exp.cm.duration':      '11 mos',
+    'exp.nat.duration':     '3 yrs 4 mos',
+    'exp.amphan.duration':  '5 mos',
+
+    /* ---- One-line summary per role — condensed from summary in data/profile.js ---- */
+    'exp.stherb.summary':   'Maintaining both company websites — each on a fully custom theme written from scratch — while building HerbCore CRM in-house and keeping the servers stable.',
+    'exp.cm.summary':       'Delivered 6 internal systems in 11 months, from tour management, disbursement and procurement through to SAP data integration and bank-standard file encryption.',
+    'exp.nat.summary':      'Built the ‘Healthy Together’ loyalty platform end to end, plus data cleansing with Pandas and Looker Studio dashboards giving management the full picture.',
+    'exp.amphan.summary':   'R&amp;D internship developing an assigned hotel status display website.',
 
     /* St.Herb */
     'exp.stherb.period':         'Apr 2025 – Present',
@@ -475,6 +581,11 @@ window.cvI18n = {
     'work.title':    'Case studies',
     'work.intro':    'Five systems that best represent the work I do — each one framed as the problem, what I built, and the outcome.',
     'work.note':     'Note: the visuals are architecture diagrams drawn for this page, not screenshots of the live systems, as every one of them is an internal company tool.',
+    'work.meta.count': '5 systems',
+    'work.meta.org':   '3 organisations',
+    'work.meta.span':  '2020–2026',
+    'work.more':       'Problem · What I built · Outcome',
+    'work.diagram':    'View full diagram',
     'label.problem': 'Problem',
     'label.doing':   'What I built',
     'label.result':  'Outcome',
@@ -487,6 +598,11 @@ window.cvI18n = {
     'work.crm.doing':   'Built the whole system myself in PHP 8.2 and PostgreSQL on Docker — 37 screens, 35 controllers, 13 API groups, 57 migrations and 4 scheduled background jobs. Orders sync from every shop through the WooCommerce REST API on their own cycle, feed a packing queue that deducts stock, and connect to the DHL Express API for live rates, shipment creation and storing labels and tracking numbers against the order — alongside marketing email, an inbound mail inbox, role permissions and sales analytics.',
     'work.crm.result':  'Orders from every shop arrive on their own with no manual copying, warehouse staff work from a single queue whose status cannot be overwritten by a sync, and refunds are kept as separate records deducted automatically everywhere — so every figure in the system is a net figure without editing past orders.',
     'work.crm.status':  'In active development, roughly 70% complete. DHL booking has passed its test suite and end-to-end sandbox testing, and goes live once the production account is approved.',
+    'work.crm.summary': 'Consolidates orders from several WooCommerce shops into one system — automatic order sync, a packing queue that deducts stock itself, DHL booking and stored tracking numbers.',
+    'work.crm.m.screens':   'screens',
+    'work.crm.m.api':       'API controllers',
+    'work.crm.m.migration': 'migrations',
+    'work.crm.m.cron':      'scheduled jobs',
 
     'work.sap.tag':     'Cloudmate · 2024',
     'work.sap.name':    'SAP integration and encrypted bank file transfer',
@@ -494,6 +610,7 @@ window.cvI18n = {
     'work.sap.problem': 'Payment data had to reach the bank on a fixed cycle: export from SAP, encrypt to the bank’s specification, then send over sFTP. Every step was manual, slow and easy to get wrong.',
     'work.sap.doing':   'Built a Python job that pulls data from SAP, generates files in the bank’s required format, encrypts them to standard, transfers over sFTP and clears sent files — plus a return path that decrypts the bank’s payment result files and posts them back into SAP.',
     'work.sap.result':  'Transfers meet the bank’s security requirements, manual steps are largely gone, and both systems stay in sync without manual reconciliation.',
+    'work.sap.summary': 'Replaces the manual per-cycle bank payment handoff with a Python job that generates, encrypts and sFTPs the file, then posts the bank’s results back into SAP.',
 
     'work.adv.tag':     'Cloudmate · 2024',
     'work.adv.name':    'Advance and disbursement system',
@@ -501,6 +618,7 @@ window.cvI18n = {
     'work.adv.problem': 'Disbursement ran through several different routes — with and without a linked advance — each with its own approver order and conditions, and all of it had to stay auditable.',
     'work.adv.doing':   'Built the recording flow for advances and disbursements, designed an approval process where conditions and approver order are configurable, and added Excel export for the finance team.',
     'work.adv.result':  'Every transaction carries a complete approval trail, past records are easy to audit, and finance can pull the data straight into their own workflow.',
+    'work.adv.summary': 'Brings every disbursement route into a single system, with approval chains whose conditions and order are configurable, and a full audit trail on every record.',
 
     'work.mm.tag':     'Cloudmate · 2024',
     'work.mm.name':    'Quarterly supply planning and procurement',
@@ -508,6 +626,7 @@ window.cvI18n = {
     'work.mm.problem': 'Supply requests were spread across departments with no single view of what each quarter had planned versus actually drawn, which made budget control difficult.',
     'work.mm.doing':   'Built quarterly supply planning with a purchase request and approval flow, per-item status tracking, request history and Excel export.',
     'work.mm.result':  'A full-year view of supply usage, clearer budget control, and noticeably less repeated paperwork.',
+    'work.mm.summary': 'Lets every department plan quarterly supply requests in one place, with planned versus actual usage visible across the whole year.',
 
     'work.ht.tag':     'Nature Biotec · 2020–2023',
     'work.ht.name':    'Healthy Together — loyalty and reward platform',
@@ -515,6 +634,7 @@ window.cvI18n = {
     'work.ht.problem': 'The business needed customers to register products and collect codes toward rewards, a back office the marketing team could run themselves, and reporting management could actually read.',
     'work.ht.doing':   'Built both ends: registration forms, per-product-code QR generation, point collection and reward redemption, a lucky draw engine, plus data cleansing in Pandas and dashboards in Looker Studio.',
     'work.ht.result':  'Marketing runs campaigns without waiting on the dev team, and management sees registration and redemption activity at a glance from the dashboard.',
+    'work.ht.summary': 'A loyalty programme built on per-product QR codes that the marketing team runs on its own, with an executive dashboard in Looker Studio.',
 
     'nav.work':      'Work',
 

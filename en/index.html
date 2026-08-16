@@ -158,6 +158,7 @@
     "knowsAbout": [
       "PHP",
       "Laravel",
+      "SQL",
       "REST API",
       "PostgreSQL",
       "MySQL",
@@ -175,6 +176,10 @@
       "sFTP file encryption",
       "Workflow automation",
       "Docker",
+      "cPanel",
+      "GitHub",
+      "Cron jobs",
+      "Google Sheets",
       "WooCommerce REST API",
       "DHL Express API",
       "CRM development",
@@ -217,7 +222,7 @@
           "name": "Bangkok"
         }
       ],
-      "skills": "PHP, Laravel, REST API, PostgreSQL, MySQL, Microsoft SQL Server, JavaScript, AJAX, HTML, CSS, Bootstrap, Python, Pandas, WordPress, Git, SAP data integration, sFTP file encryption, Workflow automation, Docker, WooCommerce REST API, DHL Express API, CRM development, Looker Studio, Windows Server, Web application development, Database design"
+      "skills": "PHP, Laravel, SQL, REST API, PostgreSQL, MySQL, Microsoft SQL Server, JavaScript, AJAX, HTML, CSS, Bootstrap, Python, Pandas, WordPress, Git, SAP data integration, sFTP file encryption, Workflow automation, Docker, cPanel, GitHub, Cron jobs, Google Sheets, WooCommerce REST API, DHL Express API, CRM development, Looker Studio, Windows Server, Web application development, Database design"
     },
     "hasCredential": [
       {
@@ -619,7 +624,7 @@
           <!-- ไม่ใส่ wow: นี่คือ CTA หลักของหน้า ต้องมองเห็นแน่นอน
                ไม่ว่าอนิเมชันจะทำงานหรือไม่ -->
           <div class="cv-hero-actions">
-            <a href="../assets/pdf/resume.pdf" download class="cv-btn cv-btn-primary">
+            <a href="../assets/pdf/resume-en.pdf" download="Jaruwat-Amnuaysat-Full-Stack-Developer.pdf" class="cv-btn cv-btn-primary">
               <i class="ri-download-line" aria-hidden="true"></i>
               <span data-i18n="banner.cta.resume">Download Resume</span>
             </a>
@@ -717,7 +722,7 @@
                 <i class="ri-mail-send-line" aria-hidden="true"></i>
                 <span data-i18n="about.btn.contact">Contact Me</span>
               </a>
-              <a href="../assets/pdf/resume.pdf" download class="cv-btn cv-btn-outline">
+              <a href="../assets/pdf/resume-en.pdf" download="Jaruwat-Amnuaysat-Full-Stack-Developer.pdf" class="cv-btn cv-btn-outline">
                 <i class="ri-download-line" aria-hidden="true"></i>
                 <span data-i18n="about.btn.resume">Download Resume</span>
               </a>
@@ -796,185 +801,171 @@
 <section id="homeskill" class="rs-skill-area section-space">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xl-7 col-lg-8">
+      <div class="col-xl-8 col-lg-9">
         <div class="rs-section-title-wrapper section-title-space text-center">
           <span class="rs-section-subtitle" data-i18n="skills.subtitle">Expertise</span>
           <h2 class="rs-section-title" data-i18n="skills.title">Skills &amp; Tools</h2>
+          <p class="rs-skill-intro rs-measure-center" data-i18n="skills.intro">Grouped by the role each one plays. Every item says what it is actually used for on real work.</p>
         </div>
       </div>
     </div>
-    <div class="row g-4">
 
-      <!-- Primary Skills -->
-      <div class="col-xl-6">
-        <div class="rs-skill-group rs-skill-group--primary">
-          <div class="rs-skill-group-header">
-            <h3 class="rs-skill-group-title">Primary Skills</h3>
-            <p class="rs-skill-group-note" data-i18n="skills.primary.note">Core skills used regularly in production</p>
-          </div>
-          <div class="rs-skill-grid">
+    <!-- สามกลุ่มตามที่ผู้อ่านมองหา: เขียนด้วยภาษาอะไร ต่อยอดบนอะไร และทำงานด้วยเครื่องมืออะไร
+         ทุกรายการอยู่ระดับเดียวกันหมดและมีคำอธิบายว่าเอาไปทำอะไรในงานจริง
+         (เคยแยกชั้น "ใช้ร่วม" ไว้ท้ายกลุ่ม — ถอดออกตามที่เจ้าของโปรไฟล์สั่ง
+         เพราะการแบ่งชั้นทำให้ของที่ใช้งานได้จริงดูด้อยกว่าที่ควร)
+         เหลือแค่ "กำลังศึกษา" ที่ยังต้องแยก เพราะเป็นคนละเรื่องกับสิ่งที่ทำงานได้แล้ว -->
+    <div class="rs-skill-groups">
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".1s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/new-php-logo.png" alt="PHP" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">PHP</h5>
-                  <p class="rs-skill-meta">Backend Development</p>
-                </div>
-              </div>
-            </div>
+      <!-- กลุ่ม 1: ภาษา -->
+      <article class="rs-skill-group wow fadeInUp" data-wow-delay=".1s" data-group="lang">
+        <header class="rs-skill-group-header">
+          <span class="rs-skill-group-icon" aria-hidden="true"><i class="ri-code-s-slash-line"></i></span>
+          <span class="rs-skill-group-id">
+            <h3 class="rs-skill-group-title" data-i18n="skills.lang.title">Languages</h3>
+            <span class="rs-skill-group-note" data-i18n="skills.lang.note">Written by hand on real projects</span>
+          </span>
+        </header>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".12s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon rs-skill-icon--laravel">
-                  <i class="ri-braces-line" aria-hidden="true"></i>
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Laravel</h5>
-                  <p class="rs-skill-meta" data-i18n="skills.laravel.meta">Production back-office systems</p>
-                </div>
-              </div>
-            </div>
+        <ul class="rs-skill-list">
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">PHP</span>
+            <span class="rs-skill-note" data-i18n="skills.php.note">Primary back-end language for 6 years, currently on PHP 8.2</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">SQL</span>
+            <span class="rs-skill-note" data-i18n="skills.sql.note">Schema design and hand-written queries</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">JavaScript</span>
+            <span class="rs-skill-note" data-i18n="skills.js.note">Front-end behaviour and API calls</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">HTML / CSS</span>
+            <span class="rs-skill-note" data-i18n="skills.htmlcss.note">Page structure and responsive layout</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Python</span>
+            <span class="rs-skill-note" data-i18n="skills.python.note">Automation, SAP integration and data file handling</span>
+          </li>
+        </ul>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".15s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/sql-server copy.png" alt="SQL" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">SQL</h5>
-                  <p class="rs-skill-meta">Database Design &amp; Query</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".2s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/html-icon-02.png" alt="HTML/CSS" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">HTML / CSS</h5>
-                  <p class="rs-skill-meta">Semantic &amp; Responsive UI</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".25s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/js.png" alt="JavaScript" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">JavaScript</h5>
-                  <p class="rs-skill-meta">Frontend Interaction</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".3s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/icons8-git-150.png" alt="Git" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Git</h5>
-                  <p class="rs-skill-meta">Version Control</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <div class="rs-skill-extra rs-skill-extra--learning">
+          <span class="rs-skill-extra-label" data-i18n="skills.learning.label">Currently learning</span>
+          <span class="rs-skill-tool">Golang</span>
         </div>
-      </div>
+      </article>
 
-      <!-- Strong Skills -->
-      <div class="col-xl-6">
-        <div class="rs-skill-group">
-          <div class="rs-skill-group-header">
-            <h3 class="rs-skill-group-title">Strong Skills</h3>
-            <p class="rs-skill-group-note" data-i18n="skills.strong.note">Skills consistently used alongside primary work</p>
-          </div>
-          <div class="rs-skill-grid">
+      <!-- กลุ่ม 2: เฟรมเวิร์กและไลบรารี -->
+      <article class="rs-skill-group wow fadeInUp" data-wow-delay=".2s" data-group="framework">
+        <header class="rs-skill-group-header">
+          <span class="rs-skill-group-icon" aria-hidden="true"><i class="ri-stack-line"></i></span>
+          <span class="rs-skill-group-id">
+            <h3 class="rs-skill-group-title" data-i18n="skills.fw.title">Frameworks &amp; Libraries</h3>
+            <span class="rs-skill-group-note" data-i18n="skills.fw.note">What the work is built on top of</span>
+          </span>
+        </header>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".1s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/wordpress-icon-02.png" alt="WordPress" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">WordPress</h5>
-                  <p class="rs-skill-meta">Theme &amp; Customization</p>
-                </div>
-              </div>
-            </div>
+        <ul class="rs-skill-list">
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Laravel</span>
+            <span class="rs-skill-note" data-i18n="skills.laravel.meta">Production back-office systems</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Bootstrap</span>
+            <span class="rs-skill-note" data-i18n="skills.bootstrap.note">Layout grid and UI components</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">AJAX</span>
+            <span class="rs-skill-note" data-i18n="skills.ajax.note">Loading and sending data without a page reload</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Pandas</span>
+            <span class="rs-skill-note" data-i18n="skills.pandas.note">Data cleansing before it reaches the dashboard</span>
+          </li>
+        </ul>
+      </article>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".15s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/bootstrap-logo.jpg" alt="Bootstrap" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Bootstrap</h5>
-                  <p class="rs-skill-meta">Component &amp; Layout</p>
-                </div>
-              </div>
-            </div>
+      <!-- กลุ่ม 3: เครื่องมือและแพลตฟอร์ม
+           ฐานข้อมูลอยู่กลุ่มนี้ในฐานะแพลตฟอร์มที่ทำงานด้วย ส่วนตัวภาษา SQL อยู่กลุ่มแรก -->
+      <article class="rs-skill-group wow fadeInUp" data-wow-delay=".3s" data-group="tool">
+        <header class="rs-skill-group-header">
+          <span class="rs-skill-group-icon" aria-hidden="true"><i class="ri-tools-line"></i></span>
+          <span class="rs-skill-group-id">
+            <h3 class="rs-skill-group-title" data-i18n="skills.tool.title">Tools &amp; Platforms</h3>
+            <span class="rs-skill-group-note" data-i18n="skills.tool.note">Used every working day</span>
+          </span>
+        </header>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".2s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/python-icon-01.png" alt="Python" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Python</h5>
-                  <p class="rs-skill-meta">Automation &amp; Scripting</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".25s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/figma-icon-02.png" alt="Figma" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Figma</h5>
-                  <p class="rs-skill-meta">Wireframe &amp; UI Layout</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".3s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="../assets/images/icon/channels4_profile.jpg" alt="Postman" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Postman</h5>
-                  <p class="rs-skill-meta">API Testing &amp; Documentation</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="rs-skill-tools">
-            <span class="rs-skill-tool">REST API</span>
-            <span class="rs-skill-tool">MySQL</span>
-            <span class="rs-skill-tool">PostgreSQL</span>
-            <span class="rs-skill-tool">SQL Server</span>
-            <span class="rs-skill-tool">AJAX</span>
-          </div>
-          <div class="rs-skill-tools rs-skill-tools--learning">
-            <span class="rs-skill-tools-label" data-i18n="skills.learning.label">Currently learning</span>
-            <span class="rs-skill-tool">Golang</span>
-          </div>
-        </div>
-      </div>
+        <ul class="rs-skill-list">
+          <li class="rs-skill-item">
+            <span class="rs-skill-name" data-i18n="skills.db.name">Databases</span>
+            <span class="rs-skill-note">PostgreSQL · MySQL · SQL Server</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Docker</span>
+            <span class="rs-skill-note" data-i18n="skills.docker.note">Running the app and its database as one stack</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Git / GitHub</span>
+            <span class="rs-skill-note" data-i18n="skills.git.note">Version control on every project</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">WordPress</span>
+            <span class="rs-skill-note" data-i18n="skills.wp.note">Two company sites on fully hand-written themes</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">cPanel</span>
+            <span class="rs-skill-note" data-i18n="skills.cpanel.note">Hosting, domains and backup routines</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Windows Server</span>
+            <span class="rs-skill-note" data-i18n="skills.winsrv.note">Server setup, domains, SSL and deployment</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Looker Studio</span>
+            <span class="rs-skill-note" data-i18n="skills.looker.note">Dashboards summarising data for management</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Google Sheets</span>
+            <span class="rs-skill-note" data-i18n="skills.sheets.note">Source data feeding the dashboards</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Postman</span>
+            <span class="rs-skill-note" data-i18n="skills.postman.note">API testing and documentation</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Figma</span>
+            <span class="rs-skill-note" data-i18n="skills.figma.note">Wireframes and UI layout before building</span>
+          </li>
+        </ul>
+      </article>
 
     </div>
+
+    <!-- แถบงานเชื่อมต่อระบบ — ไม่ใช่การประเมินตัวเอง แต่เป็นรายการที่ทำมาแล้วจริง
+         จึงแยกออกจากสามกลุ่มด้านบนและระบุให้ชัดว่าเป็นงานที่เคยส่งมอบ -->
+    <div class="rs-skill-band wow fadeInUp" data-wow-delay=".2s">
+      <div class="rs-skill-band-id">
+        <span class="rs-skill-band-icon" aria-hidden="true"><i class="ri-links-line"></i></span>
+        <span>
+          <h3 class="rs-skill-band-title" data-i18n="skills.integration.title">Integration &amp; automation delivered</h3>
+          <span class="rs-skill-band-note" data-i18n="skills.integration.note">Each one is described in the Experience and Work sections</span>
+        </span>
+      </div>
+      <div class="rs-skill-band-tags">
+        <span class="rs-skill-tool">REST API</span>
+        <span class="rs-skill-tool">SAP Data Integration</span>
+        <span class="rs-skill-tool">WooCommerce REST API</span>
+        <span class="rs-skill-tool">DHL Express API</span>
+        <span class="rs-skill-tool">sFTP File Encryption</span>
+        <span class="rs-skill-tool">Batch / bat file</span>
+        <span class="rs-skill-tool">Cron Jobs</span>
+        <span class="rs-skill-tool">IMAP / SMTP</span>
+        <span class="rs-skill-tool">Excel Export</span>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- skill area end --></div>
@@ -984,458 +975,475 @@
 <section id="homeworkexp" class="rs-experience-area section-space primary-bg">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xl-6 col-lg-6">
+      <div class="col-xl-8 col-lg-9">
         <div class="rs-section-title-wrapper section-title-space text-center">
           <span class="rs-section-subtitle" data-i18n="exp.subtitle">Experience</span>
           <h2 class="rs-section-title" data-i18n="exp.title">Work Experience</h2>
+          <p class="rs-exp-intro rs-measure-center" data-i18n="exp.intro">Newest role first. Each one opens with a one-line summary — expand only the work you want to read in full.</p>
+          <!-- สรุปภาพรวมก่อนอ่านไทม์ไลน์ แบบเดียวกับ section ผลงานและใบรับรอง -->
+          <ul class="rs-exp-meta">
+            <li>
+              <i class="ri-building-2-line" aria-hidden="true"></i>
+              <span data-i18n="exp.meta.org">4 organisations</span>
+            </li>
+            <li>
+              <i class="ri-time-line" aria-hidden="true"></i>
+              <span data-i18n="exp.meta.span">2019–Present</span>
+            </li>
+            <li>
+              <i class="ri-briefcase-line" aria-hidden="true"></i>
+              <span data-i18n="exp.meta.total">6 years total</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="row g-4">
 
-      <!-- งานปัจจุบัน -->
-      <div class="col-xl-6 col-lg-6">
-        <div class="rs-experience-wrapper wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
-          <div class="rs-experience-item">
-            <div class="rs-experience-top">
-              <div class="rs-experience-designation-wrapper">
-                <span class="rs-circle-shape"></span>
-                <h5 class="rs-experience-designation">WebMaster</h5>
-              </div>
-              <span class="rs-experience-meta" data-i18n="exp.stherb.period">Apr 2025 – Present</span>
-            </div>
-            <div class="rs-experience-bottom">
-              <div class="rs-experience-brand-thumb">
-                <img src="../assets/images/brand/stherb.png" alt="St.Herb" loading="lazy" />
-              </div>
-              <div class="rs-experience-content">
-                <h6 class="rs-experience-place" data-i18n="company.stherb">ST. Herb Cosmetics International Co., Ltd.</h6>
-                <div class="rs-experience-stats">
-                  <span class="rs-experience-stat" data-i18n="exp.stherb.stat.a">3 main responsibilities</span>
-                  <span class="rs-experience-stat" data-i18n="exp.stherb.stat.b">HerbCore CRM ~70%</span>
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-11">
+        <!-- ไทม์ไลน์คอลัมน์เดียว: ประสบการณ์อ่านตามลำดับเวลา การวางสองคอลัมน์
+             ทำให้สายตาต้องกระโดดสลับซ้าย-ขวา และการ์ดที่เนื้อหาไม่เท่ากัน
+             ก็ทิ้งช่องว่างยาวข้างการ์ดที่สั้นกว่า -->
+        <ol class="rs-exp-timeline">
+
+          <!-- งานปัจจุบัน -->
+          <li class="rs-exp-item rs-exp-item--current wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
+            <article class="rs-exp-card">
+              <header class="rs-exp-head">
+                <span class="rs-exp-logo">
+                  <img src="../assets/images/brand/stherb.png" alt="St.Herb" loading="lazy" width="48" height="48" />
+                </span>
+                <div class="rs-exp-ident">
+                  <h3 class="rs-exp-role">WebMaster</h3>
+                  <p class="rs-exp-org" data-i18n="company.stherb">ST. Herb Cosmetics International Co., Ltd.</p>
                 </div>
-                <div class="rs-experience-description">
-                  <div class="accordion" id="accordion-stherb">
+                <p class="rs-exp-when">
+                  <span class="rs-exp-period" data-i18n="exp.stherb.period">Apr 2025 – Present</span>
+                  <span class="rs-exp-duration" data-i18n="exp.stherb.duration">1 yr 5 mos</span>
+                </p>
+              </header>
 
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#stherb-web" aria-expanded="true">
-                          <span data-i18n="exp.stherb.web.title">Website Maintenance &amp; Development</span>
-                        </button>
-                      </h4>
-                      <div id="stherb-web" class="accordion-collapse collapse show" data-bs-parent="#accordion-stherb">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP</span>
-                              <span class="badge">WordPress</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.stherb.web.desc"><p><strong>Responsibilities:</strong> Redesigned and rebuilt both company websites with fully custom themes written from scratch, alongside stability and security maintenance, traffic tracking, SEO work and the backup process</p><p><strong>Results:</strong> Both sites are live, each with its own visual identity and reading order designed around its own buyer. Stability and search visibility both improved.</p></div>
+              <p class="rs-exp-summary" data-i18n="exp.stherb.summary">Maintaining both company websites — each on a fully custom theme written from scratch — while building HerbCore CRM in-house and keeping the servers stable.</p>
 
-                          <!-- เว็บไซต์ที่ออกแบบใหม่ — เปิดดูของจริงได้ จึงเป็นหลักฐาน
-                               ชิ้นที่หนักที่สุดในหน้านี้ ต้องมีลิงก์ให้กดไปดูทันที -->
-                          <div class="cv-site-block">
-                            <p class="cv-site-block-title" data-i18n="site.block.title">Sites redesigned (fully custom themes)</p>
+              <!-- เทคโนโลยีระดับตำแหน่งงาน — เป็นสิ่งที่คนคัดโปรไฟล์กวาดตาหาก่อน
+                   จึงต้องเห็นโดยไม่ต้องกดเปิดอะไรเลย -->
+              <div class="rs-exp-stack">
+                <span class="rs-exp-stack-label" data-i18n="label.tech.stack">Tech Stack</span>
+                <ul class="rs-exp-stack-list">
+                  <li>PHP 8.2</li><li>PostgreSQL</li><li>Docker</li><li>WordPress</li><li>WooCommerce REST API</li><li>DHL Express API</li><li>Cron</li><li>cPanel</li>
+                </ul>
+              </div>
 
-                            <article class="cv-site-card">
-                              <div class="cv-site-head">
-                                <h6 class="cv-site-name">Stherb</h6>
-                                <span class="cv-site-tag" data-i18n="site.stherb.tag">D2C skincare store · English / 中文</span>
-                              </div>
-                              <p class="cv-site-desc" data-i18n="site.stherb.desc">A herbal skincare brand selling direct to consumers worldwide. The problem: give a first-time visitor enough confidence to buy within a single page.</p>
-                              <ul class="cv-site-points">
-                                <li data-i18n="site.stherb.p1">Cormorant for headings paired with Mulish for body copy on a cream ground — an editorial beauty tone that separates heading from body text on its own, without extra rules or boxes.</li>
-                                <li data-i18n="site.stherb.p2">The hero completes its reading order in one screen: category label → headline → supporting copy → primary/secondary buttons, with a 4.9-from-12,400-reviews card floating above the fold, so the credibility evidence reaches the eye before any scrolling.</li>
-                                <li data-i18n="site.stherb.p3">A four-point reassurance bar (secure payment · easy returns · 24/7 support · worldwide shipping) sits between the hero and the product row, answering the hesitations before the buy button rather than after it.</li>
-                                <li data-i18n="site.stherb.p4">Products is a mega menu split into Women / Men with sub-categories, so a shopper picks a line straight from the nav instead of landing on a catch-all listing first. Each product card reads complete on its own: category → name → stars and review count → price → full-width button.</li>
-                                <li data-i18n="site.stherb.p5">14 of 25 images are WebP with srcset and lazy loading; no horizontal scroll at 390px; two languages wired up through hreflang.</li>
-                              </ul>
-                              <a class="cv-site-link" href="https://stherb.com/" target="_blank" rel="noopener noreferrer">
-                                <i class="ri-external-link-line" aria-hidden="true"></i>
-                                <span data-i18n="site.visit">Visit the site</span>
-                                <span class="cv-site-domain">stherb.com</span>
-                              </a>
-                            </article>
+              <!-- เว็บที่ออกแบบใหม่เปิดดูของจริงได้ จึงเป็นหลักฐานที่หนักที่สุดในหน้านี้
+                   ลิงก์ต้องอยู่ระดับการ์ด ส่วนเหตุผลการออกแบบเก็บไว้ในตัวพับข้างล่าง -->
+              <div class="rs-exp-proof">
+                <span class="rs-exp-proof-label" data-i18n="site.block.title">Sites redesigned (fully custom themes)</span>
+                <ul class="rs-exp-proof-list">
+                  <li>
+                    <a class="rs-exp-proof-link" href="https://stherb.com/" target="_blank" rel="noopener noreferrer">
+                      <i class="ri-external-link-line" aria-hidden="true"></i>
+                      <span class="rs-exp-proof-name">stherb.com</span>
+                      <span class="rs-exp-proof-tag" data-i18n="site.stherb.tag">D2C skincare store · English / 中文</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="rs-exp-proof-link" href="https://emperorherb.com/" target="_blank" rel="noopener noreferrer">
+                      <i class="ri-external-link-line" aria-hidden="true"></i>
+                      <span class="rs-exp-proof-name">emperorherb.com</span>
+                      <span class="rs-exp-proof-tag" data-i18n="site.emperor.tag">Botanical extracts for export · English</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-                            <article class="cv-site-card">
-                              <div class="cv-site-head">
-                                <h6 class="cv-site-name">Emperorherb</h6>
-                                <span class="cv-site-tag" data-i18n="site.emperor.tag">Botanical extracts for export · English</span>
-                              </div>
-                              <p class="cv-site-desc" data-i18n="site.emperor.desc">Botanical extracts aimed at export markets. The reader is a buyer looking for a supplier, not a consumer buying one jar — so the visual language had to differ from Stherb from top to bottom.</p>
-                              <ul class="cv-site-points">
-                                <li data-i18n="site.emperor.p1">Deep forest green and gold with Playfair Display and Nunito Sans, a centred logo and navigation split left and right — the vocabulary of a premium supplier, and a completely different personality from Stherb despite sharing the same WordPress platform.</li>
-                                <li data-i18n="site.emperor.p2">The hero leads with the numbers a B2B buyer actually screens on: 70+ botanical products · 32 export markets · 10+ years of experience.</li>
-                                <li data-i18n="site.emperor.p3">A single primary CTA, "Shop the Catalog", rather than the two Stherb uses — this buyer arrives with one goal, so a competing option would only split attention.</li>
-                                <li data-i18n="site.emperor.p4">Products are grouped by five health goals instead of listed by name, and the brand promises are written as No.1–No.3 with icons rather than a long paragraph.</li>
-                              </ul>
-                              <a class="cv-site-link" href="https://emperorherb.com/" target="_blank" rel="noopener noreferrer">
-                                <i class="ri-external-link-line" aria-hidden="true"></i>
-                                <span data-i18n="site.visit">Visit the site</span>
-                                <span class="cv-site-domain">emperorherb.com</span>
-                              </a>
-                            </article>
-
-                            <p class="cv-site-note" data-i18n="site.note">Both sites run on WordPress but use entirely separate themes written from scratch — not a stock theme recoloured. The type systems, palettes, header architectures and section vocabularies have nothing in common.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stherb-server" aria-expanded="false">
-                          <span data-i18n="exp.stherb.server.title">Server Maintenance &amp; Coordination</span>
-                        </button>
-                      </h4>
-                      <div id="stherb-server" class="accordion-collapse collapse" data-bs-parent="#accordion-stherb">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">cPanel</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.stherb.server.desc"><p><strong>Responsibilities:</strong> Coordinated and monitored server stability, resolved primary issues</p><p><strong>Results:</strong> Uninterrupted service and reduced system downtime</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stherb-crm" aria-expanded="false">
-                          <span data-i18n="exp.stherb.crm.title">HerbCore CRM Development</span>
-                        </button>
-                      </h4>
-                      <div id="stherb-crm" class="accordion-collapse collapse" data-bs-parent="#accordion-stherb">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP 8.2</span>
-                              <span class="badge">PostgreSQL</span>
-                              <span class="badge">Docker</span>
-                              <span class="badge">WooCommerce REST API</span>
-                              <span class="badge">DHL Express API</span>
-                              <span class="badge">Cron</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.stherb.crm.desc"><p><strong>Responsibilities:</strong> Building an in-house back-office CRM that consolidates orders from multiple WooCommerce shops into one place — scheduled order sync, a packing queue that deducts stock, net-revenue refund handling, DHL Express booking, marketing and inbound email, plus sales analytics, role permissions and an audit log</p><p><strong>Scope:</strong> 37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled background jobs</p><p><strong>Status:</strong> Roughly 70% complete — DHL booking has passed end-to-end sandbox testing and is waiting on production account approval</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+              <div class="rs-exp-tasks">
+                <div class="rs-exp-tasks-head">
+                  <span class="rs-exp-tasks-label" data-i18n="exp.tasks">What I worked on</span>
+                  <span class="rs-exp-stat" data-i18n="exp.stherb.stat.a">3 main responsibilities</span>
+                  <span class="rs-exp-stat" data-i18n="exp.stherb.stat.b">HerbCore CRM ~70%</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Cloudmate -->
-      <div class="col-xl-6 col-lg-6">
-        <div class="rs-experience-wrapper wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1s">
-          <div class="rs-experience-item">
-            <div class="rs-experience-top">
-              <div class="rs-experience-designation-wrapper">
-                <span class="rs-circle-shape"></span>
-                <h5 class="rs-experience-designation">Programmer</h5>
-              </div>
-              <span class="rs-experience-meta" data-i18n="exp.cm.period">Jan – Nov 2024</span>
-            </div>
-            <div class="rs-experience-bottom">
-              <div class="rs-experience-brand-thumb">
-                <img src="../assets/images/brand/CM.jpg" alt="CloudMate" loading="lazy" />
-              </div>
-              <div class="rs-experience-content">
-                <h6 class="rs-experience-place" data-i18n="company.cm">Cloudmate Co., Ltd.</h6>
-                <div class="rs-experience-stats">
-                  <span class="rs-experience-stat" data-i18n="exp.cm.stat.a">6 systems</span>
-                  <span class="rs-experience-stat" data-i18n="exp.cm.stat.b">11 months</span>
-                </div>
-                <div class="rs-experience-description">
-                  <div class="accordion" id="accordion-cloudmate">
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cm-tour" aria-expanded="true">
-                          <span data-i18n="exp.cm.tour.title">Tour Booking &amp; Management System</span>
-                        </button>
-                      </h4>
-                      <div id="cm-tour" class="accordion-collapse collapse show" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP</span><span class="badge">AJAX</span>
-                              <span class="badge">PostgreSQL</span><span class="badge">Bootstrap</span><span class="badge">GitHub</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.tour.desc"><p><strong>Responsibilities:</strong> Developed a platform for managing and booking tours</p><p><strong>Results:</strong> Organized data management, reduced redundant work, faster operations</p></div>
-                        </div>
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.stherb.web.title">Website Maintenance &amp; Development</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP</span>
+                        <span class="badge">WordPress</span>
                       </div>
                     </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.stherb.web.desc"><p><strong>Responsibilities:</strong> Redesigned and rebuilt both company websites with fully custom themes written from scratch, alongside stability and security maintenance, traffic tracking, SEO work and the backup process</p><p><strong>Results:</strong> Both sites are live, each with its own visual identity and reading order designed around its own buyer. Stability and search visibility both improved.</p></div>
 
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cm-mm" aria-expanded="false">
-                          <span data-i18n="exp.cm.mm.title">Planning &amp; Supply Procurement System</span>
-                        </button>
-                      </h4>
-                      <div id="cm-mm" class="accordion-collapse collapse" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP</span><span class="badge">AJAX</span>
-                              <span class="badge">PostgreSQL</span><span class="badge">Bootstrap</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.mm.desc"><p><strong>Responsibilities:</strong> Quarterly supply planning, approval workflow design and Excel data export</p><p><strong>Results:</strong> Clear budget control and easy audit trail</p></div>
+                    <div class="cv-site-block">
+                      <article class="cv-site-card">
+                        <div class="cv-site-head">
+                          <h4 class="cv-site-name">Stherb</h4>
+                          <span class="cv-site-tag" data-i18n="site.stherb.tag">D2C skincare store · English / 中文</span>
                         </div>
-                      </div>
-                    </div>
+                        <p class="cv-site-desc" data-i18n="site.stherb.desc">A herbal skincare brand selling direct to consumers worldwide. The problem: give a first-time visitor enough confidence to buy within a single page.</p>
+                        <ul class="cv-site-points">
+                          <li data-i18n="site.stherb.p1">Cormorant for headings paired with Mulish for body copy on a cream ground — an editorial beauty tone that separates heading from body text on its own, without extra rules or boxes.</li>
+                          <li data-i18n="site.stherb.p2">The hero completes its reading order in one screen: category label → headline → supporting copy → primary/secondary buttons, with a 4.9-from-12,400-reviews card floating above the fold, so the credibility evidence reaches the eye before any scrolling.</li>
+                          <li data-i18n="site.stherb.p3">A four-point reassurance bar (secure payment · easy returns · 24/7 support · worldwide shipping) sits between the hero and the product row, answering the hesitations before the buy button rather than after it.</li>
+                          <li data-i18n="site.stherb.p4">Products is a mega menu split into Women / Men with sub-categories, so a shopper picks a line straight from the nav instead of landing on a catch-all listing first. Each product card reads complete on its own: category → name → stars and review count → price → full-width button.</li>
+                          <li data-i18n="site.stherb.p5">14 of 25 images are WebP with srcset and lazy loading; no horizontal scroll at 390px; two languages wired up through hreflang.</li>
+                        </ul>
+                        <a class="cv-site-link" href="https://stherb.com/" target="_blank" rel="noopener noreferrer">
+                          <i class="ri-external-link-line" aria-hidden="true"></i>
+                          <span data-i18n="site.visit">Visit the site</span>
+                          <span class="cv-site-domain">stherb.com</span>
+                        </a>
+                      </article>
 
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cm-enc" aria-expanded="false">
-                          <span data-i18n="exp.cm.enc.title">Data Encryption for Banking Systems</span>
-                        </button>
-                      </h4>
-                      <div id="cm-enc" class="accordion-collapse collapse" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">Python</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.enc.desc"><p><strong>Responsibilities:</strong> Generated files from SAP and encrypted per bank requirements before sending via sFTP; retrieved payment result files from bank's sFTP, re-encrypted and recorded into SAP</p><p><strong>Results:</strong> Secure data transmission meeting bank security standards</p></div>
+                      <article class="cv-site-card">
+                        <div class="cv-site-head">
+                          <h4 class="cv-site-name">Emperorherb</h4>
+                          <span class="cv-site-tag" data-i18n="site.emperor.tag">Botanical extracts for export · English</span>
                         </div>
-                      </div>
-                    </div>
+                        <p class="cv-site-desc" data-i18n="site.emperor.desc">Botanical extracts aimed at export markets. The reader is a buyer looking for a supplier, not a consumer buying one jar — so the visual language had to differ from Stherb from top to bottom.</p>
+                        <ul class="cv-site-points">
+                          <li data-i18n="site.emperor.p1">Deep forest green and gold with Playfair Display and Nunito Sans, a centred logo and navigation split left and right — the vocabulary of a premium supplier, and a completely different personality from Stherb despite sharing the same WordPress platform.</li>
+                          <li data-i18n="site.emperor.p2">The hero leads with the numbers a B2B buyer actually screens on: 70+ botanical products · 32 export markets · 10+ years of experience.</li>
+                          <li data-i18n="site.emperor.p3">A single primary CTA, "Shop the Catalog", rather than the two Stherb uses — this buyer arrives with one goal, so a competing option would only split attention.</li>
+                          <li data-i18n="site.emperor.p4">Products are grouped by five health goals instead of listed by name, and the brand promises are written as No.1–No.3 with icons rather than a long paragraph.</li>
+                        </ul>
+                        <a class="cv-site-link" href="https://emperorherb.com/" target="_blank" rel="noopener noreferrer">
+                          <i class="ri-external-link-line" aria-hidden="true"></i>
+                          <span data-i18n="site.visit">Visit the site</span>
+                          <span class="cv-site-domain">emperorherb.com</span>
+                        </a>
+                      </article>
 
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cm-adv" aria-expanded="false">
-                          <span data-i18n="exp.cm.adv.title">Advance &amp; Disbursement Payment System</span>
-                        </button>
-                      </h4>
-                      <div id="cm-adv" class="accordion-collapse collapse" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP</span><span class="badge">AJAX</span>
-                              <span class="badge">PostgreSQL</span><span class="badge">Bootstrap</span><span class="badge">GitHub</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.adv.desc"><p><strong>Responsibilities:</strong> Recorded advance payments, disbursed without advance references, approved per conditions and hierarchy, exported data to Excel</p><p><strong>Results:</strong> Transparent financial system with easy audit trail</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cm-data" aria-expanded="false">
-                          <span data-i18n="exp.cm.data.title">Data Connection &amp; File Management System</span>
-                        </button>
-                      </h4>
-                      <div id="cm-data" class="accordion-collapse collapse" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP</span><span class="badge">bat file</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.data.desc"><p><strong>Responsibilities:</strong> Retrieved data from external sources into the database or generated .txt files for SAP; used bat files for real-time data retrieval</p><p><strong>Results:</strong> Consistent inter-system data and reduced redundant manual work</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cm-auto" aria-expanded="false">
-                          <span data-i18n="exp.cm.auto.title">Automatic File Transfer System</span>
-                        </button>
-                      </h4>
-                      <div id="cm-auto" class="accordion-collapse collapse" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">Python</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.auto.desc"><p><strong>Responsibilities:</strong> Developed a program to transfer payment data to the bank via FTP, removed transferred files and encrypted files per bank requirements</p><p><strong>Results:</strong> Reduced manual steps and enhanced data transfer security</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cm-server" aria-expanded="false">
-                          <span data-i18n="exp.cm.server.title">Server Maintenance &amp; Coordination</span>
-                        </button>
-                      </h4>
-                      <div id="cm-server" class="accordion-collapse collapse" data-bs-parent="#accordion-cloudmate">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">Windows Server</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.cm.server.desc"><p><strong>Responsibilities:</strong> Resolved primary server issues, purchased domain and connected via DNS, purchased SSL for HTTPS, configured server per software deployment requirements</p><p><strong>Results:</strong> Successful system deployment with secure HTTPS connection</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NatureBiotech -->
-      <div class="col-xl-6 col-lg-6">
-        <div class="rs-experience-wrapper wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
-          <div class="rs-experience-item">
-            <div class="rs-experience-top">
-              <div class="rs-experience-designation-wrapper">
-                <span class="rs-circle-shape"></span>
-                <h5 class="rs-experience-designation">Full Stack Developer</h5>
-              </div>
-              <span class="rs-experience-meta" data-i18n="exp.nat.period">Jul 2020 – Oct 2023</span>
-            </div>
-            <div class="rs-experience-bottom">
-              <div class="rs-experience-brand-thumb">
-                <img src="../assets/images/brand/logo.png" alt="NatureBiotech" loading="lazy" />
-              </div>
-              <div class="rs-experience-content">
-                <h6 class="rs-experience-place" data-i18n="company.nat">Nature Biotec Co., Ltd.</h6>
-                <div class="rs-experience-stats">
-                  <span class="rs-experience-stat" data-i18n="exp.nat.stat.a">3 core systems</span>
-                  <span class="rs-experience-stat" data-i18n="exp.nat.stat.b">3 yrs 4 mos</span>
-                </div>
-                <div class="rs-experience-description">
-                  <div class="accordion" id="accordion-nature">
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nat-ht" aria-expanded="true">
-                          <span data-i18n="exp.nat.ht.title">Healthy Together Website</span>
-                        </button>
-                      </h4>
-                      <div id="nat-ht" class="accordion-collapse collapse show" data-bs-parent="#accordion-nature">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">PHP</span><span class="badge">AJAX</span>
-                              <span class="badge">MySQL</span><span class="badge">Bootstrap</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.nat.ht.desc"><p><strong>Responsibilities:</strong> Developed gift redemption/registration system, backend for customer data management, privilege management and redemption history</p><p><strong>Additional:</strong> Generated permanent QR Codes, developed Clean Edge product registration &amp; claiming forms with unique QR Codes per product code, developed Lucky Draw system for activity registration and management</p><p><strong>Results:</strong> Improved customer experience and faster team management</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nat-report" aria-expanded="false">
-                          <span data-i18n="exp.nat.report.title">Data Report &amp; Dashboard</span>
-                        </button>
-                      </h4>
-                      <div id="nat-report" class="accordion-collapse collapse" data-bs-parent="#accordion-nature">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">Python</span><span class="badge">Pandas</span>
-                              <span class="badge">Google Sheets</span><span class="badge">Looker Studio</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.nat.report.desc"><p><strong>Responsibilities:</strong> Data cleansing, report generation and dashboard integration</p><p><strong>Results:</strong> Management gained quick data overview; marketing team communicated more precisely</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nat-wp" aria-expanded="false">
-                          <span data-i18n="exp.nat.wp.title">WordPress Website</span>
-                        </button>
-                      </h4>
-                      <div id="nat-wp" class="accordion-collapse collapse" data-bs-parent="#accordion-nature">
-                        <div class="accordion-body">
-                          <div class="rs-tech-stack">
-                            <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
-                            <div class="rs-tech-badges">
-                              <span class="badge">WordPress</span>
-                            </div>
-                          </div>
-                          <div class="rs-postbox-details-feature" data-i18n="exp.nat.wp.desc"><p><strong>Responsibilities:</strong> Website design, domain registration, system configuration and security maintenance</p><p><strong>Results:</strong> Trustworthy, fast website with reduced vulnerability risks</p></div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ฝึกงาน -->
-      <div class="col-xl-6 col-lg-6">
-        <div class="rs-experience-wrapper wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1s">
-          <div class="rs-experience-item">
-            <div class="rs-experience-top">
-              <div class="rs-experience-designation-wrapper">
-                <span class="rs-circle-shape"></span>
-                <h5 class="rs-experience-designation">Intern</h5>
-              </div>
-              <span class="rs-experience-meta" data-i18n="exp.amphan.period">Jun – Oct 2019</span>
-            </div>
-            <div class="rs-experience-bottom">
-              <div class="rs-experience-brand-thumb">
-                <img src="../assets/images/brand/logo_1d5afc22d5.png" alt="Ampan Tech" loading="lazy" />
-              </div>
-              <div class="rs-experience-content">
-                <h6 class="rs-experience-place" data-i18n="company.amphan">Amphan Technology Co., Ltd.</h6>
-                <div class="rs-experience-stats">
-                  <span class="rs-experience-stat" data-i18n="exp.amphan.stat.a">5-month internship</span>
-                </div>
-                <div class="rs-experience-description">
-                  <div class="accordion" id="accordion-ampan">
-                    <div class="accordion-item">
-                      <h4 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ampan-display" aria-expanded="true">
-                          <span data-i18n="exp.amphan.web.title">Website Development in R&amp;D</span>
-                        </button>
-                      </h4>
-                      <div id="ampan-display" class="accordion-collapse collapse show" data-bs-parent="#accordion-ampan">
-                        <div class="accordion-body">
-                          <div class="rs-postbox-details-feature" data-i18n="exp.amphan.web.desc"><p><strong>Responsibilities:</strong> Internship in R&amp;D position, developing websites as assigned</p><p><strong>Results:</strong> Gained real-world web development experience in a corporate environment</p></div>
-                        </div>
-                      </div>
+                      <p class="cv-site-note" data-i18n="site.note">Both sites run on WordPress but use entirely separate themes written from scratch — not a stock theme recoloured. The type systems, palettes, header architectures and section vocabularies have nothing in common.</p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                </details>
 
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.stherb.crm.title">HerbCore CRM Development</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP 8.2</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">WooCommerce REST API</span>
+                        <span class="badge">DHL Express API</span>
+                        <span class="badge">Cron</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.stherb.crm.desc"><p><strong>Responsibilities:</strong> Building an in-house back-office CRM that consolidates orders from multiple WooCommerce shops into one place — scheduled order sync, a packing queue that deducts stock, net-revenue refund handling, DHL Express booking, marketing and inbound email, plus sales analytics, role permissions and an audit log</p><p><strong>Scope:</strong> 37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled background jobs</p><p><strong>Status:</strong> Roughly 70% complete — DHL booking has passed end-to-end sandbox testing and is waiting on production account approval</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.stherb.server.title">Server Maintenance &amp; Coordination</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">cPanel</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.stherb.server.desc"><p><strong>Responsibilities:</strong> Coordinated and monitored server stability, resolved primary issues</p><p><strong>Results:</strong> Uninterrupted service and reduced system downtime</p></div>
+                  </div>
+                </details>
+              </div>
+            </article>
+          </li>
+
+          <!-- Cloudmate -->
+          <li class="rs-exp-item wow fadeInUp" data-wow-delay=".15s" data-wow-duration="1s">
+            <article class="rs-exp-card">
+              <header class="rs-exp-head">
+                <span class="rs-exp-logo">
+                  <img src="../assets/images/brand/CM.jpg" alt="CloudMate" loading="lazy" width="48" height="48" />
+                </span>
+                <div class="rs-exp-ident">
+                  <h3 class="rs-exp-role">Programmer</h3>
+                  <p class="rs-exp-org" data-i18n="company.cm">Cloudmate Co., Ltd.</p>
+                </div>
+                <p class="rs-exp-when">
+                  <span class="rs-exp-period" data-i18n="exp.cm.period">Jan – Nov 2024</span>
+                  <span class="rs-exp-duration" data-i18n="exp.cm.duration">11 mos</span>
+                </p>
+              </header>
+
+              <p class="rs-exp-summary" data-i18n="exp.cm.summary">Delivered 6 internal systems in 11 months, from tour management, disbursement and procurement through to SAP data integration and bank-standard file encryption.</p>
+
+              <div class="rs-exp-stack">
+                <span class="rs-exp-stack-label" data-i18n="label.tech.stack">Tech Stack</span>
+                <ul class="rs-exp-stack-list">
+                  <li>PHP</li><li>Python</li><li>PostgreSQL</li><li>AJAX</li><li>Bootstrap</li><li>SAP</li><li>sFTP</li><li>Windows Server</li><li>GitHub</li>
+                </ul>
+              </div>
+
+              <div class="rs-exp-tasks">
+                <div class="rs-exp-tasks-head">
+                  <span class="rs-exp-tasks-label" data-i18n="exp.tasks">What I worked on</span>
+                  <span class="rs-exp-stat" data-i18n="exp.cm.stat.a">6 systems</span>
+                </div>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.tour.title">Tour Booking &amp; Management System</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP</span><span class="badge">AJAX</span>
+                        <span class="badge">PostgreSQL</span><span class="badge">Bootstrap</span><span class="badge">GitHub</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.tour.desc"><p><strong>Responsibilities:</strong> Developed a platform for managing and booking tours</p><p><strong>Results:</strong> Organized data management, reduced redundant work, faster operations</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.mm.title">Planning &amp; Supply Procurement System</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP</span><span class="badge">AJAX</span>
+                        <span class="badge">PostgreSQL</span><span class="badge">Bootstrap</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.mm.desc"><p><strong>Responsibilities:</strong> Quarterly supply planning, approval workflow design and Excel data export</p><p><strong>Results:</strong> Clear budget control and easy audit trail</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.enc.title">Data Encryption for Banking Systems</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">Python</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.enc.desc"><p><strong>Responsibilities:</strong> Generated files from SAP and encrypted per bank requirements before sending via sFTP; retrieved payment result files from bank's sFTP, re-encrypted and recorded into SAP</p><p><strong>Results:</strong> Secure data transmission meeting bank security standards</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.adv.title">Advance &amp; Disbursement Payment System</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP</span><span class="badge">AJAX</span>
+                        <span class="badge">PostgreSQL</span><span class="badge">Bootstrap</span><span class="badge">GitHub</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.adv.desc"><p><strong>Responsibilities:</strong> Recorded advance payments, disbursed without advance references, approved per conditions and hierarchy, exported data to Excel</p><p><strong>Results:</strong> Transparent financial system with easy audit trail</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.data.title">Data Connection &amp; File Management System</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP</span><span class="badge">bat file</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.data.desc"><p><strong>Responsibilities:</strong> Retrieved data from external sources into the database or generated .txt files for SAP; used bat files for real-time data retrieval</p><p><strong>Results:</strong> Consistent inter-system data and reduced redundant manual work</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.auto.title">Automatic File Transfer System</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">Python</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.auto.desc"><p><strong>Responsibilities:</strong> Developed a program to transfer payment data to the bank via FTP, removed transferred files and encrypted files per bank requirements</p><p><strong>Results:</strong> Reduced manual steps and enhanced data transfer security</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.cm.server.title">Server Maintenance &amp; Coordination</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">Windows Server</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.cm.server.desc"><p><strong>Responsibilities:</strong> Resolved primary server issues, purchased domain and connected via DNS, purchased SSL for HTTPS, configured server per software deployment requirements</p><p><strong>Results:</strong> Successful system deployment with secure HTTPS connection</p></div>
+                  </div>
+                </details>
+              </div>
+            </article>
+          </li>
+
+          <!-- NatureBiotech -->
+          <li class="rs-exp-item wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1s">
+            <article class="rs-exp-card">
+              <header class="rs-exp-head">
+                <span class="rs-exp-logo">
+                  <img src="../assets/images/brand/logo.png" alt="NatureBiotech" loading="lazy" width="48" height="48" />
+                </span>
+                <div class="rs-exp-ident">
+                  <h3 class="rs-exp-role">Full Stack Developer</h3>
+                  <p class="rs-exp-org" data-i18n="company.nat">Nature Biotec Co., Ltd.</p>
+                </div>
+                <p class="rs-exp-when">
+                  <span class="rs-exp-period" data-i18n="exp.nat.period">Jul 2020 – Oct 2023</span>
+                  <span class="rs-exp-duration" data-i18n="exp.nat.duration">3 yrs 4 mos</span>
+                </p>
+              </header>
+
+              <p class="rs-exp-summary" data-i18n="exp.nat.summary">Built the ‘Healthy Together’ loyalty platform end to end, plus data cleansing with Pandas and Looker Studio dashboards giving management the full picture.</p>
+
+              <div class="rs-exp-stack">
+                <span class="rs-exp-stack-label" data-i18n="label.tech.stack">Tech Stack</span>
+                <ul class="rs-exp-stack-list">
+                  <li>PHP</li><li>MySQL</li><li>AJAX</li><li>Bootstrap</li><li>Python</li><li>Pandas</li><li>Looker Studio</li><li>WordPress</li>
+                </ul>
+              </div>
+
+              <div class="rs-exp-tasks">
+                <div class="rs-exp-tasks-head">
+                  <span class="rs-exp-tasks-label" data-i18n="exp.tasks">What I worked on</span>
+                  <span class="rs-exp-stat" data-i18n="exp.nat.stat.a">3 core systems</span>
+                </div>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.nat.ht.title">Healthy Together Website</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">PHP</span><span class="badge">AJAX</span>
+                        <span class="badge">MySQL</span><span class="badge">Bootstrap</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.nat.ht.desc"><p><strong>Responsibilities:</strong> Developed gift redemption/registration system, backend for customer data management, privilege management and redemption history</p><p><strong>Additional:</strong> Generated permanent QR Codes, developed Clean Edge product registration &amp; claiming forms with unique QR Codes per product code, developed Lucky Draw system for activity registration and management</p><p><strong>Results:</strong> Improved customer experience and faster team management</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.nat.report.title">Data Report &amp; Dashboard</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">Python</span><span class="badge">Pandas</span>
+                        <span class="badge">Google Sheets</span><span class="badge">Looker Studio</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.nat.report.desc"><p><strong>Responsibilities:</strong> Data cleansing, report generation and dashboard integration</p><p><strong>Results:</strong> Management gained quick data overview; marketing team communicated more precisely</p></div>
+                  </div>
+                </details>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.nat.wp.title">WordPress Website</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-tech-stack">
+                      <span class="rs-tech-title" data-i18n="label.tech.stack">Tech Stack</span>
+                      <div class="rs-tech-badges">
+                        <span class="badge">WordPress</span>
+                      </div>
+                    </div>
+                    <div class="rs-postbox-details-feature" data-i18n="exp.nat.wp.desc"><p><strong>Responsibilities:</strong> Website design, domain registration, system configuration and security maintenance</p><p><strong>Results:</strong> Trustworthy, fast website with reduced vulnerability risks</p></div>
+                  </div>
+                </details>
+              </div>
+            </article>
+          </li>
+
+          <!-- ฝึกงาน -->
+          <li class="rs-exp-item wow fadeInUp" data-wow-delay=".25s" data-wow-duration="1s">
+            <article class="rs-exp-card">
+              <header class="rs-exp-head">
+                <span class="rs-exp-logo">
+                  <img src="../assets/images/brand/logo_1d5afc22d5.png" alt="Ampan Tech" loading="lazy" width="48" height="48" />
+                </span>
+                <div class="rs-exp-ident">
+                  <h3 class="rs-exp-role">Intern</h3>
+                  <p class="rs-exp-org" data-i18n="company.amphan">Amphan Technology Co., Ltd.</p>
+                </div>
+                <p class="rs-exp-when">
+                  <span class="rs-exp-period" data-i18n="exp.amphan.period">Jun – Oct 2019</span>
+                  <span class="rs-exp-duration" data-i18n="exp.amphan.duration">5 mos</span>
+                </p>
+              </header>
+
+              <p class="rs-exp-summary" data-i18n="exp.amphan.summary">R&amp;D internship developing an assigned hotel status display website.</p>
+
+              <div class="rs-exp-stack">
+                <span class="rs-exp-stack-label" data-i18n="label.tech.stack">Tech Stack</span>
+                <ul class="rs-exp-stack-list">
+                  <li>PHP</li><li>HTML</li><li>CSS</li>
+                </ul>
+              </div>
+
+              <div class="rs-exp-tasks">
+                <div class="rs-exp-tasks-head">
+                  <span class="rs-exp-tasks-label" data-i18n="exp.tasks">What I worked on</span>
+                </div>
+
+                <details class="rs-exp-task">
+                  <summary>
+                    <span data-i18n="exp.amphan.web.title">Website Development in R&amp;D</span>
+                    <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+                  </summary>
+                  <div class="rs-exp-task-body">
+                    <div class="rs-postbox-details-feature" data-i18n="exp.amphan.web.desc"><p><strong>Responsibilities:</strong> Internship in R&amp;D position, developing websites as assigned</p><p><strong>Results:</strong> Gained real-world web development experience in a corporate environment</p></div>
+                  </div>
+                </details>
+              </div>
+            </article>
+          </li>
+
+        </ol>
+      </div>
     </div>
   </div>
 </section>
@@ -1446,25 +1454,78 @@
 <section id="homework" class="rs-work-area section-space">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xl-7 col-lg-8">
+      <div class="col-xl-8 col-lg-9">
         <div class="rs-section-title-wrapper section-title-space text-center">
           <span class="rs-section-subtitle" data-i18n="work.subtitle">Selected work</span>
           <h2 class="rs-section-title" data-i18n="work.title">Case studies</h2>
-          <p class="rs-work-intro" data-i18n="work.intro">Five systems that best represent the work I do — each one framed as the problem, what I built, and the outcome.</p>
+          <p class="rs-work-intro rs-measure-center" data-i18n="work.intro">Five systems that best represent the work I do — each one framed as the problem, what I built, and the outcome.</p>
+          <!-- สรุปภาพรวมก่อนอ่านการ์ด แบบเดียวกับ section ใบรับรอง -->
+          <ul class="rs-work-meta">
+            <li>
+              <i class="ri-stack-line" aria-hidden="true"></i>
+              <span data-i18n="work.meta.count">5 systems</span>
+            </li>
+            <li>
+              <i class="ri-building-2-line" aria-hidden="true"></i>
+              <span data-i18n="work.meta.org">3 organisations</span>
+            </li>
+            <li>
+              <i class="ri-time-line" aria-hidden="true"></i>
+              <span data-i18n="work.meta.span">2020–2026</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="rs-work-list">
 
-      <article class="rs-work-item wow fadeInUp" data-wow-delay=".1s">
-        <div class="rs-work-media">
+      <!-- ชิ้นเด่น: กินสองคอลัมน์ และเป็นชิ้นเดียวที่โชว์แผนภาพในหน้า
+           เพราะเป็นความกว้างเดียวที่ตัวหนังสือในแผนภาพยังพออ่านออก -->
+      <article class="rs-work-item rs-work-item--featured wow fadeInUp" data-wow-delay=".1s" data-accent="violet">
+        <a class="rs-work-media popup-image" href="../assets/images/case/herbcore.jpg">
           <img src="../assets/images/case/herbcore.jpg" alt="Architecture diagram of HerbCore CRM, from multi-shop order sync through to delivery" data-i18n-attr="alt:work.crm.alt" loading="lazy" width="1200" height="660" />
-        </div>
+          <span class="rs-work-zoom">
+            <i class="ri-zoom-in-line" aria-hidden="true"></i>
+            <span data-i18n="work.diagram">View full diagram</span>
+          </span>
+        </a>
         <div class="rs-work-body">
-          <span class="rs-work-tag" data-i18n="work.crm.tag">St.Herb · 2026</span>
-          <span class="rs-work-badge" data-i18n="work.crm.badge">In progress · ~70%</span>
+          <div class="rs-work-head">
+            <span class="rs-work-tag" data-i18n="work.crm.tag">St.Herb · 2026</span>
+            <span class="rs-work-badge" data-i18n="work.crm.badge">In progress · ~70%</span>
+          </div>
           <h3 class="rs-work-name" data-i18n="work.crm.name">HerbCore CRM — multi-shop order consolidation, from checkout to delivery</h3>
+          <p class="rs-work-summary" data-i18n="work.crm.summary">Consolidates orders from several WooCommerce shops into one system — automatic order sync, a packing queue that deducts stock itself, DHL booking and stored tracking numbers.</p>
+
+          <!-- ตัวเลขจากเนื้อหาเดิม — ดึงขึ้นมาให้เห็นตั้งแต่กวาดตา ไม่ต้องอ่านย่อหน้า -->
+          <ul class="rs-work-metrics">
+            <li><strong>37</strong><span data-i18n="work.crm.m.screens">screens</span></li>
+            <li><strong>35</strong><span data-i18n="work.crm.m.api">API controllers</span></li>
+            <li><strong>57</strong><span data-i18n="work.crm.m.migration">migrations</span></li>
+            <li><strong>4</strong><span data-i18n="work.crm.m.cron">scheduled jobs</span></li>
+          </ul>
+
+          <ol class="rs-work-flow">
+            <li><span>WooCommerce</span></li>
+            <li><span>Auto-sync (Cron)</span></li>
+            <li><span>Orders</span></li>
+            <li><span>Packing</span></li>
+            <li><span>DHL + Tracking</span></li>
+          </ol>
+
+          <div class="rs-work-tech">
+            <span>PHP 8.2</span><span>PostgreSQL</span><span>Docker</span><span>WooCommerce REST API</span><span>DHL Express API</span><span>IMAP/SMTP</span><span>Cron</span>
+          </div>
+        </div>
+
+        <!-- ของชิ้นเด่นวางตัวพับไว้นอก .rs-work-body และกินเต็มความกว้างการ์ด
+             ถ้าปล่อยไว้ในคอลัมน์ซ้าย เวลากางออกคอลัมน์ขวาจะเหลือที่ว่างยาวใต้ภาพ -->
+        <details class="rs-work-more">
+          <summary>
+            <span data-i18n="work.more">Problem · What I built · Outcome</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </summary>
           <dl class="rs-work-detail">
             <dt data-i18n="label.problem">Problem</dt>
             <dd data-i18n="work.crm.problem">The business sells through several WooCommerce shops at once, so orders, customers and stock all lived in separate back offices and had to be copied together by hand every day. Reported sales also excluded refunds, so the numbers used for decisions never matched the money actually received.</dd>
@@ -1475,92 +1536,178 @@
             <dt data-i18n="label.status">Status</dt>
             <dd data-i18n="work.crm.status">In active development, roughly 70% complete. DHL booking has passed its test suite and end-to-end sandbox testing, and goes live once the production account is approved.</dd>
           </dl>
-          <div class="rs-work-tech">
-            <span>PHP 8.2</span><span>PostgreSQL</span><span>Docker</span><span>WooCommerce REST API</span><span>DHL Express API</span><span>IMAP/SMTP</span><span>Cron</span>
-          </div>
-        </div>
+        </details>
       </article>
 
-      <article class="rs-work-item wow fadeInUp" data-wow-delay=".1s">
-        <div class="rs-work-media">
-          <img src="../assets/images/case/sap-bank.jpg" alt="Architecture diagram of the SAP to bank file transfer pipeline" data-i18n-attr="alt:work.sap.alt" loading="lazy" width="1200" height="660" />
-        </div>
+      <article class="rs-work-item wow fadeInUp" data-wow-delay=".15s" data-accent="blue">
         <div class="rs-work-body">
-          <span class="rs-work-tag" data-i18n="work.sap.tag">Cloudmate · 2024</span>
+          <div class="rs-work-head">
+            <span class="rs-work-tag" data-i18n="work.sap.tag">Cloudmate · 2024</span>
+          </div>
           <h3 class="rs-work-name" data-i18n="work.sap.name">SAP integration and encrypted bank file transfer</h3>
-          <dl class="rs-work-detail">
-            <dt data-i18n="label.problem">Problem</dt>
-            <dd data-i18n="work.sap.problem">Payment data had to reach the bank on a fixed cycle: export from SAP, encrypt to the bank’s specification, then send over sFTP. Every step was manual, slow and easy to get wrong.</dd>
-            <dt data-i18n="label.doing">What I built</dt>
-            <dd data-i18n="work.sap.doing">Built a Python job that pulls data from SAP, generates files in the bank’s required format, encrypts them to standard, transfers over sFTP and clears sent files — plus a return path that decrypts the bank’s payment result files and posts them back into SAP.</dd>
-            <dt data-i18n="label.result">Outcome</dt>
-            <dd data-i18n="work.sap.result">Transfers meet the bank’s security requirements, manual steps are largely gone, and both systems stay in sync without manual reconciliation.</dd>
-          </dl>
-          <div class="rs-work-tech">
-            <span>Python</span><span>SAP</span><span>sFTP</span><span>Encryption</span><span>Batch</span>
+          <p class="rs-work-summary" data-i18n="work.sap.summary">Replaces the manual per-cycle bank payment handoff with a Python job that generates, encrypts and sFTPs the file, then posts the bank’s results back into SAP.</p>
+
+          <ol class="rs-work-flow">
+            <li><span>SAP</span></li>
+            <li><span>Generate file</span></li>
+            <li><span>Encrypt</span></li>
+            <li><span>sFTP</span></li>
+            <li><span>Bank</span></li>
+          </ol>
+
+          <details class="rs-work-more">
+            <summary>
+              <span data-i18n="work.more">Problem · What I built · Outcome</span>
+              <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+            </summary>
+            <dl class="rs-work-detail">
+              <dt data-i18n="label.problem">Problem</dt>
+              <dd data-i18n="work.sap.problem">Payment data had to reach the bank on a fixed cycle: export from SAP, encrypt to the bank’s specification, then send over sFTP. Every step was manual, slow and easy to get wrong.</dd>
+              <dt data-i18n="label.doing">What I built</dt>
+              <dd data-i18n="work.sap.doing">Built a Python job that pulls data from SAP, generates files in the bank’s required format, encrypts them to standard, transfers over sFTP and clears sent files — plus a return path that decrypts the bank’s payment result files and posts them back into SAP.</dd>
+              <dt data-i18n="label.result">Outcome</dt>
+              <dd data-i18n="work.sap.result">Transfers meet the bank’s security requirements, manual steps are largely gone, and both systems stay in sync without manual reconciliation.</dd>
+            </dl>
+          </details>
+
+          <div class="rs-work-foot">
+            <div class="rs-work-tech">
+              <span>Python</span><span>SAP</span><span>sFTP</span><span>Encryption</span><span>Batch</span>
+            </div>
+            <a class="rs-work-diagram popup-image" href="../assets/images/case/sap-bank.jpg">
+              <i class="ri-flow-chart" aria-hidden="true"></i>
+              <span data-i18n="work.diagram">View full diagram</span>
+              <span class="rs-sr-only" data-i18n="work.sap.alt">Architecture diagram of the SAP to bank file transfer pipeline</span>
+            </a>
           </div>
         </div>
       </article>
 
-      <article class="rs-work-item wow fadeInUp" data-wow-delay=".1s">
-        <div class="rs-work-media">
-          <img src="../assets/images/case/disbursement.jpg" alt="Architecture diagram of the advance and disbursement system" data-i18n-attr="alt:work.adv.alt" loading="lazy" width="1200" height="660" />
-        </div>
+      <article class="rs-work-item wow fadeInUp" data-wow-delay=".2s" data-accent="green">
         <div class="rs-work-body">
-          <span class="rs-work-tag" data-i18n="work.adv.tag">Cloudmate · 2024</span>
+          <div class="rs-work-head">
+            <span class="rs-work-tag" data-i18n="work.adv.tag">Cloudmate · 2024</span>
+          </div>
           <h3 class="rs-work-name" data-i18n="work.adv.name">Advance and disbursement system</h3>
-          <dl class="rs-work-detail">
-            <dt data-i18n="label.problem">Problem</dt>
-            <dd data-i18n="work.adv.problem">Disbursement ran through several different routes — with and without a linked advance — each with its own approver order and conditions, and all of it had to stay auditable.</dd>
-            <dt data-i18n="label.doing">What I built</dt>
-            <dd data-i18n="work.adv.doing">Built the recording flow for advances and disbursements, designed an approval process where conditions and approver order are configurable, and added Excel export for the finance team.</dd>
-            <dt data-i18n="label.result">Outcome</dt>
-            <dd data-i18n="work.adv.result">Every transaction carries a complete approval trail, past records are easy to audit, and finance can pull the data straight into their own workflow.</dd>
-          </dl>
-          <div class="rs-work-tech">
-            <span>PHP</span><span>PostgreSQL</span><span>AJAX</span><span>Excel Export</span>
+          <p class="rs-work-summary" data-i18n="work.adv.summary">Brings every disbursement route into a single system, with approval chains whose conditions and order are configurable, and a full audit trail on every record.</p>
+
+          <ol class="rs-work-flow">
+            <li><span>Request</span></li>
+            <li><span>Multi-level approval</span></li>
+            <li><span>Disbursement</span></li>
+            <li><span>Excel export</span></li>
+          </ol>
+
+          <details class="rs-work-more">
+            <summary>
+              <span data-i18n="work.more">Problem · What I built · Outcome</span>
+              <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+            </summary>
+            <dl class="rs-work-detail">
+              <dt data-i18n="label.problem">Problem</dt>
+              <dd data-i18n="work.adv.problem">Disbursement ran through several different routes — with and without a linked advance — each with its own approver order and conditions, and all of it had to stay auditable.</dd>
+              <dt data-i18n="label.doing">What I built</dt>
+              <dd data-i18n="work.adv.doing">Built the recording flow for advances and disbursements, designed an approval process where conditions and approver order are configurable, and added Excel export for the finance team.</dd>
+              <dt data-i18n="label.result">Outcome</dt>
+              <dd data-i18n="work.adv.result">Every transaction carries a complete approval trail, past records are easy to audit, and finance can pull the data straight into their own workflow.</dd>
+            </dl>
+          </details>
+
+          <div class="rs-work-foot">
+            <div class="rs-work-tech">
+              <span>PHP</span><span>PostgreSQL</span><span>AJAX</span><span>Excel Export</span>
+            </div>
+            <a class="rs-work-diagram popup-image" href="../assets/images/case/disbursement.jpg">
+              <i class="ri-flow-chart" aria-hidden="true"></i>
+              <span data-i18n="work.diagram">View full diagram</span>
+              <span class="rs-sr-only" data-i18n="work.adv.alt">Architecture diagram of the advance and disbursement system</span>
+            </a>
           </div>
         </div>
       </article>
 
-      <article class="rs-work-item wow fadeInUp" data-wow-delay=".1s">
-        <div class="rs-work-media">
-          <img src="../assets/images/case/procurement.jpg" alt="Architecture diagram of the quarterly supply planning system" data-i18n-attr="alt:work.mm.alt" loading="lazy" width="1200" height="660" />
-        </div>
+      <article class="rs-work-item wow fadeInUp" data-wow-delay=".25s" data-accent="amber">
         <div class="rs-work-body">
-          <span class="rs-work-tag" data-i18n="work.mm.tag">Cloudmate · 2024</span>
+          <div class="rs-work-head">
+            <span class="rs-work-tag" data-i18n="work.mm.tag">Cloudmate · 2024</span>
+          </div>
           <h3 class="rs-work-name" data-i18n="work.mm.name">Quarterly supply planning and procurement</h3>
-          <dl class="rs-work-detail">
-            <dt data-i18n="label.problem">Problem</dt>
-            <dd data-i18n="work.mm.problem">Supply requests were spread across departments with no single view of what each quarter had planned versus actually drawn, which made budget control difficult.</dd>
-            <dt data-i18n="label.doing">What I built</dt>
-            <dd data-i18n="work.mm.doing">Built quarterly supply planning with a purchase request and approval flow, per-item status tracking, request history and Excel export.</dd>
-            <dt data-i18n="label.result">Outcome</dt>
-            <dd data-i18n="work.mm.result">A full-year view of supply usage, clearer budget control, and noticeably less repeated paperwork.</dd>
-          </dl>
-          <div class="rs-work-tech">
-            <span>PHP</span><span>PostgreSQL</span><span>Bootstrap</span><span>Excel Export</span>
+          <p class="rs-work-summary" data-i18n="work.mm.summary">Lets every department plan quarterly supply requests in one place, with planned versus actual usage visible across the whole year.</p>
+
+          <ol class="rs-work-flow">
+            <li><span>Quarterly plan</span></li>
+            <li><span>Purchase request</span></li>
+            <li><span>Approval</span></li>
+            <li><span>Status tracking</span></li>
+          </ol>
+
+          <details class="rs-work-more">
+            <summary>
+              <span data-i18n="work.more">Problem · What I built · Outcome</span>
+              <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+            </summary>
+            <dl class="rs-work-detail">
+              <dt data-i18n="label.problem">Problem</dt>
+              <dd data-i18n="work.mm.problem">Supply requests were spread across departments with no single view of what each quarter had planned versus actually drawn, which made budget control difficult.</dd>
+              <dt data-i18n="label.doing">What I built</dt>
+              <dd data-i18n="work.mm.doing">Built quarterly supply planning with a purchase request and approval flow, per-item status tracking, request history and Excel export.</dd>
+              <dt data-i18n="label.result">Outcome</dt>
+              <dd data-i18n="work.mm.result">A full-year view of supply usage, clearer budget control, and noticeably less repeated paperwork.</dd>
+            </dl>
+          </details>
+
+          <div class="rs-work-foot">
+            <div class="rs-work-tech">
+              <span>PHP</span><span>PostgreSQL</span><span>Bootstrap</span><span>Excel Export</span>
+            </div>
+            <a class="rs-work-diagram popup-image" href="../assets/images/case/procurement.jpg">
+              <i class="ri-flow-chart" aria-hidden="true"></i>
+              <span data-i18n="work.diagram">View full diagram</span>
+              <span class="rs-sr-only" data-i18n="work.mm.alt">Architecture diagram of the quarterly supply planning system</span>
+            </a>
           </div>
         </div>
       </article>
 
-      <article class="rs-work-item wow fadeInUp" data-wow-delay=".1s">
-        <div class="rs-work-media">
-          <img src="../assets/images/case/loyalty.jpg" alt="Architecture diagram of the Healthy Together loyalty platform" data-i18n-attr="alt:work.ht.alt" loading="lazy" width="1200" height="660" />
-        </div>
+      <article class="rs-work-item wow fadeInUp" data-wow-delay=".3s" data-accent="pink">
         <div class="rs-work-body">
-          <span class="rs-work-tag" data-i18n="work.ht.tag">Nature Biotec · 2020–2023</span>
+          <div class="rs-work-head">
+            <span class="rs-work-tag" data-i18n="work.ht.tag">Nature Biotec · 2020–2023</span>
+          </div>
           <h3 class="rs-work-name" data-i18n="work.ht.name">Healthy Together — loyalty and reward platform</h3>
-          <dl class="rs-work-detail">
-            <dt data-i18n="label.problem">Problem</dt>
-            <dd data-i18n="work.ht.problem">The business needed customers to register products and collect codes toward rewards, a back office the marketing team could run themselves, and reporting management could actually read.</dd>
-            <dt data-i18n="label.doing">What I built</dt>
-            <dd data-i18n="work.ht.doing">Built both ends: registration forms, per-product-code QR generation, point collection and reward redemption, a lucky draw engine, plus data cleansing in Pandas and dashboards in Looker Studio.</dd>
-            <dt data-i18n="label.result">Outcome</dt>
-            <dd data-i18n="work.ht.result">Marketing runs campaigns without waiting on the dev team, and management sees registration and redemption activity at a glance from the dashboard.</dd>
-          </dl>
-          <div class="rs-work-tech">
-            <span>PHP</span><span>MySQL</span><span>Python</span><span>Pandas</span><span>Looker Studio</span>
+          <p class="rs-work-summary" data-i18n="work.ht.summary">A loyalty programme built on per-product QR codes that the marketing team runs on its own, with an executive dashboard in Looker Studio.</p>
+
+          <ol class="rs-work-flow">
+            <li><span>Register</span></li>
+            <li><span>Per-product QR</span></li>
+            <li><span>Collect points</span></li>
+            <li><span>Redeem reward</span></li>
+          </ol>
+
+          <details class="rs-work-more">
+            <summary>
+              <span data-i18n="work.more">Problem · What I built · Outcome</span>
+              <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+            </summary>
+            <dl class="rs-work-detail">
+              <dt data-i18n="label.problem">Problem</dt>
+              <dd data-i18n="work.ht.problem">The business needed customers to register products and collect codes toward rewards, a back office the marketing team could run themselves, and reporting management could actually read.</dd>
+              <dt data-i18n="label.doing">What I built</dt>
+              <dd data-i18n="work.ht.doing">Built both ends: registration forms, per-product-code QR generation, point collection and reward redemption, a lucky draw engine, plus data cleansing in Pandas and dashboards in Looker Studio.</dd>
+              <dt data-i18n="label.result">Outcome</dt>
+              <dd data-i18n="work.ht.result">Marketing runs campaigns without waiting on the dev team, and management sees registration and redemption activity at a glance from the dashboard.</dd>
+            </dl>
+          </details>
+
+          <div class="rs-work-foot">
+            <div class="rs-work-tech">
+              <span>PHP</span><span>MySQL</span><span>Python</span><span>Pandas</span><span>Looker Studio</span>
+            </div>
+            <a class="rs-work-diagram popup-image" href="../assets/images/case/loyalty.jpg">
+              <i class="ri-flow-chart" aria-hidden="true"></i>
+              <span data-i18n="work.diagram">View full diagram</span>
+              <span class="rs-sr-only" data-i18n="work.ht.alt">Architecture diagram of the Healthy Together loyalty platform</span>
+            </a>
           </div>
         </div>
       </article>
@@ -1965,7 +2112,7 @@
           </li>
           <li style="display:flex;align-items:center;gap:12px;">
             <i class="ri-download-line" style="font-size:15px;color:#60A5FA;min-width:18px;"></i>
-            <a href="../assets/pdf/resume.pdf" download style="font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;" data-i18n="footer.download">Download Resume (PDF)</a>
+            <a href="../assets/pdf/resume-en.pdf" download="Jaruwat-Amnuaysat-Full-Stack-Developer.pdf" style="font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;" data-i18n="footer.download">Download Resume (PDF)</a>
           </li>
         </ul>
       </div>

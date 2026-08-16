@@ -26,8 +26,9 @@ const LAYOUT = path.join(COMPONENT_DIR, "layout.html");
 const I18N_FILE = path.join(ROOT, "assets", "js", "i18n.js");
 const profile = require("./data/profile");
 
-/* โดเมนจริงของเว็บ — ใช้กับ canonical / hreflang / sitemap / JSON-LD */
-const BASE_URL = "https://darkneed02.github.io";
+/* โดเมนจริงของเว็บ — ใช้กับ canonical / hreflang / sitemap / JSON-LD
+   ค่าอยู่ใน data/profile.js เพราะ tools/make-resume.js ต้องใช้ค่าเดียวกัน */
+const BASE_URL = profile.site.baseUrl;
 
 /* ฟอร์มติดต่อ: GitHub Pages รัน PHP ไม่ได้ จึงต้องใช้ endpoint ภายนอก
    ขอ access key ฟรีที่ https://web3forms.com (กรอกอีเมล แล้วเขาส่ง key มาให้)
@@ -54,6 +55,11 @@ const PAGES = [
     ogLocale: "th_TH",
     ogImage: "assets/images/og-cover-th.jpg",
     ogImageAlt: "จารุวัฒน์ อำนวยสัตย์ — Full Stack Developer (PHP/Laravel)",
+    /* ไฟล์ Resume แยกภาษา — generate ด้วย tools/make-resume.js
+       resumeDownload คือชื่อไฟล์ตอนที่ HR กดเซฟลงเครื่อง (ตั้งผ่าน
+       attribute download) ใช้ ASCII ล้วนเพื่อให้ชื่อไฟล์ไม่เพี้ยนข้ามระบบ */
+    resumePdf: "assets/pdf/resume.pdf",
+    resumeDownload: "Jaruwat-Amnuaysat-Full-Stack-Developer-TH.pdf",
   },
   {
     lang: "en",
@@ -70,6 +76,8 @@ const PAGES = [
     ogLocale: "en_US",
     ogImage: "assets/images/og-cover-en.jpg",
     ogImageAlt: "Jaruwat Amnuaysat — Full Stack Developer (PHP/Laravel)",
+    resumePdf: "assets/pdf/resume-en.pdf",
+    resumeDownload: "Jaruwat-Amnuaysat-Full-Stack-Developer.pdf",
   },
 ];
 
@@ -230,6 +238,9 @@ function applyTokens(html, page, dict) {
        ยังกัน rewriteAssetPaths ไม่ให้ไปเติม ../ ให้ด้วย */
     OG_IMAGE: BASE_URL + "/" + page.ogImage,
     OG_IMAGE_ALT: escapeHtml(page.ogImageAlt),
+    /* path แบบ relative — rewriteAssetPaths จะเติม ../ ให้เองสำหรับหน้า /en/ */
+    RESUME_PDF: page.resumePdf,
+    RESUME_DOWNLOAD: escapeHtml(page.resumeDownload),
     CONTACT_FORM_KEY: escapeHtml(CONTACT_FORM_KEY),
     JSON_LD: [jsonLdBlock(buildJsonLd(page)), buildFaqJsonLd(dict, page) && jsonLdBlock(buildFaqJsonLd(dict, page))]
       .filter(Boolean)
@@ -634,6 +645,26 @@ function main() {
 
   /* ---------- รายงานผล + ตรวจ key ที่หายไป ---------- */
   let hasProblem = false;
+
+  /* ตรวจว่าไฟล์ Resume PDF ยังตรงกับ data/profile.js อยู่ไหม
+     build.js ไม่ได้สร้าง PDF ให้ (ต้องใช้ Chrome) และ GitHub Action ก็รันแค่ build.js
+     ถ้าไม่เตือนตรงนี้ การแก้ profile.js แล้ว push จะทำให้ PDF ค้างอยู่เวอร์ชันเก่า
+     แบบเงียบๆ ซึ่งคือต้นเหตุของปัญหาเดิมทั้งหมด (ดู docs/ux-seo-plan §15.2) */
+  {
+    const profileMtime = fs.statSync(path.join(ROOT, "data", "profile.js")).mtimeMs;
+    const stale = [];
+    for (const page of PAGES) {
+      const pdf = path.join(ROOT, page.resumePdf);
+      if (!fs.existsSync(pdf)) stale.push(`${page.resumePdf} (ยังไม่มีไฟล์)`);
+      else if (fs.statSync(pdf).mtimeMs < profileMtime) stale.push(page.resumePdf);
+    }
+    if (stale.length) {
+      console.warn(
+        `\n! Resume PDF เก่ากว่า data/profile.js: ${stale.join(", ")}\n` +
+          `  รัน "node tools/make-resume.js" เพื่อสร้างใหม่ ไม่งั้นไฟล์ที่ HR โหลดไปจะไม่ตรงกับเว็บ\n`
+      );
+    }
+  }
   for (const page of PAGES) {
     const { report, bytes, out } = reports[page.lang];
     console.log(

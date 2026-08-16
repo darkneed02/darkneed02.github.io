@@ -94,6 +94,9 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
+/* summary โฟกัสได้เองโดยไม่ต้องมี tabindex จึงไม่เข้าเงื่อนไขข้างบน
+   ถ้าไม่ระบุแยกจะ tab ไปถึงตัวพับเนื้อหา case study แล้วไม่เห็นวงโฟกัส */
+summary:focus-visible,
 [tabindex]:focus-visible {
   outline: 3px solid var(--cv-blue);
   outline-offset: 3px;
@@ -818,277 +821,540 @@ textarea:focus-visible,
 .rs-qualification-meta:empty { display: none; }
 
 /* ---------------------------------------------------------
-   8. SKILLS
+   8. SKILLS — จัดกลุ่มตามประเภท (ภาษา / เฟรมเวิร์ก / เครื่องมือ)
+
+   ของเดิมแบ่งการ์ดเป็น Primary / Strong ซึ่งเป็นแกน "ระดับความชำนาญ"
+   อย่างเดียว คนอ่านจึงต้องไล่ทั้งสองการ์ดเพื่อตอบคำถามพื้นฐานอย่าง
+   "เขียนภาษาอะไรได้บ้าง" หรือ "ใช้เครื่องมืออะไร"
+   เวอร์ชันนี้ใช้ประเภทเป็นแกนหลัก (ตอบได้ในสายตาเดียว) และเก็บแกน
+   ความชำนาญไว้ในรูปแบบของรายการภายในกลุ่มแทน:
+     ใช้ประจำ = แถวที่มีคำอธิบายว่าเอาไปทำอะไร
+     ใช้ร่วม  = ป้ายสั้นท้ายกลุ่ม มีคำว่า "ใช้ร่วม" กำกับ
+   ระดับจึงอ่านออกจากรูปแบบ + ข้อความ ไม่ต้องพึ่งสีอย่างเดียว
+   และไม่กลับไปใช้ตัวเลขให้คะแนนตัวเองที่เคยถอดออกไปแล้ว
    --------------------------------------------------------- */
 .rs-skill-area {
   background: #fff !important;
 }
 
-/* Group card */
-.rs-skill-group {
-  background: var(--cv-bg);
-  border: 1px solid var(--cv-border-light);
-  border-radius: var(--cv-radius-lg);
-  padding: 28px;
-  /* เดิม height:100% — สองกลุ่มมีจำนวนรายการไม่เท่ากัน
-     กลุ่มที่สั้นกว่าจึงเหลือพื้นที่ว่างท้ายการ์ดร้อยกว่า px */
-  height: auto;
-}
-.rs-skill-group--primary {
-  background: linear-gradient(135deg, var(--cv-navy) 0%, #1e3a6e 100%);
-  border-color: transparent;
+.rs-skill-intro {
+  font-size: 15px !important;
+  color: var(--cv-text-muted) !important;
+  margin-top: 10px !important;
 }
 
-.rs-skill-group-header { margin-bottom: 24px; }
-.rs-skill-group-title {
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  margin-bottom: 4px !important;
-}
-.rs-skill-group--primary .rs-skill-group-title { color: #fff !important; }
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-group-title { color: var(--cv-navy) !important; }
-
-.rs-skill-group-note {
-  font-size: 13px !important;
-  margin: 0 !important;
-}
-.rs-skill-group--primary .rs-skill-group-note { color: rgba(255,255,255,.55) !important; }
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-group-note { color: var(--cv-text-muted) !important; }
-
-/* Skill grid
-   ตัดแถบเปอร์เซ็นต์ออกแล้ว การ์ดจึงเตี้ยลงมาก จัดสองคอลัมน์ได้
-   สแกนจบเร็วกว่าและไม่เหลือช่องว่างยาวๆ ในกลุ่ม */
-.rs-skill-grid {
+/* วางเป็น 2 คอลัมน์ แล้วให้กลุ่ม "เครื่องมือ" กินเต็มความกว้างแถวล่าง
+   เพราะกลุ่มนี้มี 8 รายการ ขณะที่อีกสองกลุ่มมี 5 และ 4 — ถ้าวางสามคอลัมน์
+   เท่ากัน การ์ดเครื่องมือจะสูงกว่าเพื่อนราว 300px เห็นเป็นเสาโด่งขึ้นมาใบเดียว
+   พอกินเต็มความกว้าง รายการจะไหลเป็นหลายคอลัมน์ ความสูงเลยกลับมาใกล้กัน
+   align-items:start — การ์ดสูงตามเนื้อหา ไม่ยืดให้เท่ากันแล้วเหลือช่องกลวงข้างใน */
+.rs-skill-groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 20px;
 }
+.rs-skill-group[data-group="tool"] { grid-column: 1 / -1; }
 
-/* Skill card */
-.rs-skill-card {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: var(--cv-radius-sm);
-  padding: 14px 16px;
+.rs-skill-group {
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius);
+  box-shadow: var(--cv-shadow-sm);
+  padding: 24px;
   transition: var(--cv-transition);
 }
-.rs-skill-group--primary .rs-skill-card:hover {
-  background: rgba(255,255,255,.12);
-  transform: translateY(-2px);
-}
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-card {
-  background: #fff;
-  border-color: var(--cv-border-light);
-  box-shadow: var(--cv-shadow-sm);
-}
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-card:hover {
+.rs-skill-group:hover {
   box-shadow: var(--cv-shadow);
   border-color: rgba(59,130,246,.25);
-  transform: translateY(-2px);
 }
 
-.rs-skill-card-top {
+/* ---- หัวกลุ่ม ---- */
+.rs-skill-group-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 0;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--cv-border-light);
 }
-.rs-skill-icon {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border-radius: 8px;
-  background: rgba(255,255,255,.12);
+.rs-skill-group-id { display: block; }
+
+.rs-skill-group-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-icon {
   background: var(--cv-blue-light);
 }
-.rs-skill-icon img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+.rs-skill-group-icon i {
+  font-size: 21px;
+  line-height: 1;
+  color: var(--cv-blue-mid);
 }
-.rs-skill-title {
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  margin: 0 !important;
+/* สีประจำกลุ่ม — ชุดเดียวกับจุดหมวดใบรับรอง (.rs-cert-cat[data-cat])
+   ใช้เป็นตัวช่วยจำเฉยๆ ความหมายของกลุ่มอ่านได้จากหัวข้อและไอคอนอยู่แล้ว
+   จึงไม่มีข้อมูลไหนที่สื่อด้วยสีเพียงอย่างเดียว */
+.rs-skill-group[data-group="framework"] .rs-skill-group-icon {
+  background: rgba(14,165,233,.12);
 }
-.rs-skill-group--primary .rs-skill-title { color: #fff !important; }
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-title { color: var(--cv-navy) !important; }
-
-.rs-skill-meta {
-  font-size: 11px !important;
-  margin: 0 !important;
+.rs-skill-group[data-group="framework"] .rs-skill-group-icon i { color: #0369A1; }
+.rs-skill-group[data-group="tool"] .rs-skill-group-icon {
+  background: rgba(16,185,129,.12);
 }
-.rs-skill-group--primary .rs-skill-meta { color: rgba(255,255,255,.50) !important; }
-.rs-skill-group:not(.rs-skill-group--primary) .rs-skill-meta { color: var(--cv-text-muted) !important; }
+.rs-skill-group[data-group="tool"] .rs-skill-group-icon i { color: #047857; }
 
-/* หมายเหตุ: แถบเปอร์เซ็นต์ทักษะ (PHP 90%, Laravel 85% ...) ถูกถอดออก
-   ตัวเลขเป็นการให้คะแนนตัวเองที่ยืนยันไม่ได้ ไม่มีเกณฑ์กลางว่า 90%
-   ต่างจาก 85% อย่างไร และเป็นจุดที่ผู้สัมภาษณ์สายเทคนิคมองว่าลดความน่าเชื่อถือ
-   ระดับความชำนาญสื่อผ่านการจัดกลุ่ม Primary / Strong / กำลังศึกษา แทน */
+.rs-skill-group-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--cv-navy) !important;
+  margin: 0 0 2px !important;
+}
+.rs-skill-group-note {
+  display: block;
+  font-size: 12.5px;
+  color: var(--cv-text-muted);
+  line-height: 1.5;
+}
 
-/* Skill tools tags */
-.rs-skill-tools {
+/* ---- รายการที่ใช้ประจำ ----
+   ชื่อกับคำอธิบายวางคนละบรรทัด สายตากวาดคอลัมน์ชื่อลงมาได้รวดเดียว
+   แล้วค่อยกลับไปอ่านคำอธิบายเฉพาะตัวที่สนใจ */
+/* auto-fit — จำนวนคอลัมน์ปรับตามความกว้างที่การ์ดมีจริง
+   การ์ดครึ่งหน้าจอได้ 2 คอลัมน์ การ์ดเครื่องมือที่กินเต็มความกว้างได้ 3–4
+   บนมือถือเหลือคอลัมน์เดียวเอง ไม่ต้องเขียน breakpoint ซ้อนหลายชั้น
+   260px คือความกว้างที่คำอธิบายภาษาไทยส่วนใหญ่ยังจบใน 1–2 บรรทัด */
+.rs-skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px 24px;
+}
+.rs-skill-item {
+  padding-left: 13px;
+  border-left: 2px solid var(--cv-blue);
+}
+.rs-skill-group[data-group="framework"] .rs-skill-item { border-left-color: var(--cv-teal); }
+.rs-skill-group[data-group="tool"] .rs-skill-item { border-left-color: var(--cv-green); }
+
+.rs-skill-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cv-navy);
+  line-height: 1.4;
+}
+.rs-skill-note {
+  display: block;
+  font-size: 12.5px;
+  color: var(--cv-text-muted);
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
+/* ---- แถวป้ายท้ายกลุ่ม: เหลือเฉพาะ "กำลังศึกษา" ---- */
+.rs-skill-extra {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 6px;
   margin-top: 16px;
-  padding-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--cv-border-light);
 }
-.rs-skill-tool {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--cv-blue-mid);
-  background: var(--cv-blue-light);
-  padding: 4px 10px;
-  border-radius: 100px;
-  letter-spacing: .3px;
-}
-
-/* ไอคอนแบบ font (ใช้กับทักษะที่ไม่มีไฟล์โลโก้ เช่น Laravel) */
-.rs-skill-icon i {
-  font-size: 20px;
-  line-height: 1;
-  color: #FF6B5B;
-}
-
-/* กลุ่ม "กำลังศึกษา" — ต้องดูต่างจากทักษะที่ใช้งานจริงอย่างชัดเจน
-   เพื่อไม่ให้ HR หรือ AI เข้าใจผิดว่าเป็นทักษะที่ใช้ทำงานได้แล้ว */
-.rs-skill-tools--learning {
-  align-items: center;
-  margin-top: 10px;
-  padding-top: 0;
-  border-top: none;
-}
-.rs-skill-tools-label {
+.rs-skill-extra-label {
   font-size: 11px;
   font-weight: 600;
   color: var(--cv-text-light);
   letter-spacing: .3px;
   margin-right: 2px;
 }
-.rs-skill-tools--learning .rs-skill-tool {
+.rs-skill-tool {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--cv-blue-mid);
+  background: var(--cv-blue-light);
+  padding: 5px 11px;
+  border-radius: 100px;
+  letter-spacing: .3px;
+}
+/* "กำลังศึกษา" ต้องดูต่างจากทักษะที่ใช้งานจริงอย่างชัดเจน
+   เพื่อไม่ให้ HR หรือ AI เข้าใจผิดว่าเป็นทักษะที่ใช้ทำงานได้แล้ว */
+.rs-skill-extra--learning .rs-skill-tool {
   color: var(--cv-text-muted);
   background: transparent;
   border: 1px dashed var(--cv-border);
 }
 
-/* ---------------------------------------------------------
-   9. WORK EXPERIENCE
-   --------------------------------------------------------- */
-.rs-experience-area {
-  background: var(--cv-bg) !important;
-}
-
-/* เดิม height:100% ทำให้การ์ดในแถวเดียวกันสูงเท่ากันหมด
-   การ์ดที่มีเนื้อหาน้อย (เช่น ฝึกงาน) จึงเหลือพื้นที่ว่างหลายร้อย px
-   ให้แต่ละใบสูงเท่าเนื้อหาจริงแทน */
-.rs-experience-wrapper {
-  height: auto;
-}
-
-.rs-experience-item {
-  background: var(--cv-card) !important;
-  border: 1px solid var(--cv-border-light) !important;
-  border-radius: var(--cv-radius-lg) !important;
-  padding: 24px !important;
-  box-shadow: var(--cv-shadow-sm) !important;
-  transition: var(--cv-transition) !important;
-  height: auto;
-}
-.rs-experience-item:hover {
-  box-shadow: var(--cv-shadow-md) !important;
-  border-color: rgba(59,130,246,.18) !important;
-  transform: translateY(-3px);
-}
-
-/* Experience header */
-.rs-experience-top {
+/* ---- แถบงานเชื่อมต่อระบบ ----
+   เนื้อหาชุดนี้เป็นงานที่ส่งมอบไปแล้ว ไม่ใช่การประเมินตัวเอง
+   จึงวางเป็นแถบเต็มความกว้างแยกจากสามกลุ่มด้านบน ไม่ปนกัน */
+.rs-skill-band {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 18px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--cv-border-light);
-}
-.rs-experience-designation-wrapper {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-}
-.rs-circle-shape {
-  width: 10px;
-  height: 10px;
-  min-width: 10px;
-  border-radius: 50%;
-  background: var(--cv-blue);
-  box-shadow: 0 0 0 3px rgba(59,130,246,.20);
-  display: block;
-}
-.rs-experience-designation {
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  color: var(--cv-navy) !important;
-  margin: 0 !important;
-}
-.rs-experience-meta {
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  color: var(--cv-blue-mid) !important;
-  background: var(--cv-blue-light) !important;
-  padding: 4px 10px !important;
-  border-radius: 100px !important;
-  white-space: nowrap !important;
-}
-
-/* Experience body */
-.rs-experience-bottom {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.rs-experience-brand-thumb {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  border-radius: 10px;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 20px;
+  padding: 20px 24px;
   background: var(--cv-bg);
-  border: 1px solid var(--cv-border-light);
-  overflow: hidden;
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius);
+}
+/* บนจอแคบหัวข้อของแถบตัดเป็นสองบรรทัด ถ้าจัดกึ่งกลางแนวตั้ง
+   ไอคอนจะลอยไปอยู่กลางย่อหน้าแทนที่จะอยู่ระดับเดียวกับหัวข้อ */
+.rs-skill-band-id {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.rs-skill-band-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
 }
-.rs-experience-brand-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.rs-skill-band-icon i {
+  font-size: 19px;
+  line-height: 1;
+  color: var(--cv-blue-mid);
 }
-.rs-experience-content { flex: 1; min-width: 0; }
-.rs-experience-place {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: var(--cv-text) !important;
-  margin-bottom: 10px !important;
+.rs-skill-band-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--cv-navy) !important;
+  margin: 0 0 2px !important;
 }
-
-/* ตัวเลขสรุปขอบเขตงานของแต่ละที่ — ให้สแกนเห็นก่อนกดอ่าน accordion */
-.rs-experience-stats {
+.rs-skill-band-note {
+  display: block;
+  font-size: 12.5px;
+  color: var(--cv-text-muted);
+  line-height: 1.5;
+}
+.rs-skill-band-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: -4px 0 12px;
 }
-.rs-experience-stat {
-  font-size: 11px;
+.rs-skill-band-tags .rs-skill-tool {
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+}
+
+@media (max-width: 991px) {
+  /* ต่ำกว่านี้การ์ดครึ่งหน้าจอแคบจนคำอธิบายตัดบรรทัดถี่ ซ้อนกันลงมาอ่านง่ายกว่า
+     (รายการข้างในยังไหลเป็น 2 คอลัมน์เองถ้าการ์ดกว้างพอ) */
+  .rs-skill-groups { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .rs-skill-groups { gap: 16px; }
+  .rs-skill-group { padding: 20px; }
+  .rs-skill-band { padding: 18px 20px; }
+}
+
+/* หมายเหตุ: แถบเปอร์เซ็นต์ทักษะ (PHP 90%, Laravel 85% ...) ถูกถอดออกไปแล้ว
+   ตัวเลขเป็นการให้คะแนนตัวเองที่ยืนยันไม่ได้ ไม่มีเกณฑ์กลางว่า 90%
+   ต่างจาก 85% อย่างไร และเป็นจุดที่ผู้สัมภาษณ์สายเทคนิคมองว่าลดความน่าเชื่อถือ
+   ระดับความชำนาญสื่อผ่านรูปแบบรายการ (ใช้ประจำ / ใช้ร่วม / กำลังศึกษา) แทน
+   — ห้ามนำ bar, ดาว หรือ dot meter กลับมาแทนที่ */
+
+/* ---------------------------------------------------------
+   9. WORK EXPERIENCE — ไทม์ไลน์คอลัมน์เดียว
+
+   ของเดิมวางการ์ดสองคอลัมน์ ซึ่งพังกับเนื้อหาชุดนี้สองทาง
+   1) ประสบการณ์อ่านตามลำดับเวลา สองคอลัมน์บังคับให้สายตา
+      กระโดดสลับซ้าย-ขวา แกนเวลาจึงหายไป
+   2) การ์ดเซนต์เฮิร์บยาวกว่าการ์ดฝึกงานหลายเท่า แถวเดียวกัน
+      จึงเหลือช่องว่างยาวข้างการ์ดที่สั้นกว่าเสมอ
+   --------------------------------------------------------- */
+/* หมายเหตุ: section นี้กินสีจาก .primary-bg (พื้นกรมท่า) ที่หมวด 18
+   ซึ่งจำเพาะเท่ากันแต่อยู่ท้ายไฟล์กว่า จึงชนะเสมอ — เคยมีกฎ
+   .rs-experience-area { background: var(--cv-bg) } อยู่ตรงนี้ที่ไม่เคยมีผล
+   สีของทุกอย่างในหมวดนี้จึงต้องคิดบนพื้นกรมท่า ไม่ใช่พื้นเทาอ่อน */
+
+/* section นี้เป็น .primary-bg (พื้นกรมท่า) — ใช้ --cv-text-muted ไม่ได้
+   วัดได้ 2.5:1 บนพื้น #1B2B4B ซึ่งตกเกณฑ์ AA ค่านี้ให้ 9.2:1
+   และยังหม่นกว่าหัวข้อสีขาวพอให้เห็นลำดับชั้น */
+.rs-exp-intro {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #C7D2E4;
+  margin: 14px 0 0;
+}
+
+/* แถบสรุปภาพรวมก่อนอ่านรายละเอียด — ชุดเดียวกับ .rs-work-meta / .rs-cert-meta */
+.rs-exp-meta {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.rs-exp-meta li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cv-text);
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+  border-radius: 100px;
+  padding: 7px 16px;
+}
+.rs-exp-meta i {
+  font-size: 16px;
+  line-height: 1;
+  color: var(--cv-blue-mid);
+}
+
+/* --- โครงไทม์ไลน์ --- */
+.rs-exp-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 38px;
+  position: relative;
+}
+.rs-exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 30px;
+  bottom: 30px;
+  width: 2px;
+  background: rgba(255,255,255,.20);
+}
+.rs-exp-item { position: relative; }
+.rs-exp-item + .rs-exp-item { margin-top: 20px; }
+
+/* จุดบนเส้นเวลา — ขนาดและวงแหวนชุดเดียวกับ .rs-divider::before ของ section การศึกษา
+   แต่กลับสีให้เข้ากับพื้นกรมท่า: ขอบเป็นสีพื้นเพื่อเว้นวงให้จุดไม่ติดกับเส้น
+   width 14px รวมเส้นขอบแล้ว (box-sizing: border-box) จุดกึ่งกลางจึงตรงกับเส้นที่ 7px พอดี */
+.rs-exp-item::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 26px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #8FA0BE;
+  border: 3px solid var(--cv-navy);
+  box-shadow: 0 0 0 2px rgba(255,255,255,.22);
+}
+/* งานปัจจุบันคือข้อมูลชิ้นแรกที่คนอ่านมองหา จึงเป็นจุดเดียวที่ใช้สีเน้น
+   และไม่ได้สื่อด้วยสีอย่างเดียว — ช่วงเวลาบนการ์ดเขียน "ปัจจุบัน" กำกับไว้ */
+.rs-exp-item--current::before {
+  background: var(--cv-blue);
+  box-shadow: 0 0 0 4px rgba(59,130,246,.35);
+}
+
+.rs-exp-card {
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border-light);
+  border-radius: var(--cv-radius-lg);
+  padding: 24px 26px;
+  box-shadow: var(--cv-shadow-sm);
+  /* ไม่ยกการ์ดตอน hover เหมือนของเดิม — การ์ดทั้งใบกดไม่ได้
+     การขยับตามเมาส์จึงบอกใบ้ว่าคลิกได้ทั้งที่คลิกไม่ได้ */
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.rs-exp-card:hover { box-shadow: var(--cv-shadow); }
+.rs-exp-item--current .rs-exp-card {
+  border-color: rgba(59,130,246,.28);
+  box-shadow: var(--cv-shadow);
+}
+
+/* --- หัวการ์ด: โลโก้ + ตำแหน่ง/บริษัท + ช่วงเวลา --- */
+.rs-exp-head {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: start;
+  gap: 14px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--cv-border-light);
+}
+.rs-exp-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--cv-bg);
+  border: 1px solid var(--cv-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  overflow: hidden;
+}
+.rs-exp-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+.rs-exp-ident { min-width: 0; }
+.rs-exp-role {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: var(--cv-navy) !important;
+  line-height: 1.35;
+  margin: 0 0 3px !important;
+}
+.rs-exp-org {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cv-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.rs-exp-when {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+.rs-exp-period {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--cv-blue-mid);
+  background: var(--cv-blue-light);
+  padding: 5px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+/* ระยะเวลาที่อยู่แต่ละที่ — คนอ่าน CV คิดเลขนี้ในหัวอยู่แล้ว คิดให้เลย */
+.rs-exp-duration {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cv-text-light);
+  white-space: nowrap;
+}
+
+/* --- สรุปหนึ่งบรรทัด: เห็นเสมอโดยไม่ต้องกดเปิดอะไร --- */
+.rs-exp-summary {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--cv-text);
+  margin: 0 0 16px;
+  max-width: 68ch;
+}
+
+/* --- เทคโนโลยีระดับตำแหน่งงาน --- */
+.rs-exp-stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 16px;
+}
+.rs-exp-stack-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--cv-text-light);
+}
+.rs-exp-stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.rs-exp-stack-list li {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--cv-text);
+  background: var(--cv-bg);
+  border: 1px solid var(--cv-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+/* --- หลักฐานที่เปิดดูของจริงได้ — ต้องอยู่ระดับการ์ด ไม่ใช่ก้นตัวพับ --- */
+.rs-exp-proof {
+  background: var(--cv-blue-light);
+  border: 1px solid rgba(37,99,235,.16);
+  border-radius: var(--cv-radius);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.rs-exp-proof-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cv-navy);
+  margin-bottom: 10px;
+}
+.rs-exp-proof-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 8px;
+}
+.rs-exp-proof-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  min-height: 44px;
+  padding: 9px 14px;
+  background: var(--cv-card);
+  border: 1px solid var(--cv-border);
+  border-radius: 9px;
+  text-decoration: none !important;
+  transition: var(--cv-transition);
+}
+.rs-exp-proof-link:hover,
+.rs-exp-proof-link:focus-visible {
+  border-color: rgba(37,99,235,.35);
+  box-shadow: var(--cv-shadow-sm);
+}
+.rs-exp-proof-link i {
+  font-size: 15px;
+  line-height: 1;
+  color: var(--cv-blue-mid);
+  flex-shrink: 0;
+}
+.rs-exp-proof-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cv-blue-mid);
+}
+.rs-exp-proof-tag {
+  flex-basis: 100%;
+  padding-left: 25px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--cv-text-muted);
+}
+
+/* --- รายการงานที่รับผิดชอบ --- */
+.rs-exp-tasks-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.rs-exp-tasks-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--cv-text-light);
+}
+.rs-exp-stat {
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--cv-text-muted);
   background: var(--cv-border-light);
@@ -1098,50 +1364,76 @@ textarea:focus-visible,
   white-space: nowrap;
 }
 
-/* Accordion overrides */
-.rs-experience-description .accordion {
-  border: none;
+/* ใช้ <details> ชุดเดียวกับ section ผลงาน และไม่ผูก data-bs-parent เหมือน
+   accordion เดิม — ของเดิมพอเปิดอันใหม่อันเก่าจะหุบเอง ความสูงการ์ดกระตุก
+   ทุกครั้งที่กด และเทียบงานสองชิ้นพร้อมกันไม่ได้เลย */
+.rs-exp-task { border-top: 1px solid var(--cv-border-light); }
+.rs-exp-task > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 11px 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cv-text);
+  cursor: pointer;
+  list-style: none;
+  transition: color .2s ease;
 }
-.rs-experience-description .accordion-item {
-  border: none;
-  border-bottom: 1px solid var(--cv-border-light);
-  background: transparent;
-  border-radius: 0 !important;
+.rs-exp-task > summary::-webkit-details-marker { display: none; }
+.rs-exp-task > summary:hover { color: var(--cv-blue-mid); }
+.rs-exp-task[open] > summary { color: var(--cv-blue-mid); }
+.rs-exp-task > summary i {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--cv-text-light);
+  flex-shrink: 0;
+  transition: transform .25s ease;
 }
-.rs-experience-description .accordion-item:last-child {
-  border-bottom: none;
+.rs-exp-task[open] > summary i {
+  transform: rotate(180deg);
+  color: var(--cv-blue-mid);
 }
-.rs-experience-description .accordion-button {
-  background: transparent !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: var(--cv-text) !important;
-  padding: 10px 0 !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-.rs-experience-description .accordion-button:not(.collapsed) {
-  color: var(--cv-blue-mid) !important;
-}
-.rs-experience-description .accordion-button::after {
-  width: 16px;
-  height: 16px;
-  background-size: 16px;
-  filter: none;
-  opacity: .5;
-}
-.rs-experience-description .accordion-button .accordion-btn { display: none; }
-.rs-experience-description .accordion-body {
-  padding: 8px 0 12px !important;
-  font-size: 13px;
+.rs-exp-task-body { padding: 2px 0 16px; }
+.rs-exp-task-body .rs-postbox-details-feature p {
+  font-size: 14px !important;
+  line-height: 1.75;
   color: var(--cv-text-muted);
-  line-height: 1.7;
+  margin-bottom: 8px;
 }
-.rs-experience-description .accordion-body p {
-  margin-bottom: 6px;
-  font-size: 13px !important;
+.rs-exp-task-body .rs-postbox-details-feature p:last-child { margin-bottom: 0; }
+.rs-exp-task-body .rs-postbox-details-feature strong {
+  color: var(--cv-text);
+  font-weight: 600;
 }
-.rs-experience-description .accordion-body p:last-child { margin-bottom: 0; }
+
+@media (max-width: 767px) {
+  .rs-exp-timeline { padding-left: 26px; }
+  .rs-exp-timeline::before { left: 5px; }
+  .rs-exp-item::before { left: -26px; width: 12px; height: 12px; top: 24px; }
+  .rs-exp-card { padding: 20px; }
+  .rs-exp-head { grid-template-columns: 40px 1fr; gap: 12px; }
+  .rs-exp-logo { width: 40px; height: 40px; }
+  /* ช่วงเวลาลงมาเป็นแถวของตัวเอง ไม่งั้นไปเบียดชื่อบริษัทจนตัดคำทีละคำ */
+  .rs-exp-when {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .rs-exp-role { font-size: 16.5px !important; }
+  .rs-exp-summary { font-size: 14.5px; }
+  .rs-exp-proof-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575px) {
+  .rs-exp-meta li { font-size: 12.5px; padding: 6px 13px; }
+  .rs-exp-card { padding: 18px 16px; }
+  .rs-exp-proof { padding: 12px 13px; }
+}
 
 /* Tech stack badges */
 .rs-tech-stack {
@@ -1914,41 +2206,117 @@ a.rs-cert-cta:focus-visible { border-radius: 10px; }
 
 /* ---------------------------------------------------------
    15. WORK / CASE STUDIES
-   สลับซ้าย-ขวาเพื่อให้สแกนเป็นจังหวะ ไม่ใช่กำแพงข้อความ
+   หนึ่งชิ้นเด่นเต็มความกว้าง + อีกสี่ชิ้นเป็นกริดกะทัดรัด
+   เนื้อหาเต็มยังอยู่ครบใน DOM แต่พับไว้ใน <details>
+   เพื่อให้กวาดตาเทียบกันได้ก่อนค่อยเลือกอ่านลึก
    --------------------------------------------------------- */
 .rs-work-area {
   background: var(--cv-bg);
 }
 .rs-work-intro {
-  font-size: 14px !important;
-  font-weight: 300 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
   color: var(--cv-text-muted) !important;
   margin-top: 10px !important;
 }
+/* แถบสรุปหัว section — รูปแบบเดียวกับ .rs-cert-meta */
+.rs-work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 26px;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+}
+.rs-work-meta li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cv-text-muted);
+}
+.rs-work-meta i {
+  font-size: 15px;
+  line-height: 1;
+  color: var(--cv-blue);
+}
+
 .rs-work-list {
   display: grid;
-  gap: 28px;
-}
-.rs-work-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: 34px;
-  /* เดิมเป็น center — ภาพแผนภาพเตี้ยกว่าคอลัมน์ข้อความมาก
-     จึงลอยอยู่กลางการ์ดโดยมีช่องว่างบน-ล่างข้างละเกือบร้อย px */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  /* ต้องเป็น start ไม่ใช่ stretch — ถ้าการ์ดในแถวสูงเท่ากันตลอด
+     พอกางเนื้อหาของใบหนึ่ง อีกใบจะถูกยืดตามจนมีที่ว่างเปล่ายาวเป็นร้อย px */
   align-items: start;
+}
+
+/* สีประจำแต่ละชิ้น ดึงมาจากสีในแผนภาพของงานนั้น
+   ค่าตัวอักษรทุกตัวผ่าน 4.5:1 บนพื้นอ่อนของตัวเอง */
+.rs-work-item {
+  --work-accent:     var(--cv-blue);
+  --work-accent-ink: var(--cv-blue-mid);
+  --work-accent-bg:  var(--cv-blue-light);
+}
+.rs-work-item[data-accent="violet"] { --work-accent: #8B5CF6; --work-accent-ink: #6D28D9; --work-accent-bg: #F5F3FF; }
+.rs-work-item[data-accent="green"]  { --work-accent: #10B981; --work-accent-ink: #047857; --work-accent-bg: #ECFDF5; }
+.rs-work-item[data-accent="amber"]  { --work-accent: #F59E0B; --work-accent-ink: #B45309; --work-accent-bg: #FFFBEB; }
+.rs-work-item[data-accent="pink"]   { --work-accent: #EC4899; --work-accent-ink: #BE185D; --work-accent-bg: #FDF2F8; }
+
+.rs-work-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--cv-card);
   border: 1px solid var(--cv-border);
   border-radius: var(--cv-radius-lg);
-  padding: 26px;
+  padding: 24px;
   box-shadow: var(--cv-shadow-sm);
   transition: var(--cv-transition);
+  overflow: hidden;
+}
+/* แถบสีบางๆ บนขอบซ้าย ทำให้แต่ละการ์ดแยกจากกันได้โดยไม่ต้องเพิ่มกรอบหนา */
+.rs-work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--work-accent);
+  opacity: .55;
+  transition: opacity .25s;
 }
 .rs-work-item:hover {
   box-shadow: var(--cv-shadow-md);
-  border-color: rgba(59,130,246,.45);
+  border-color: var(--work-accent);
+  transform: translateY(-2px);
 }
-.rs-work-item:nth-child(even) .rs-work-media { order: 2; }
+.rs-work-item:hover::before { opacity: 1; }
+
+/* ชิ้นเด่น: เต็มสองคอลัมน์ ภาพอยู่ขวา เนื้อหาอยู่ซ้าย */
+.rs-work-item--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .82fr);
+  gap: 28px;
+  align-items: start;
+  padding: 26px;
+}
+.rs-work-item--featured > .rs-work-media { grid-column: 2; grid-row: 1; align-self: start; }
+.rs-work-item--featured > .rs-work-body  { grid-column: 1; grid-row: 1; }
+.rs-work-item--featured > .rs-work-more  { grid-column: 1 / -1; grid-row: 2; margin-top: 14px; }
+
+.rs-work-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* ---- ภาพแผนภาพของชิ้นเด่น (คลิกเพื่อเปิดขนาดเต็ม) ---- */
 .rs-work-media {
+  position: relative;
+  display: block;
   border-radius: var(--cv-radius);
   overflow: hidden;
   border: 1px solid var(--cv-border);
@@ -1959,17 +2327,46 @@ a.rs-cert-cta:focus-visible { border-radius: 10px; }
   width: 100%;
   height: auto;
   display: block;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.rs-work-media:hover img { transform: scale(1.03); }
+/* ป้ายบอกว่าคลิกได้ — บนจอสัมผัสไม่มี hover จึงให้แสดงค้างไว้ */
+.rs-work-zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  color: #F8FAFC;
+  background: rgba(15,26,48,.82);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 100px;
+  padding: 7px 12px;
+  backdrop-filter: blur(4px);
+}
+.rs-work-zoom i { font-size: 14px; }
+
+/* ---- หัวการ์ด ---- */
+.rs-work-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 .rs-work-tag {
   display: inline-block;
   font-size: 11px;
   font-weight: 600;
-  color: var(--cv-blue-mid);
-  background: var(--cv-blue-light);
+  color: var(--work-accent-ink);
+  background: var(--work-accent-bg);
   padding: 4px 12px;
   border-radius: 100px;
   letter-spacing: .3px;
-  margin-bottom: 10px;
 }
 /* ป้ายบอกว่างานยังไม่จบ — ต้องอ่านออกว่าต่างจาก .rs-work-tag ตั้งแต่แวบแรก */
 .rs-work-badge {
@@ -1982,15 +2379,117 @@ a.rs-cert-cta:focus-visible { border-radius: 10px; }
   padding: 3px 11px;
   border-radius: 100px;
   letter-spacing: .3px;
-  margin: 0 0 10px 8px;
 }
 .rs-work-name {
-  font-size: 19px !important;
+  font-size: 18px !important;
   font-weight: 600 !important;
   color: var(--cv-navy) !important;
   line-height: 1.4 !important;
-  margin: 0 0 16px !important;
+  margin: 0 0 8px !important;
 }
+.rs-work-item--featured .rs-work-name { font-size: 21px !important; }
+/* บรรทัดสรุป — ตัวที่รับน้ำหนักการอ่านแทนย่อหน้ายาวสามก้อนเดิม */
+.rs-work-summary {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--cv-text-muted) !important;
+  line-height: 1.7 !important;
+  margin: 0 0 14px !important;
+  max-width: 62ch;
+}
+
+/* ---- ตัวเลขผลงาน ---- */
+.rs-work-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+.rs-work-metrics li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 86px;
+  padding: 8px 12px;
+  background: var(--work-accent-bg);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius-sm);
+}
+.rs-work-metrics strong {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--work-accent-ink);
+}
+.rs-work-metrics span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cv-text-muted);
+}
+
+/* ---- แถบลำดับการทำงาน — แทนแผนภาพขนาดย่อที่อ่านไม่ออก ---- */
+.rs-work-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 0;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+.rs-work-flow li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.rs-work-flow li + li::before {
+  content: "\2192";
+  margin: 0 6px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--work-accent);
+}
+.rs-work-flow span {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--cv-text);
+  background: var(--cv-bg);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius-sm);
+  padding: 5px 10px;
+}
+
+/* ---- ตัวพับเนื้อหาเต็ม ---- */
+.rs-work-more {
+  border-top: 1px solid var(--cv-border-light);
+}
+.rs-work-more > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--work-accent-ink);
+  list-style: none;
+  user-select: none;
+}
+.rs-work-more > summary::-webkit-details-marker { display: none; }
+.rs-work-more > summary i {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+}
+.rs-work-more[open] > summary i { transform: rotate(180deg); }
+.rs-work-more > summary:hover { opacity: .78; }
+
 .rs-work-detail {
   margin: 0 0 16px !important;
 }
@@ -2011,6 +2510,19 @@ a.rs-cert-cta:focus-visible { border-radius: 10px; }
   max-width: 72ch;
 }
 .rs-work-detail dd:last-child { margin-bottom: 0; }
+/* ชิ้นเด่นกางเต็มความกว้างการ์ด 72ch จะเหลือที่ว่างด้านขวามาก
+   84ch ยังอยู่ในช่วงที่อ่านสบายและเติมความกว้างได้พอดีกว่า */
+.rs-work-item--featured .rs-work-detail dd { max-width: 84ch; }
+
+/* ---- ท้ายการ์ด: tech + ลิงก์เปิดแผนภาพ ---- */
+.rs-work-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
 .rs-work-tech {
   display: flex;
   flex-wrap: wrap;
@@ -2025,6 +2537,21 @@ a.rs-cert-cta:focus-visible { border-radius: 10px; }
   padding: 4px 11px;
   border-radius: 6px;
 }
+.rs-work-diagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--work-accent-ink);
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+.rs-work-diagram i { font-size: 15px; line-height: 1; }
+.rs-work-diagram:hover,
+.rs-work-diagram:focus-visible { color: var(--work-accent-ink); opacity: .75; }
+
 .rs-work-note {
   font-size: 12px !important;
   font-weight: 300 !important;
@@ -2034,13 +2561,23 @@ a.rs-cert-cta:focus-visible { border-radius: 10px; }
 }
 
 @media (max-width: 991px) {
-  .rs-work-item {
+  .rs-work-list { grid-template-columns: 1fr; gap: 18px; }
+  .rs-work-item { padding: 20px; }
+  .rs-work-item--featured {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 20px;
     padding: 20px;
   }
-  /* บนจอแคบให้ภาพอยู่บนเสมอ ไม่ต้องสลับ */
-  .rs-work-item:nth-child(even) .rs-work-media { order: 0; }
+  /* บนจอแคบเรียงตามลำดับใน DOM: ภาพ → เนื้อหา → ตัวพับ */
+  .rs-work-item--featured > .rs-work-media,
+  .rs-work-item--featured > .rs-work-body,
+  .rs-work-item--featured > .rs-work-more { grid-column: 1; grid-row: auto; }
+  .rs-work-item--featured .rs-work-name { font-size: 19px !important; }
+}
+@media (max-width: 575px) {
+  .rs-work-meta { gap: 8px 18px; }
+  .rs-work-metrics li { min-width: calc(50% - 4px); flex: 1 1 calc(50% - 4px); }
+  .rs-work-foot { justify-content: flex-start; }
 }
 
 /* ---------------------------------------------------------

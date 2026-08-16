@@ -9,3 +9,5 @@ docker-compose.override.yml
 
 # หรือทุกไฟล์ docker-compose*.yml
 docker-compose*.yml
+# cache ฟอนต์ของ tools/make-resume.js — ดึงใหม่ได้เสมอ ไม่ต้อง commit
+tools/.font-cache/

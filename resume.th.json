@@ -165,16 +165,23 @@
   ],
   "skills": [
     {
-      "name": "ภาษาและเฟรมเวิร์ก",
+      "name": "ภาษาที่ใช้พัฒนา",
       "keywords": [
         "PHP",
-        "Laravel",
+        "SQL",
         "JavaScript",
-        "AJAX",
-        "Python",
         "HTML",
         "CSS",
-        "Bootstrap"
+        "Python"
+      ]
+    },
+    {
+      "name": "เฟรมเวิร์กและไลบรารี",
+      "keywords": [
+        "Laravel",
+        "Bootstrap",
+        "AJAX",
+        "Pandas"
       ]
     },
     {
@@ -193,19 +200,25 @@
         "WooCommerce REST API",
         "DHL Express API",
         "sFTP file encryption",
-        "Batch automation"
+        "Batch automation",
+        "Cron jobs",
+        "IMAP/SMTP",
+        "Excel export"
       ]
     },
     {
-      "name": "เครื่องมือ",
+      "name": "เครื่องมือและแพลตฟอร์ม",
       "keywords": [
-        "Git",
         "Docker",
-        "Postman",
+        "Git",
+        "GitHub",
         "WordPress",
-        "Figma",
+        "cPanel",
+        "Windows Server",
         "Looker Studio",
-        "Windows Server"
+        "Google Sheets",
+        "Postman",
+        "Figma"
       ]
     },
     {

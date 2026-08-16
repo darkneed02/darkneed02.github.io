@@ -165,16 +165,23 @@
   ],
   "skills": [
     {
-      "name": "Languages & Frameworks",
+      "name": "Languages",
       "keywords": [
         "PHP",
-        "Laravel",
+        "SQL",
         "JavaScript",
-        "AJAX",
-        "Python",
         "HTML",
         "CSS",
-        "Bootstrap"
+        "Python"
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "keywords": [
+        "Laravel",
+        "Bootstrap",
+        "AJAX",
+        "Pandas"
       ]
     },
     {
@@ -193,19 +200,25 @@
         "WooCommerce REST API",
         "DHL Express API",
         "sFTP file encryption",
-        "Batch automation"
+        "Batch automation",
+        "Cron jobs",
+        "IMAP/SMTP",
+        "Excel export"
       ]
     },
     {
-      "name": "Tools",
+      "name": "Tools & Platforms",
       "keywords": [
-        "Git",
         "Docker",
-        "Postman",
+        "Git",
+        "GitHub",
         "WordPress",
-        "Figma",
+        "cPanel",
+        "Windows Server",
         "Looker Studio",
-        "Windows Server"
+        "Google Sheets",
+        "Postman",
+        "Figma"
       ]
     },
     {

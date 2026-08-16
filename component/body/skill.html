@@ -2,185 +2,173 @@
 <section id="homeskill" class="rs-skill-area section-space">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xl-7 col-lg-8">
+      <div class="col-xl-8 col-lg-9">
         <div class="rs-section-title-wrapper section-title-space text-center">
           <span class="rs-section-subtitle" data-i18n="skills.subtitle">ความเชี่ยวชาญ</span>
           <h2 class="rs-section-title" data-i18n="skills.title">ทักษะและเครื่องมือ</h2>
+          <p class="rs-skill-intro rs-measure-center" data-i18n="skills.intro">
+            แยกเป็นสามกลุ่มตามบทบาทการใช้งาน รายการที่มีคำอธิบายกำกับคือสิ่งที่ใช้ทำงานจริงเป็นประจำ ส่วนป้ายท้ายกลุ่มคือสิ่งที่หยิบมาใช้ร่วมเป็นครั้งคราว
+          </p>
         </div>
       </div>
     </div>
-    <div class="row g-4">
 
-      <!-- Primary Skills -->
-      <div class="col-xl-6">
-        <div class="rs-skill-group rs-skill-group--primary">
-          <div class="rs-skill-group-header">
-            <h3 class="rs-skill-group-title">Primary Skills</h3>
-            <p class="rs-skill-group-note" data-i18n="skills.primary.note">ทักษะหลักที่ใช้งานจริงเป็นประจำ</p>
-          </div>
-          <div class="rs-skill-grid">
+    <!-- สามกลุ่มตามที่ผู้อ่านมองหา: เขียนด้วยภาษาอะไร ต่อยอดบนอะไร และทำงานด้วยเครื่องมืออะไร
+         ทุกรายการอยู่ระดับเดียวกันหมดและมีคำอธิบายว่าเอาไปทำอะไรในงานจริง
+         (เคยแยกชั้น "ใช้ร่วม" ไว้ท้ายกลุ่ม — ถอดออกตามที่เจ้าของโปรไฟล์สั่ง
+         เพราะการแบ่งชั้นทำให้ของที่ใช้งานได้จริงดูด้อยกว่าที่ควร)
+         เหลือแค่ "กำลังศึกษา" ที่ยังต้องแยก เพราะเป็นคนละเรื่องกับสิ่งที่ทำงานได้แล้ว -->
+    <div class="rs-skill-groups">
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".1s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/new-php-logo.png" alt="PHP" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">PHP</h5>
-                  <p class="rs-skill-meta">Backend Development</p>
-                </div>
-              </div>
-            </div>
+      <!-- กลุ่ม 1: ภาษา -->
+      <article class="rs-skill-group wow fadeInUp" data-wow-delay=".1s" data-group="lang">
+        <header class="rs-skill-group-header">
+          <span class="rs-skill-group-icon" aria-hidden="true"><i class="ri-code-s-slash-line"></i></span>
+          <span class="rs-skill-group-id">
+            <h3 class="rs-skill-group-title" data-i18n="skills.lang.title">ภาษาที่ใช้พัฒนา</h3>
+            <span class="rs-skill-group-note" data-i18n="skills.lang.note">ภาษาที่เขียนเองในงานจริง</span>
+          </span>
+        </header>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".12s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon rs-skill-icon--laravel">
-                  <i class="ri-braces-line" aria-hidden="true"></i>
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Laravel</h5>
-                  <p class="rs-skill-meta" data-i18n="skills.laravel.meta">ระบบหลังบ้านที่ใช้งานจริงใน Production</p>
-                </div>
-              </div>
-            </div>
+        <ul class="rs-skill-list">
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">PHP</span>
+            <span class="rs-skill-note" data-i18n="skills.php.note">ภาษาหลักของงานหลังบ้านตลอด 6 ปี</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">SQL</span>
+            <span class="rs-skill-note" data-i18n="skills.sql.note">ออกแบบตารางและเขียน query เอง</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">JavaScript</span>
+            <span class="rs-skill-note" data-i18n="skills.js.note">งานฝั่งหน้าเว็บและเรียก API</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">HTML / CSS</span>
+            <span class="rs-skill-note" data-i18n="skills.htmlcss.note">โครงหน้าเว็บและงาน responsive</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Python</span>
+            <span class="rs-skill-note" data-i18n="skills.python.note">งาน Automation เชื่อม SAP และจัดการไฟล์ข้อมูล</span>
+          </li>
+        </ul>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".15s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/sql-server copy.png" alt="SQL" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">SQL</h5>
-                  <p class="rs-skill-meta">Database Design &amp; Query</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".2s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/html-icon-02.png" alt="HTML/CSS" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">HTML / CSS</h5>
-                  <p class="rs-skill-meta">Semantic &amp; Responsive UI</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".25s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/js.png" alt="JavaScript" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">JavaScript</h5>
-                  <p class="rs-skill-meta">Frontend Interaction</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".3s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/icons8-git-150.png" alt="Git" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Git</h5>
-                  <p class="rs-skill-meta">Version Control</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <div class="rs-skill-extra rs-skill-extra--learning">
+          <span class="rs-skill-extra-label" data-i18n="skills.learning.label">กำลังศึกษา</span>
+          <span class="rs-skill-tool">Golang</span>
         </div>
-      </div>
+      </article>
 
-      <!-- Strong Skills -->
-      <div class="col-xl-6">
-        <div class="rs-skill-group">
-          <div class="rs-skill-group-header">
-            <h3 class="rs-skill-group-title">Strong Skills</h3>
-            <p class="rs-skill-group-note" data-i18n="skills.strong.note">ทักษะที่ใช้งานร่วมกับงานหลักสม่ำเสมอ</p>
-          </div>
-          <div class="rs-skill-grid">
+      <!-- กลุ่ม 2: เฟรมเวิร์กและไลบรารี -->
+      <article class="rs-skill-group wow fadeInUp" data-wow-delay=".2s" data-group="framework">
+        <header class="rs-skill-group-header">
+          <span class="rs-skill-group-icon" aria-hidden="true"><i class="ri-stack-line"></i></span>
+          <span class="rs-skill-group-id">
+            <h3 class="rs-skill-group-title" data-i18n="skills.fw.title">เฟรมเวิร์กและไลบรารี</h3>
+            <span class="rs-skill-group-note" data-i18n="skills.fw.note">ตัวช่วยที่สร้างงานอยู่บนนั้น</span>
+          </span>
+        </header>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".1s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/wordpress-icon-02.png" alt="WordPress" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">WordPress</h5>
-                  <p class="rs-skill-meta">Theme &amp; Customization</p>
-                </div>
-              </div>
-            </div>
+        <ul class="rs-skill-list">
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Laravel</span>
+            <span class="rs-skill-note" data-i18n="skills.laravel.meta">ระบบหลังบ้านที่ใช้งานจริงใน Production</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Bootstrap</span>
+            <span class="rs-skill-note" data-i18n="skills.bootstrap.note">โครงเลย์เอาต์และคอมโพเนนต์ UI</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">AJAX</span>
+            <span class="rs-skill-note" data-i18n="skills.ajax.note">โหลดและส่งข้อมูลโดยไม่รีเฟรชหน้า</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Pandas</span>
+            <span class="rs-skill-note" data-i18n="skills.pandas.note">ทำ Data Cleansing ก่อนขึ้นแดชบอร์ด</span>
+          </li>
+        </ul>
+      </article>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".15s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/bootstrap-logo.jpg" alt="Bootstrap" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Bootstrap</h5>
-                  <p class="rs-skill-meta">Component &amp; Layout</p>
-                </div>
-              </div>
-            </div>
+      <!-- กลุ่ม 3: เครื่องมือและแพลตฟอร์ม
+           ฐานข้อมูลอยู่กลุ่มนี้ในฐานะแพลตฟอร์มที่ทำงานด้วย ส่วนตัวภาษา SQL อยู่กลุ่มแรก -->
+      <article class="rs-skill-group wow fadeInUp" data-wow-delay=".3s" data-group="tool">
+        <header class="rs-skill-group-header">
+          <span class="rs-skill-group-icon" aria-hidden="true"><i class="ri-tools-line"></i></span>
+          <span class="rs-skill-group-id">
+            <h3 class="rs-skill-group-title" data-i18n="skills.tool.title">เครื่องมือและแพลตฟอร์ม</h3>
+            <span class="rs-skill-group-note" data-i18n="skills.tool.note">สิ่งที่ใช้ทำงานทุกวัน</span>
+          </span>
+        </header>
 
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".2s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/python-icon-01.png" alt="Python" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Python</h5>
-                  <p class="rs-skill-meta">Automation &amp; Scripting</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".25s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/figma-icon-02.png" alt="Figma" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Figma</h5>
-                  <p class="rs-skill-meta">Wireframe &amp; UI Layout</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rs-skill-card wow fadeInUp" data-wow-delay=".3s">
-              <div class="rs-skill-card-top">
-                <div class="rs-skill-icon">
-                  <img src="assets/images/icon/channels4_profile.jpg" alt="Postman" />
-                </div>
-                <div>
-                  <h5 class="rs-skill-title">Postman</h5>
-                  <p class="rs-skill-meta">API Testing &amp; Documentation</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="rs-skill-tools">
-            <span class="rs-skill-tool">REST API</span>
-            <span class="rs-skill-tool">MySQL</span>
-            <span class="rs-skill-tool">PostgreSQL</span>
-            <span class="rs-skill-tool">SQL Server</span>
-            <span class="rs-skill-tool">AJAX</span>
-          </div>
-          <div class="rs-skill-tools rs-skill-tools--learning">
-            <span class="rs-skill-tools-label" data-i18n="skills.learning.label">กำลังศึกษา</span>
-            <span class="rs-skill-tool">Golang</span>
-          </div>
-        </div>
-      </div>
+        <ul class="rs-skill-list">
+          <li class="rs-skill-item">
+            <span class="rs-skill-name" data-i18n="skills.db.name">ฐานข้อมูล</span>
+            <span class="rs-skill-note">PostgreSQL · MySQL · SQL Server</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Docker</span>
+            <span class="rs-skill-note" data-i18n="skills.docker.note">ยกระบบและฐานข้อมูลขึ้นรันเป็นชุดเดียว</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Git / GitHub</span>
+            <span class="rs-skill-note" data-i18n="skills.git.note">ควบคุมเวอร์ชันทุกโปรเจกต์</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">WordPress</span>
+            <span class="rs-skill-note" data-i18n="skills.wp.note">เขียนธีมเองทั้งชุด 2 เว็บบริษัท</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">cPanel</span>
+            <span class="rs-skill-note" data-i18n="skills.cpanel.note">ดูแลโฮสต์ โดเมน และระบบสำรองข้อมูล</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Windows Server</span>
+            <span class="rs-skill-note" data-i18n="skills.winsrv.note">ตั้งค่าเซิร์ฟเวอร์ โดเมน SSL และ Deploy</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Looker Studio</span>
+            <span class="rs-skill-note" data-i18n="skills.looker.note">แดชบอร์ดสรุปข้อมูลให้ผู้บริหาร</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Google Sheets</span>
+            <span class="rs-skill-note" data-i18n="skills.sheets.note">ต้นทางข้อมูลที่ต่อเข้าแดชบอร์ด</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Postman</span>
+            <span class="rs-skill-note" data-i18n="skills.postman.note">ทดสอบและทำเอกสาร API</span>
+          </li>
+          <li class="rs-skill-item">
+            <span class="rs-skill-name">Figma</span>
+            <span class="rs-skill-note" data-i18n="skills.figma.note">ร่าง Wireframe และวาง UI ก่อนลงมือ</span>
+          </li>
+        </ul>
+      </article>
 
     </div>
+
+    <!-- แถบงานเชื่อมต่อระบบ — ไม่ใช่การประเมินตัวเอง แต่เป็นรายการที่ทำมาแล้วจริง
+         จึงแยกออกจากสามกลุ่มด้านบนและระบุให้ชัดว่าเป็นงานที่เคยส่งมอบ -->
+    <div class="rs-skill-band wow fadeInUp" data-wow-delay=".2s">
+      <div class="rs-skill-band-id">
+        <span class="rs-skill-band-icon" aria-hidden="true"><i class="ri-links-line"></i></span>
+        <span>
+          <h3 class="rs-skill-band-title" data-i18n="skills.integration.title">งานเชื่อมต่อระบบและ Automation ที่ทำมาแล้ว</h3>
+          <span class="rs-skill-band-note" data-i18n="skills.integration.note">อ่านรายละเอียดแต่ละงานได้ที่หัวข้อประสบการณ์และผลงาน</span>
+        </span>
+      </div>
+      <div class="rs-skill-band-tags">
+        <span class="rs-skill-tool">REST API</span>
+        <span class="rs-skill-tool">SAP Data Integration</span>
+        <span class="rs-skill-tool">WooCommerce REST API</span>
+        <span class="rs-skill-tool">DHL Express API</span>
+        <span class="rs-skill-tool">sFTP File Encryption</span>
+        <span class="rs-skill-tool">Batch / bat file</span>
+        <span class="rs-skill-tool">Cron Jobs</span>
+        <span class="rs-skill-tool">IMAP / SMTP</span>
+        <span class="rs-skill-tool">Excel Export</span>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- skill area end -->

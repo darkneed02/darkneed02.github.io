@@ -54,6 +54,7 @@ const person = {
   knowsAbout: [
     "PHP",
     "Laravel",
+    "SQL",
     "REST API",
     "PostgreSQL",
     "MySQL",
@@ -71,6 +72,10 @@ const person = {
     "sFTP file encryption",
     "Workflow automation",
     "Docker",
+    "cPanel",
+    "GitHub",
+    "Cron jobs",
+    "Google Sheets",
     "WooCommerce REST API",
     "DHL Express API",
     "CRM development",
@@ -205,11 +210,24 @@ const certificates = [
 
 /* กลุ่มทักษะ — ตรงกับที่แสดงใน section ทักษะบนหน้าเว็บ */
 const skills = [
-  { group: { th: "ภาษาและเฟรมเวิร์ก", en: "Languages & Frameworks" }, items: ["PHP", "Laravel", "JavaScript", "AJAX", "Python", "HTML", "CSS", "Bootstrap"] },
+  /* กลุ่มสามอันแรกเรียงตรงกับ section ความเชี่ยวชาญบนหน้าเว็บ
+     (ภาษา / เฟรมเวิร์ก / เครื่องมือ) เพื่อให้สิ่งที่คนอ่านเห็น
+     กับสิ่งที่ ATS และ AI อ่านจาก resume.json ตรงกัน
+     ยกเว้น "ฐานข้อมูล" ที่แยกเป็นกลุ่มของตัวเองในข้อมูลโครงสร้าง
+     — parser ส่วนใหญ่จับคู่ตำแหน่งงานจากหัวข้อกลุ่มด้วย การซ่อน
+     PostgreSQL/MySQL ไว้ใต้หัวข้อ "Tools" ทำให้เสียคีย์เวิร์ดไปเปล่าๆ
+     บนหน้าเว็บก็ยังมีคำว่า "ฐานข้อมูล" กำกับแถวนั้นอยู่ ไม่ขัดกัน */
+  { group: { th: "ภาษาที่ใช้พัฒนา", en: "Languages" }, items: ["PHP", "SQL", "JavaScript", "HTML", "CSS", "Python"] },
+  { group: { th: "เฟรมเวิร์กและไลบรารี", en: "Frameworks & Libraries" }, items: ["Laravel", "Bootstrap", "AJAX", "Pandas"] },
   { group: { th: "ฐานข้อมูล", en: "Databases" }, items: ["PostgreSQL", "MySQL", "Microsoft SQL Server"] },
-  { group: { th: "เชื่อมต่อระบบและ Automation", en: "Integration & Automation" }, items: ["REST API", "SAP data integration", "WooCommerce REST API", "DHL Express API", "sFTP file encryption", "Batch automation"] },
-  { group: { th: "เครื่องมือ", en: "Tools" }, items: ["Git", "Docker", "Postman", "WordPress", "Figma", "Looker Studio", "Windows Server"] },
+  { group: { th: "เชื่อมต่อระบบและ Automation", en: "Integration & Automation" }, items: ["REST API", "SAP data integration", "WooCommerce REST API", "DHL Express API", "sFTP file encryption", "Batch automation", "Cron jobs", "IMAP/SMTP", "Excel export"] },
+  { group: { th: "เครื่องมือและแพลตฟอร์ม", en: "Tools & Platforms" }, items: ["Docker", "Git", "GitHub", "WordPress", "cPanel", "Windows Server", "Looker Studio", "Google Sheets", "Postman", "Figma"] },
   { group: { th: "กำลังศึกษา", en: "Currently learning" }, items: ["Golang"] },
 ];
 
-module.exports = { person, work, education, certificates, skills };
+/* โดเมนจริงของเว็บ — อยู่ตรงนี้เพราะมีสองตัวที่ต้องใช้ค่าเดียวกัน
+   (build.js ใช้ทำ canonical/hreflang/sitemap/JSON-LD ส่วน
+   tools/make-resume.js ใช้ใส่ในเรซูเม่) ถ้าแยกกันเขียนจะหลุดจากกัน */
+const site = { baseUrl: "https://darkneed02.github.io" };
+
+module.exports = { person, work, education, certificates, skills, site };

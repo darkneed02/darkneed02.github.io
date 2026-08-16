@@ -17,10 +17,11 @@ Full Stack Developer with 6 years of experience, working mainly with PHP/Laravel
 
 ## Skills
 
-- **Languages & Frameworks**: PHP, Laravel, JavaScript, AJAX, Python, HTML, CSS, Bootstrap
+- **Languages**: PHP, SQL, JavaScript, HTML, CSS, Python
+- **Frameworks & Libraries**: Laravel, Bootstrap, AJAX, Pandas
 - **Databases**: PostgreSQL, MySQL, Microsoft SQL Server
-- **Integration & Automation**: REST API, SAP data integration, WooCommerce REST API, DHL Express API, sFTP file encryption, Batch automation
-- **Tools**: Git, Docker, Postman, WordPress, Figma, Looker Studio, Windows Server
+- **Integration & Automation**: REST API, SAP data integration, WooCommerce REST API, DHL Express API, sFTP file encryption, Batch automation, Cron jobs, IMAP/SMTP, Excel export
+- **Tools & Platforms**: Docker, Git, GitHub, WordPress, cPanel, Windows Server, Looker Studio, Google Sheets, Postman, Figma
 - **Currently learning**: Golang
 
 ## Work experience
