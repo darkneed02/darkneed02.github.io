@@ -141,12 +141,17 @@ window.cvI18n = {
 
     /* ---- Certifications ---- */
     'cert.subtitle':          'ใบรับรอง',
-    'cert.desc':              '8 ใบรับรอง พร้อมลิงก์ตรวจสอบหลักฐานได้ทุกใบ',
-    'cert.backend.subtitle':  'งานพัฒนา REST API และระบบฝั่งเซิร์ฟเวอร์',
-    'cert.data.subtitle':     'เส้นทางด้าน Data Science และ Data Engineering',
-    'cert.cloud.subtitle':    'พื้นฐานระบบคลาวด์และการจัดการโครงสร้างพื้นฐาน',
+    'cert.desc':              'ใบรับรองด้าน Backend, Data และ Cloud — กดดูหลักฐานได้ทุกใบ',
+    /* total/issuers นับตรงกับ certificates[] ใน data/profile.js (8 ใบ, 2 ผู้ออก)
+       ส่วน latest ต้องแก้มือ เพราะ profile.js ไม่ได้เก็บวันที่ไว้ —
+       เพิ่มใบใหม่เมื่อไหร่ ต้องมาแก้ทั้งสามค่านี้ทั้ง th และ en */
+    'cert.meta.total':        '8 ใบรับรอง',
+    'cert.meta.issuers':      '2 สถาบัน',
+    'cert.meta.latest':       'ล่าสุด Feb 2025',
     'cert.view':              'ดูใบรับรอง',
-    'cert.de.course':         'Data Engineer Track (5 ใบรับรอง)',
+    'cert.de.course':         'Data Engineer Track',
+    'cert.de.count':          '5 ใบรับรอง',
+    'cert.de.list':           'หลักสูตรในแทร็กนี้',
     'cert.de.cert1':          'ปูพื้นฐานสู่สายงาน Data Engineer',
     'cert.de.cert2':          'เครื่องมือและโครงสร้างพื้นฐาน Data Engineering',
     'cert.de.cert3':          'Python, Pandas &amp; PySpark',
@@ -417,12 +422,14 @@ window.cvI18n = {
 
     /* ---- Certifications ---- */
     'cert.subtitle':          'Certifications',
-    'cert.desc':              'A collection of certifications with verification links for each item',
-    'cert.backend.subtitle':  'REST API development and server-side systems',
-    'cert.data.subtitle':     'Data Science and Data Engineering tracks',
-    'cert.cloud.subtitle':    'Cloud fundamentals and infrastructure management',
+    'cert.desc':              'Credentials across backend, data and cloud — every one links to its proof',
+    'cert.meta.total':        '8 certificates',
+    'cert.meta.issuers':      '2 issuers',
+    'cert.meta.latest':       'Latest Feb 2025',
     'cert.view':              'View Certificate',
-    'cert.de.course':         'Data Engineer Track (5 Certificates)',
+    'cert.de.course':         'Data Engineer Track',
+    'cert.de.count':          '5 certificates',
+    'cert.de.list':           'Courses in this track',
     'cert.de.cert1':          'Foundation for Data Engineer Career',
     'cert.de.cert2':          'Data Engineering Tools &amp; Infrastructure',
     'cert.de.cert3':          'Python, Pandas &amp; PySpark',

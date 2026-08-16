@@ -2,154 +2,178 @@
 <section id="homeportfolio" class="rs-cert-area section-space secondary-bg">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xl-7 col-lg-8">
+      <div class="col-xl-8 col-lg-9">
         <div class="rs-section-title-wrapper section-title-space text-center">
           <span class="rs-section-subtitle" data-i18n="cert.subtitle">ใบรับรอง</span>
           <h2 class="rs-section-title">Certifications</h2>
           <p class="rs-cert-intro rs-measure-center" data-i18n="cert.desc">
-            8 ใบรับรอง พร้อมลิงก์ตรวจสอบหลักฐานได้ทุกใบ
+            ใบรับรองด้าน Backend, Data และ Cloud — กดดูหลักฐานได้ทุกใบ
           </p>
+          <!-- สรุปให้เห็นภาพรวมก่อนอ่านการ์ด: มีกี่ใบ จากใคร ใหม่แค่ไหน -->
+          <ul class="rs-cert-meta">
+            <li>
+              <i class="ri-award-line" aria-hidden="true"></i>
+              <span data-i18n="cert.meta.total">8 ใบรับรอง</span>
+            </li>
+            <li>
+              <i class="ri-building-2-line" aria-hidden="true"></i>
+              <span data-i18n="cert.meta.issuers">2 สถาบัน</span>
+            </li>
+            <li>
+              <i class="ri-time-line" aria-hidden="true"></i>
+              <span data-i18n="cert.meta.latest">ล่าสุด Feb 2025</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- หมวด Backend & API -->
-    <div class="rs-cert-group">
-      <div class="rs-cert-group-head">
-        <h3 class="rs-cert-group-title">Backend &amp; API</h3>
-        <p class="rs-cert-group-note" data-i18n="cert.backend.subtitle">งานพัฒนา REST API และระบบฝั่งเซิร์ฟเวอร์</p>
-      </div>
-      <div class="rs-cert-grid">
-
-        <article class="rs-cert-card wow fadeInUp" data-wow-delay=".1s">
-          <div class="rs-cert-card-head">
-            <span class="rs-cert-logo">
-              <img src="assets/images/cer/futureskill.png" alt="FutureSkill" loading="lazy" />
-            </span>
+    <!-- ใบเด่น: แทร็กที่รวม 5 ใบไว้ด้วยกัน วางเต็มความกว้างเป็นบล็อกแรก
+         ทำให้ยอด 5+1+1+1 = 8 ตรงกับหัวข้อทันทีที่กวาดตา -->
+    <article class="rs-cert-track wow fadeInUp" data-wow-delay=".1s">
+      <div class="rs-cert-track-main">
+        <div class="rs-cert-card-head">
+          <span class="rs-cert-logo">
+            <img src="assets/images/cer/futureskill.png" alt="FutureSkill" loading="lazy" width="40" height="40" />
+          </span>
+          <span class="rs-cert-id">
             <span class="rs-cert-issuer">FutureSkill</span>
-            <time class="rs-cert-date">12 Feb 2025</time>
-          </div>
-          <h4 class="rs-cert-name">Mastering Fundamental Golang: Building REST API Project</h4>
-          <ul class="rs-cert-skills">
-            <li>Golang</li>
-            <li>REST API</li>
-          </ul>
-          <a class="rs-cert-link" href="https://app.futureskill.co/api/certificate?courseId=171&userId=63471" target="_blank" rel="noopener noreferrer">
-            <i class="ri-external-link-line" aria-hidden="true"></i>
-            <span data-i18n="cert.view">ดูใบรับรอง</span>
-          </a>
-        </article>
-
+            <time class="rs-cert-date" datetime="2023-11">Nov 2023</time>
+          </span>
+          <span class="rs-cert-count" data-i18n="cert.de.count">5 ใบรับรอง</span>
+        </div>
+        <span class="rs-cert-cat" data-cat="data">
+          <span class="rs-cert-dot" aria-hidden="true"></span>Data &amp; Analytics
+        </span>
+        <h3 class="rs-cert-name rs-cert-name--lg" data-i18n="cert.de.course">Data Engineer Track</h3>
+        <ul class="rs-cert-skills">
+          <li>Python</li>
+          <li>PySpark</li>
+          <li>AWS</li>
+          <li>ETL Pipeline</li>
+        </ul>
       </div>
-    </div>
 
-    <!-- หมวด Data & Analytics -->
-    <div class="rs-cert-group">
-      <div class="rs-cert-group-head">
-        <h3 class="rs-cert-group-title">Data &amp; Analytics</h3>
-        <p class="rs-cert-group-note" data-i18n="cert.data.subtitle">เส้นทางด้าน Data Science และ Data Engineering</p>
+      <div class="rs-cert-track-list">
+        <p class="rs-cert-list-label" data-i18n="cert.de.list">หลักสูตรในแทร็กนี้</p>
+        <ul class="rs-cert-links">
+          <li>
+            <a href="https://app.futureskill.co/api/certificate?courseId=612&userId=63471" target="_blank" rel="noopener noreferrer">
+              <span class="rs-cert-num" aria-hidden="true">01</span>
+              <span class="rs-cert-link-text" data-i18n="cert.de.cert1">ปูพื้นฐานสู่สายงาน Data Engineer</span>
+              <i class="ri-external-link-line" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://app.futureskill.co/api/certificate?courseId=613&userId=63471" target="_blank" rel="noopener noreferrer">
+              <span class="rs-cert-num" aria-hidden="true">02</span>
+              <span class="rs-cert-link-text" data-i18n="cert.de.cert2">เครื่องมือและโครงสร้างพื้นฐาน Data Engineering</span>
+              <i class="ri-external-link-line" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://app.futureskill.co/api/certificate?courseId=639&userId=63471" target="_blank" rel="noopener noreferrer">
+              <span class="rs-cert-num" aria-hidden="true">03</span>
+              <span class="rs-cert-link-text" data-i18n="cert.de.cert3">Python, Pandas &amp; PySpark</span>
+              <i class="ri-external-link-line" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://app.futureskill.co/api/certificate?courseId=640&userId=63471" target="_blank" rel="noopener noreferrer">
+              <span class="rs-cert-num" aria-hidden="true">04</span>
+              <span class="rs-cert-link-text" data-i18n="cert.de.cert4">ETL Pipeline ด้วย PySpark</span>
+              <i class="ri-external-link-line" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://app.futureskill.co/api/certificate?courseId=641&userId=63471" target="_blank" rel="noopener noreferrer">
+              <span class="rs-cert-num" aria-hidden="true">05</span>
+              <span class="rs-cert-link-text" data-i18n="cert.de.cert5">Serverless Data Lakes ด้วย AWS</span>
+              <i class="ri-external-link-line" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="rs-cert-grid">
+    </article>
 
-        <article class="rs-cert-card rs-cert-card--wide wow fadeInUp" data-wow-delay=".1s">
-          <div class="rs-cert-card-head">
-            <span class="rs-cert-logo">
-              <img src="assets/images/cer/futureskill.png" alt="FutureSkill" loading="lazy" />
-            </span>
+    <!-- อีก 3 ใบที่เหลือ เรียงใหม่สุดก่อน — สามใบพอดีหนึ่งแถวบนจอกว้าง
+         จึงไม่เหลือคอลัมน์ว่างเหมือนตอนแยกเป็นสามหมวด -->
+    <div class="rs-cert-grid">
+
+      <article class="rs-cert-card wow fadeInUp" data-wow-delay=".1s">
+        <div class="rs-cert-card-head">
+          <span class="rs-cert-logo">
+            <img src="assets/images/cer/futureskill.png" alt="FutureSkill" loading="lazy" width="40" height="40" />
+          </span>
+          <span class="rs-cert-id">
             <span class="rs-cert-issuer">FutureSkill</span>
-            <time class="rs-cert-date">Nov 2023</time>
-          </div>
-          <h4 class="rs-cert-name" data-i18n="cert.de.course">Data Engineer Track (5 ใบรับรอง)</h4>
-          <ul class="rs-cert-skills">
-            <li>Python</li>
-            <li>PySpark</li>
-            <li>AWS</li>
-            <li>ETL Pipeline</li>
-          </ul>
-          <ul class="rs-cert-links">
-            <li>
-              <a href="https://app.futureskill.co/api/certificate?courseId=612&userId=63471" target="_blank" rel="noopener noreferrer">
-                <i class="ri-external-link-line" aria-hidden="true"></i>
-                <span data-i18n="cert.de.cert1">ปูพื้นฐานสู่สายงาน Data Engineer</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://app.futureskill.co/api/certificate?courseId=613&userId=63471" target="_blank" rel="noopener noreferrer">
-                <i class="ri-external-link-line" aria-hidden="true"></i>
-                <span data-i18n="cert.de.cert2">เครื่องมือและโครงสร้างพื้นฐาน Data Engineering</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://app.futureskill.co/api/certificate?courseId=639&userId=63471" target="_blank" rel="noopener noreferrer">
-                <i class="ri-external-link-line" aria-hidden="true"></i>
-                <span data-i18n="cert.de.cert3">Python, Pandas &amp; PySpark</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://app.futureskill.co/api/certificate?courseId=640&userId=63471" target="_blank" rel="noopener noreferrer">
-                <i class="ri-external-link-line" aria-hidden="true"></i>
-                <span data-i18n="cert.de.cert4">ETL Pipeline ด้วย PySpark</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://app.futureskill.co/api/certificate?courseId=641&userId=63471" target="_blank" rel="noopener noreferrer">
-                <i class="ri-external-link-line" aria-hidden="true"></i>
-                <span data-i18n="cert.de.cert5">Serverless Data Lakes ด้วย AWS</span>
-              </a>
-            </li>
-          </ul>
-        </article>
+            <time class="rs-cert-date" datetime="2025-02-12">Feb 2025</time>
+          </span>
+        </div>
+        <span class="rs-cert-cat" data-cat="backend">
+          <span class="rs-cert-dot" aria-hidden="true"></span>Backend &amp; API
+        </span>
+        <h3 class="rs-cert-name">Mastering Fundamental Golang: Building REST API Project</h3>
+        <ul class="rs-cert-skills">
+          <li>Golang</li>
+          <li>REST API</li>
+        </ul>
+        <a class="rs-cert-cta" href="https://app.futureskill.co/api/certificate?courseId=171&userId=63471" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="cert.view">ดูใบรับรอง</span>
+          <span class="rs-sr-only">Mastering Fundamental Golang: Building REST API Project</span>
+          <i class="ri-external-link-line" aria-hidden="true"></i>
+        </a>
+      </article>
 
-        <article class="rs-cert-card wow fadeInUp" data-wow-delay=".15s">
-          <div class="rs-cert-card-head">
-            <span class="rs-cert-logo">
-              <img src="assets/images/cer/futureskill.png" alt="FutureSkill" loading="lazy" />
-            </span>
+      <article class="rs-cert-card wow fadeInUp" data-wow-delay=".15s">
+        <div class="rs-cert-card-head">
+          <span class="rs-cert-logo">
+            <img src="assets/images/cer/futureskill.png" alt="FutureSkill" loading="lazy" width="40" height="40" />
+          </span>
+          <span class="rs-cert-id">
             <span class="rs-cert-issuer">FutureSkill</span>
-            <time class="rs-cert-date">14 Mar 2023</time>
-          </div>
-          <h4 class="rs-cert-name">Data Science for Everyone</h4>
-          <ul class="rs-cert-skills">
-            <li>Data Science</li>
-          </ul>
-          <a class="rs-cert-link" href="https://app.futureskill.co/api/certificate?courseId=51&userId=63471" target="_blank" rel="noopener noreferrer">
-            <i class="ri-external-link-line" aria-hidden="true"></i>
-            <span data-i18n="cert.view">ดูใบรับรอง</span>
-          </a>
-        </article>
+            <time class="rs-cert-date" datetime="2023-03-14">Mar 2023</time>
+          </span>
+        </div>
+        <span class="rs-cert-cat" data-cat="data">
+          <span class="rs-cert-dot" aria-hidden="true"></span>Data &amp; Analytics
+        </span>
+        <h3 class="rs-cert-name">Data Science for Everyone</h3>
+        <ul class="rs-cert-skills">
+          <li>Data Science</li>
+        </ul>
+        <a class="rs-cert-cta" href="https://app.futureskill.co/api/certificate?courseId=51&userId=63471" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="cert.view">ดูใบรับรอง</span>
+          <span class="rs-sr-only">Data Science for Everyone</span>
+          <i class="ri-external-link-line" aria-hidden="true"></i>
+        </a>
+      </article>
 
-      </div>
-    </div>
-
-    <!-- หมวด Cloud & Infrastructure -->
-    <div class="rs-cert-group">
-      <div class="rs-cert-group-head">
-        <h3 class="rs-cert-group-title">Cloud &amp; Infrastructure</h3>
-        <p class="rs-cert-group-note" data-i18n="cert.cloud.subtitle">พื้นฐานระบบคลาวด์และการจัดการโครงสร้างพื้นฐาน</p>
-      </div>
-      <div class="rs-cert-grid">
-
-        <article class="rs-cert-card wow fadeInUp" data-wow-delay=".1s">
-          <div class="rs-cert-card-head">
-            <span class="rs-cert-logo">
-              <img src="assets/images/cer/CompTIA.png" alt="CompTIA" loading="lazy" />
-            </span>
+      <article class="rs-cert-card wow fadeInUp" data-wow-delay=".2s">
+        <div class="rs-cert-card-head">
+          <span class="rs-cert-logo">
+            <img src="assets/images/cer/CompTIA.png" alt="CompTIA" loading="lazy" width="40" height="40" />
+          </span>
+          <span class="rs-cert-id">
             <span class="rs-cert-issuer">CompTIA</span>
-            <time class="rs-cert-date">15 Sep 2018</time>
-          </div>
-          <h4 class="rs-cert-name">CompTIA Cloud Essentials+</h4>
-          <ul class="rs-cert-skills">
-            <li>Cloud Computing</li>
-          </ul>
-          <a class="rs-cert-link" href="https://drive.google.com/file/d/1M3AxoumBlYWQ-OtTKjVRB7-6teeXpJcj/view" target="_blank" rel="noopener noreferrer">
-            <i class="ri-external-link-line" aria-hidden="true"></i>
-            <span data-i18n="cert.view">ดูใบรับรอง</span>
-          </a>
-        </article>
+            <time class="rs-cert-date" datetime="2018-09-15">Sep 2018</time>
+          </span>
+        </div>
+        <span class="rs-cert-cat" data-cat="cloud">
+          <span class="rs-cert-dot" aria-hidden="true"></span>Cloud &amp; Infrastructure
+        </span>
+        <h3 class="rs-cert-name">CompTIA Cloud Essentials+</h3>
+        <ul class="rs-cert-skills">
+          <li>Cloud Computing</li>
+        </ul>
+        <a class="rs-cert-cta" href="https://drive.google.com/file/d/1M3AxoumBlYWQ-OtTKjVRB7-6teeXpJcj/view" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="cert.view">ดูใบรับรอง</span>
+          <span class="rs-sr-only">CompTIA Cloud Essentials+</span>
+          <i class="ri-external-link-line" aria-hidden="true"></i>
+        </a>
+      </article>
 
-      </div>
     </div>
-
   </div>
 </section>
 <!-- certificates area end -->
