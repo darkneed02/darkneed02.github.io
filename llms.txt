@@ -28,9 +28,10 @@ Full Stack Developer with 6 years of experience, working mainly with PHP/Laravel
 ### WebMaster — ST. Herb Cosmetics International Co., Ltd.
 04/2025 – Present
 
-Maintained website stability and security, tracked traffic, improved SEO and UX, built the backup process, and coordinated server monitoring. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.
+Redesigned and rebuilt both company websites (stherb.com and emperorherb.com) with fully custom WordPress themes written from scratch, alongside stability and security maintenance, traffic tracking, SEO, the backup process and server coordination. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.
 
-- Website maintenance and development
+- Full redesign of stherb.com — D2C skincare store, English/Chinese, entirely custom theme
+- Full redesign of emperorherb.com — botanical extracts for export markets, a separate custom theme from stherb.com
 - Server maintenance and coordination
 - HerbCore CRM — multi-shop order consolidation (37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled jobs), in development, roughly 70% complete
 
@@ -93,7 +94,7 @@ Tech: PHP, HTML, CSS
 
 Full Stack Developer ประสบการณ์ 6 ปี ทำงานหลักด้วย PHP/Laravel และ SQL ถนัดระบบหลังบ้านขององค์กร ตั้งแต่ระบบเบิกจ่าย ระบบสมาชิก ไปจนถึงการเชื่อมข้อมูลกับ SAP และการส่งไฟล์เข้ารหัสตามมาตรฐานธนาคาร
 
-- WebMaster — บริษัท เซนต์เฮิร์บ คอสเมติกส์ อินเตอร์เนชั่นแนล จำกัด (04/2025 – ปัจจุบัน): ดูแลความเสถียรและความปลอดภัยของเว็บไซต์ ติดตาม Traffic ปรับ SEO และ UI/UX จัดทำระบบ Backup พร้อมประสานงานและเฝ้าระวัง Server และพัฒนาระบบ HerbCore CRM หลังบ้านเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker เพื่อรวมออเดอร์จากร้าน WooCommerce หลายร้าน ต่อคิวแพ็กสินค้า และจองขนส่งผ่าน DHL Express API
+- WebMaster — บริษัท เซนต์เฮิร์บ คอสเมติกส์ อินเตอร์เนชั่นแนล จำกัด (04/2025 – ปัจจุบัน): ออกแบบและพัฒนาเว็บไซต์ของบริษัทใหม่ทั้งสองเว็บ (stherb.com และ emperorherb.com) โดยเขียนธีม WordPress ขึ้นเองทั้งชุด พร้อมดูแลความเสถียรและความปลอดภัย ติดตาม Traffic ปรับ SEO จัดทำระบบ Backup ประสานงานและเฝ้าระวัง Server และพัฒนาระบบ HerbCore CRM หลังบ้านเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker เพื่อรวมออเดอร์จากร้าน WooCommerce หลายร้าน ต่อคิวแพ็กสินค้า และจองขนส่งผ่าน DHL Express API
 - Programmer — บริษัท คลาวด์เมท จำกัด (01/2024 – 11/2024): พัฒนา 6 ระบบภายในองค์กรภายใน 11 เดือน ครอบคลุมระบบจัดการทัวร์และการจอง ระบบเบิกจ่าย ระบบพัสดุ การเชื่อมข้อมูลกับ SAP และการเข้ารหัสไฟล์ตามข้อกำหนดของธนาคารก่อนส่งผ่าน sFTP
 - Full Stack Developer — บริษัท เนเจอร์ไบโอเทค จำกัด (07/2020 – 10/2023): พัฒนาระบบ Loyalty ‘Healthy Together’ ทั้งหน้าบ้านและหลังบ้าน รวมถึงระบบลงทะเบียน แลกของรางวัล QR Code เฉพาะสินค้า และ Lucky Draw พร้อมทำ Data Cleansing ด้วย Pandas และ Dashboard ด้วย Looker Studio
 - นักศึกษาฝึกงาน (R&D) — บริษัท อำพันเทคโนโลยี จำกัด (06/2019 – 10/2019): ฝึกงานในตำแหน่ง R&D พัฒนาเว็บไซต์แสดงสถานะสำหรับงานโรงแรมตามที่ได้รับมอบหมาย

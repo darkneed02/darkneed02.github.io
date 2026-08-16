@@ -1162,6 +1162,127 @@ textarea:focus-visible,
   color: var(--cv-blue-mid) !important;
 }
 
+/* ---------------------------------------------------------
+   9b. เว็บไซต์ที่ออกแบบใหม่ (ในการ์ดประสบการณ์)
+   เป็นงานชิ้นเดียวในหน้านี้ที่กดเข้าไปดูของจริงได้ จึงให้น้ำหนัก
+   ต่างจากย่อหน้าอื่นใน accordion และดันลิงก์ให้เด่น
+   --------------------------------------------------------- */
+.cv-site-block {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cv-border-light);
+}
+.cv-site-block-title {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--cv-text-light) !important;
+  margin: 0 0 10px !important;
+}
+
+.cv-site-card {
+  background: var(--cv-bg);
+  border: 1px solid var(--cv-border);
+  border-radius: var(--cv-radius);
+  padding: 16px 18px;
+}
+.cv-site-card + .cv-site-card { margin-top: 12px; }
+
+.cv-site-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-bottom: 8px;
+}
+.cv-site-name {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--cv-navy) !important;
+  margin: 0 !important;
+}
+.cv-site-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cv-blue-mid);
+  background: var(--cv-blue-light);
+  padding: 3px 9px;
+  border-radius: 100px;
+}
+
+.cv-site-desc {
+  font-size: 13px !important;
+  color: var(--cv-text-muted) !important;
+  line-height: 1.7 !important;
+  margin: 0 0 10px !important;
+}
+
+.cv-site-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 7px;
+}
+.cv-site-points li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 12.5px;
+  color: var(--cv-text-muted);
+  line-height: 1.65;
+}
+.cv-site-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cv-blue);
+}
+
+/* ลิงก์ต้องดูกดได้ชัด และสูงพอสำหรับนิ้ว */
+.cv-site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: var(--cv-radius-sm);
+  background: var(--cv-blue-light);
+  border: 1px solid rgba(59,130,246,.28);
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--cv-blue-mid) !important;
+  text-decoration: none !important;
+  transition: var(--cv-transition);
+}
+.cv-site-link:hover {
+  background: var(--cv-blue-mid);
+  border-color: var(--cv-blue-mid);
+  color: #fff !important;
+}
+.cv-site-link i { font-size: 15px; }
+.cv-site-domain {
+  font-weight: 400;
+  opacity: .75;
+  font-size: 12px;
+}
+
+.cv-site-note {
+  font-size: 12px !important;
+  color: var(--cv-text-light) !important;
+  line-height: 1.7 !important;
+  margin: 12px 0 0 !important;
+}
+
+@media (max-width: 575px) {
+  .cv-site-card { padding: 14px 15px; }
+  .cv-site-link { width: 100%; justify-content: center; flex-wrap: wrap; }
+}
+
 /* Result highlights */
 .rs-postbox-details-feature p {
   font-size: 13px;

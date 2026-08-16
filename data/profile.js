@@ -93,17 +93,19 @@ const work = [
     startDate: "2025-04",
     endDate: null,
     summary: {
-      th: "ดูแลความเสถียรและความปลอดภัยของเว็บไซต์ ติดตาม Traffic ปรับ SEO และ UI/UX จัดทำระบบ Backup พร้อมประสานงานและเฝ้าระวัง Server และพัฒนาระบบ HerbCore CRM หลังบ้านเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker เพื่อรวมออเดอร์จากร้าน WooCommerce หลายร้าน ต่อคิวแพ็กสินค้า และจองขนส่งผ่าน DHL Express API",
-      en: "Maintained website stability and security, tracked traffic, improved SEO and UX, built the backup process, and coordinated server monitoring. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.",
+      th: "ออกแบบและพัฒนาเว็บไซต์ของบริษัทใหม่ทั้งสองเว็บ (stherb.com และ emperorherb.com) โดยเขียนธีม WordPress ขึ้นเองทั้งชุด พร้อมดูแลความเสถียรและความปลอดภัย ติดตาม Traffic ปรับ SEO จัดทำระบบ Backup ประสานงานและเฝ้าระวัง Server และพัฒนาระบบ HerbCore CRM หลังบ้านเองทั้งระบบด้วย PHP 8.2 + PostgreSQL บน Docker เพื่อรวมออเดอร์จากร้าน WooCommerce หลายร้าน ต่อคิวแพ็กสินค้า และจองขนส่งผ่าน DHL Express API",
+      en: "Redesigned and rebuilt both company websites (stherb.com and emperorherb.com) with fully custom WordPress themes written from scratch, alongside stability and security maintenance, traffic tracking, SEO, the backup process and server coordination. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.",
     },
     highlights: {
       th: [
-        "ดูแลและพัฒนาเว็บไซต์",
+        "ออกแบบเว็บไซต์ stherb.com ใหม่ทั้งเว็บ — ร้านค้าออนไลน์สกินแคร์ สองภาษา (อังกฤษ/จีน) custom theme ทั้งชุด",
+        "ออกแบบเว็บไซต์ emperorherb.com ใหม่ทั้งเว็บ — สารสกัดสมุนไพรสำหรับตลาดส่งออก custom theme คนละชุดกับ stherb.com",
         "ดูแลและประสานงาน Server",
         "พัฒนาระบบ HerbCore CRM รวมออเดอร์หลายร้าน (37 หน้าจอ · 35 controller · API 13 กลุ่มงาน · 57 migration · งานตั้งเวลา 4 ตัว) — อยู่ระหว่างพัฒนา เสร็จแล้วประมาณ 70%",
       ],
       en: [
-        "Website maintenance and development",
+        "Full redesign of stherb.com — D2C skincare store, English/Chinese, entirely custom theme",
+        "Full redesign of emperorherb.com — botanical extracts for export markets, a separate custom theme from stherb.com",
         "Server maintenance and coordination",
         "HerbCore CRM — multi-shop order consolidation (37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled jobs), in development, roughly 70% complete",
       ],

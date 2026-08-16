@@ -86,7 +86,7 @@ window.cvI18n = {
     /* St.Herb */
     'exp.stherb.period':         'เม.ย. 2568 – ปัจจุบัน',
     'exp.stherb.web.title':      'ดูแลและพัฒนาเว็บไซต์',
-    'exp.stherb.web.desc':       '<p><strong>หน้าที่:</strong> ดูแลความเสถียร/ความปลอดภัย, ติดตาม Traffic, ปรับ SEO, ปรับ UI/UX, จัดทำระบบ Backup</p><p><strong>ผลลัพธ์:</strong> เว็บไซต์เสถียรขึ้น การมองเห็นดีขึ้น และ UX ปรับปรุงให้ดีขึ้น</p>',
+    'exp.stherb.web.desc':       '<p><strong>หน้าที่:</strong> ออกแบบและพัฒนาเว็บไซต์ของบริษัทใหม่ทั้งสองเว็บ โดยเขียนธีมขึ้นเองทั้งชุด พร้อมดูแลความเสถียร/ความปลอดภัย ติดตาม Traffic ปรับ SEO และจัดทำระบบ Backup</p><p><strong>ผลลัพธ์:</strong> ทั้งสองเว็บใช้งานจริงแล้ว แต่ละเว็บมีบุคลิกและลำดับการอ่านที่ออกแบบมาตามกลุ่มผู้ซื้อของตัวเอง เว็บเสถียรขึ้นและการมองเห็นดีขึ้น</p>',
     'exp.stherb.server.title':   'ดูแลและประสานงาน Server',
     'exp.stherb.server.desc':    '<p><strong>หน้าที่:</strong> ประสานงานและเฝ้าระวังความเสถียรของ Server พร้อมแก้ปัญหาเบื้องต้น</p><p><strong>ผลลัพธ์:</strong> บริการไม่สะดุดและลดเวลาหยุดชะงักของระบบ</p>',
     'exp.stherb.crm.title':     'พัฒนาระบบ HerbCore CRM',
@@ -262,6 +262,26 @@ window.cvI18n = {
     'contact.location.value': 'ปทุมธานี · พร้อมทำงาน Remote',
     'contact.social.label':   'ติดตามได้ที่',
 
+    /* ---- เว็บไซต์ที่ออกแบบใหม่ (อยู่ใน task ดูแลและพัฒนาเว็บไซต์) ---- */
+    'site.block.title':  'เว็บไซต์ที่ออกแบบใหม่ (custom theme ทั้งชุด)',
+    'site.visit':        'เปิดดูเว็บไซต์',
+    'site.note':         'ทั้งสองเว็บอยู่บน WordPress เหมือนกันแต่เป็นธีมคนละชุดที่เขียนขึ้นใหม่ทั้งหมด ไม่ได้เอาธีมสำเร็จรูปมาเปลี่ยนสี — ดูได้จากระบบฟอนต์ พาเลต โครงสร้าง header และชุด section ที่ไม่ซ้ำกันเลยสักส่วนเดียว',
+
+    'site.stherb.tag':   'ร้านค้าออนไลน์สกินแคร์ · อังกฤษ / 中文',
+    'site.stherb.desc':  'แบรนด์สกินแคร์สมุนไพรที่ขายตรงถึงผู้บริโภคทั่วโลก โจทย์คือทำให้คนที่เพิ่งรู้จักแบรนด์เชื่อใจพอจะกดซื้อภายในหน้าเดียว',
+    'site.stherb.p1':    'คู่ฟอนต์ Cormorant (หัวเรื่อง) กับ Mulish (เนื้อความ) บนพื้นครีม ให้โทนนิตยสารความงามและแยกลำดับหัวเรื่องกับเนื้อความได้ชัดในตัวเอง',
+    'site.stherb.p2':    'Hero จบลำดับการอ่านใน 1 จอ: ป้ายหมวด → พาดหัว → คำอธิบาย → ปุ่มหลัก/รอง โดยมีการ์ดคะแนน 4.9 จาก 12,400 รีวิว ลอยอยู่เหนือ fold — หลักฐานความน่าเชื่อถือมาถึงตาก่อนต้องเลื่อน',
+    'site.stherb.p3':    'แถบความมั่นใจ 4 ข้อ (จ่ายเงินปลอดภัย · คืนสินค้าง่าย · ซัพพอร์ต 24/7 · ส่งทั่วโลก) คั่นก่อนแถวสินค้า ตอบข้อกังวลก่อนถึงปุ่มซื้อ',
+    'site.stherb.p4':    'เมนู Products เป็น mega menu แยก Women / Men พร้อมหมวดย่อย เลือกได้จากเมนูโดยไม่ต้องเข้าหน้ารวมก่อน ส่วนการ์ดสินค้าอ่านครบในใบเดียว: หมวด → ชื่อ → ดาวและจำนวนรีวิว → ราคา → ปุ่มเต็มความกว้าง',
+    'site.stherb.p5':    'ภาพ 14 จาก 25 ไฟล์เป็น WebP มี srcset และ lazy-load ไม่มีการเลื่อนแนวนอนที่ความกว้าง 390px รองรับสองภาษาผ่าน hreflang',
+
+    'site.emperor.tag':  'สารสกัดสมุนไพรส่งออก · อังกฤษ',
+    'site.emperor.desc': 'สารสกัดพฤกษศาสตร์สำหรับตลาดส่งออก คนอ่านคือผู้ซื้อที่มองหาคู่ค้า ไม่ใช่ผู้บริโภคที่ซื้อชิ้นเดียว ภาษาภาพจึงต้องต่างจาก Stherb ทั้งชุด',
+    'site.emperor.p1':   'เขียวเข้มกับทอง คู่กับ Playfair Display และ Nunito Sans โลโก้อยู่กลางแล้วแยกเมนูซ้าย-ขวา เป็นภาษาของสินค้าพรีเมียม คนละบุคลิกกับ Stherb โดยสิ้นเชิงทั้งที่อยู่บน WordPress เหมือนกัน',
+    'site.emperor.p2':   'Hero ใส่ตัวเลขที่ผู้ซื้อ B2B ใช้ตัดสินใจตั้งแต่วินาทีแรก: 70+ ชนิดสินค้า · 32 ตลาดส่งออก · ประสบการณ์ 10+ ปี',
+    'site.emperor.p3':   'มีปุ่มหลักปุ่มเดียว "Shop the Catalog" ต่างจาก Stherb ที่ใช้สองปุ่ม เพราะผู้ซื้อกลุ่มนี้มาด้วยเป้าหมายเดียว ไม่ต้องมีทางเลือกมาแย่งความสนใจ',
+    'site.emperor.p4':   'จัดสินค้าตามเป้าหมายสุขภาพ 5 กลุ่มแทนการเรียงตามชื่อ และเขียนคำมั่นสัญญาเป็นข้อ No.1–No.3 พร้อมไอคอน แทนที่จะเป็นย่อหน้ายาว',
+
     /* ---- ชื่อที่ screen reader อ่าน สำหรับปุ่มที่มีแต่ไอคอน ---- */
     'aria.menu.open':   'เปิดเมนู',
     'aria.menu.close':  'ปิดเมนู',
@@ -342,7 +362,7 @@ window.cvI18n = {
     /* St.Herb */
     'exp.stherb.period':         'Apr 2025 – Present',
     'exp.stherb.web.title':      'Website Maintenance &amp; Development',
-    'exp.stherb.web.desc':       '<p><strong>Responsibilities:</strong> Maintained website stability &amp; security, tracked traffic, optimized SEO, improved UX/UI, developed backup system</p><p><strong>Results:</strong> Improved website stability, better search visibility and enhanced UX</p>',
+    'exp.stherb.web.desc':       '<p><strong>Responsibilities:</strong> Redesigned and rebuilt both company websites with fully custom themes written from scratch, alongside stability and security maintenance, traffic tracking, SEO work and the backup process</p><p><strong>Results:</strong> Both sites are live, each with its own visual identity and reading order designed around its own buyer. Stability and search visibility both improved.</p>',
     'exp.stherb.server.title':   'Server Maintenance &amp; Coordination',
     'exp.stherb.server.desc':    '<p><strong>Responsibilities:</strong> Coordinated and monitored server stability, resolved primary issues</p><p><strong>Results:</strong> Uninterrupted service and reduced system downtime</p>',
     'exp.stherb.crm.title':      'HerbCore CRM Development',
@@ -517,6 +537,26 @@ window.cvI18n = {
     'contact.location.label': 'Location',
     'contact.location.value': 'Pathum Thani · Open to Remote',
     'contact.social.label':   'Follow Me On',
+
+    /* ---- Redesigned sites (inside the website maintenance task) ---- */
+    'site.block.title':  'Sites redesigned (fully custom themes)',
+    'site.visit':        'Visit the site',
+    'site.note':         'Both sites run on WordPress but use entirely separate themes written from scratch — not a stock theme recoloured. The type systems, palettes, header architectures and section vocabularies have nothing in common.',
+
+    'site.stherb.tag':   'D2C skincare store · English / 中文',
+    'site.stherb.desc':  'A herbal skincare brand selling direct to consumers worldwide. The problem: give a first-time visitor enough confidence to buy within a single page.',
+    'site.stherb.p1':    'Cormorant for headings paired with Mulish for body copy on a cream ground — an editorial beauty tone that separates heading from body text on its own, without extra rules or boxes.',
+    'site.stherb.p2':    'The hero completes its reading order in one screen: category label → headline → supporting copy → primary/secondary buttons, with a 4.9-from-12,400-reviews card floating above the fold, so the credibility evidence reaches the eye before any scrolling.',
+    'site.stherb.p3':    'A four-point reassurance bar (secure payment · easy returns · 24/7 support · worldwide shipping) sits between the hero and the product row, answering the hesitations before the buy button rather than after it.',
+    'site.stherb.p4':    'Products is a mega menu split into Women / Men with sub-categories, so a shopper picks a line straight from the nav instead of landing on a catch-all listing first. Each product card reads complete on its own: category → name → stars and review count → price → full-width button.',
+    'site.stherb.p5':    '14 of 25 images are WebP with srcset and lazy loading; no horizontal scroll at 390px; two languages wired up through hreflang.',
+
+    'site.emperor.tag':  'Botanical extracts for export · English',
+    'site.emperor.desc': 'Botanical extracts aimed at export markets. The reader is a buyer looking for a supplier, not a consumer buying one jar — so the visual language had to differ from Stherb from top to bottom.',
+    'site.emperor.p1':   'Deep forest green and gold with Playfair Display and Nunito Sans, a centred logo and navigation split left and right — the vocabulary of a premium supplier, and a completely different personality from Stherb despite sharing the same WordPress platform.',
+    'site.emperor.p2':   'The hero leads with the numbers a B2B buyer actually screens on: 70+ botanical products · 32 export markets · 10+ years of experience.',
+    'site.emperor.p3':   'A single primary CTA, "Shop the Catalog", rather than the two Stherb uses — this buyer arrives with one goal, so a competing option would only split attention.',
+    'site.emperor.p4':   'Products are grouped by five health goals instead of listed by name, and the brand promises are written as No.1–No.3 with icons rather than a long paragraph.',
 
     /* ---- Accessible names for icon-only controls ---- */
     'aria.menu.open':   'Open menu',

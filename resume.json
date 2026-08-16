@@ -31,9 +31,10 @@
       "name": "ST. Herb Cosmetics International Co., Ltd.",
       "position": "WebMaster",
       "startDate": "2025-04",
-      "summary": "Maintained website stability and security, tracked traffic, improved SEO and UX, built the backup process, and coordinated server monitoring. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.",
+      "summary": "Redesigned and rebuilt both company websites (stherb.com and emperorherb.com) with fully custom WordPress themes written from scratch, alongside stability and security maintenance, traffic tracking, SEO, the backup process and server coordination. Also building HerbCore CRM in-house — PHP 8.2 and PostgreSQL on Docker — consolidating orders from multiple WooCommerce shops into one packing queue with DHL Express API shipping.",
       "highlights": [
-        "Website maintenance and development",
+        "Full redesign of stherb.com — D2C skincare store, English/Chinese, entirely custom theme",
+        "Full redesign of emperorherb.com — botanical extracts for export markets, a separate custom theme from stherb.com",
         "Server maintenance and coordination",
         "HerbCore CRM — multi-shop order consolidation (37 screens · 35 controllers · 13 API groups · 57 migrations · 4 scheduled jobs), in development, roughly 70% complete"
       ],
